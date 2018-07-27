@@ -5,20 +5,25 @@
   <url>
     <loc>http://zamariola.com.br/about/</loc>
     <lastmod>2018-07-25T23:44:33-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://zamariola.com.br/categories/</loc>
+    <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://zamariola.com.br/</loc>
+    <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://zamariola.com.br/tags/</loc>
+    <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
