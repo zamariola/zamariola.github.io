@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://zamariola.com.br/post/hybris-good-practices-i/</loc>
+    <lastmod>2018-07-26T21:48:29-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://zamariola.com.br/about/</loc>
     <lastmod>2018-07-25T23:44:33-03:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -16,13 +23,36 @@
   </url>
   
   <url>
+    <loc>http://zamariola.com.br/tags/development/</loc>
+    <lastmod>2018-07-26T21:48:29-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://zamariola.com.br/tags/hybris/</loc>
+    <lastmod>2018-07-26T21:48:29-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://zamariola.com.br/</loc>
+    <lastmod>2018-07-26T21:48:29-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://zamariola.com.br/post/</loc>
+    <lastmod>2018-07-26T21:48:29-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://zamariola.com.br/tags/</loc>
+    <lastmod>2018-07-26T21:48:29-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
