@@ -6,7 +6,7 @@
     <description>Recent content in Development on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Jul 2018 21:48:29 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jun 2018 21:01:44 -0300</lastBuildDate>
     
 	<atom:link href="http://zamariola.com.br/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>Hybris Good Practices I</title>
       <link>http://zamariola.com.br/post/hybris-good-practices-i/</link>
-      <pubDate>Thu, 26 Jul 2018 21:48:29 -0300</pubDate>
+      <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>
       
       <guid>http://zamariola.com.br/post/hybris-good-practices-i/</guid>
-      <description>1) Name your classes/interfaces with specific names instead of &amp;ldquo;Default&amp;rdquo; or &amp;ldquo;YourCustumer&amp;rdquo; prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. Coincidentally, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you or your employer to customize the hybris).
+      <description>1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &amp;ldquo;Coincidentally&amp;rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).
 Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).</description>
     </item>
     
