@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Leonardo Zamariola</title>
-    <link>http://zamariola.com.br/tags/</link>
+    <link>https://zamariola.com.br/tags/</link>
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Jun 2018 21:01:44 -0300</lastBuildDate>
     
-	<atom:link href="http://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Clean Code</title>
-      <link>http://zamariola.com.br/tags/clean-code/</link>
+      <link>https://zamariola.com.br/tags/clean-code/</link>
       <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>
       
-      <guid>http://zamariola.com.br/tags/clean-code/</guid>
+      <guid>https://zamariola.com.br/tags/clean-code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Development</title>
-      <link>http://zamariola.com.br/tags/development/</link>
+      <link>https://zamariola.com.br/tags/development/</link>
       <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>
       
-      <guid>http://zamariola.com.br/tags/development/</guid>
+      <guid>https://zamariola.com.br/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hybris</title>
-      <link>http://zamariola.com.br/tags/hybris/</link>
+      <link>https://zamariola.com.br/tags/hybris/</link>
       <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>
       
-      <guid>http://zamariola.com.br/tags/hybris/</guid>
+      <guid>https://zamariola.com.br/tags/hybris/</guid>
       <description></description>
     </item>
     

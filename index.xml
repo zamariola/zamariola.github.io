@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leonardo Zamariola</title>
-    <link>http://zamariola.com.br/</link>
+    <link>https://zamariola.com.br/</link>
     <description>Recent content on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Jun 2018 21:01:44 -0300</lastBuildDate>
     
-	<atom:link href="http://zamariola.com.br/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zamariola.com.br/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hybris Good Practices I</title>
-      <link>http://zamariola.com.br/post/hybris-good-practices-i/</link>
+      <link>https://zamariola.com.br/post/hybris-good-practices-i/</link>
       <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>
       
-      <guid>http://zamariola.com.br/post/hybris-good-practices-i/</guid>
+      <guid>https://zamariola.com.br/post/hybris-good-practices-i/</guid>
       <description>1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &amp;ldquo;Coincidentally&amp;rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).
 Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).</description>
     </item>
