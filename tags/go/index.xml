@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Leonardo Zamariola</title>
+    <link>https://zamariola.com.br/tags/go/</link>
+    <description>Recent content in Go on Leonardo Zamariola</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2019 09:53:03 -0300</lastBuildDate>
+    
+	<atom:link href="https://zamariola.com.br/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Start Writing Go Code</title>
+      <link>https://zamariola.com.br/post/how-to-start-writing-go-code/</link>
+      <pubDate>Sun, 28 Apr 2019 09:53:03 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/post/how-to-start-writing-go-code/</guid>
+      <description>Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -31,14 +31,21 @@
   
   <url>
     <loc>https://zamariola.com.br/tags/clean-code/</loc>
-    <lastmod>2018-06-26T21:01:44-03:00</lastmod>
+    <lastmod>2019-04-28T09:53:03-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zamariola.com.br/tags/development/</loc>
-    <lastmod>2018-06-26T21:01:44-03:00</lastmod>
+    <lastmod>2019-04-28T09:53:03-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/go/</loc>
+    <lastmod>2019-04-28T09:53:03-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -66,7 +73,7 @@
   
   <url>
     <loc>https://zamariola.com.br/tags/</loc>
-    <lastmod>2018-06-26T21:01:44-03:00</lastmod>
+    <lastmod>2019-04-28T09:53:03-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>

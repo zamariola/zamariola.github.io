@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jun 2018 21:01:44 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 09:53:03 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Clean Code</title>
       <link>https://zamariola.com.br/tags/clean-code/</link>
-      <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>
+      <pubDate>Sun, 28 Apr 2019 09:53:03 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/clean-code/</guid>
       <description></description>
@@ -23,9 +23,18 @@
     <item>
       <title>Development</title>
       <link>https://zamariola.com.br/tags/development/</link>
-      <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>
+      <pubDate>Sun, 28 Apr 2019 09:53:03 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://zamariola.com.br/tags/go/</link>
+      <pubDate>Sun, 28 Apr 2019 09:53:03 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/go/</guid>
       <description></description>
     </item>
     
