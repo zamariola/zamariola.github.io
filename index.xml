@@ -6,10 +6,19 @@
     <description>Recent content on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Apr 2019 09:53:03 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 08 May 2019 20:32:13 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Takt Time - How to pick the right technology stack</title>
+      <link>https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/</link>
+      <pubDate>Wed, 08 May 2019 20:32:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/</guid>
+      <description>What’s takt time and why should you care about it? Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.</description>
+    </item>
     
     <item>
       <title>How to Start Writing Go Code</title>

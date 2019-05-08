@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Leonardo Zamariola  | How to Start Writing Go Code</title>
+    <title>Leonardo Zamariola  | Takt Time - How to pick the right technology stack</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -28,27 +28,27 @@
 
     
 
-    <meta property="og:title" content="How to Start Writing Go Code" />
-<meta property="og:description" content="Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider." />
+    <meta property="og:title" content="Takt Time - How to pick the right technology stack" />
+<meta property="og:description" content="What’s takt time and why should you care about it? Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zamariola.com.br/post/how-to-start-writing-go-code/" />
-<meta property="article:published_time" content="2019-04-28T09:53:03-03:00"/>
-<meta property="article:modified_time" content="2019-04-28T09:53:03-03:00"/>
+<meta property="og:url" content="https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/" />
+<meta property="article:published_time" content="2019-05-08T20:32:13-03:00"/>
+<meta property="article:modified_time" content="2019-05-08T20:32:13-03:00"/>
 
-<meta itemprop="name" content="How to Start Writing Go Code">
-<meta itemprop="description" content="Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.">
-
-
-<meta itemprop="datePublished" content="2019-04-28T09:53:03-03:00" />
-<meta itemprop="dateModified" content="2019-04-28T09:53:03-03:00" />
-<meta itemprop="wordCount" content="913">
+<meta itemprop="name" content="Takt Time - How to pick the right technology stack">
+<meta itemprop="description" content="What’s takt time and why should you care about it? Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.">
 
 
+<meta itemprop="datePublished" content="2019-05-08T20:32:13-03:00" />
+<meta itemprop="dateModified" content="2019-05-08T20:32:13-03:00" />
+<meta itemprop="wordCount" content="1049">
 
-<meta itemprop="keywords" content="go,clean-code,development," />
+
+
+<meta itemprop="keywords" content="development,technology,stack," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to Start Writing Go Code"/>
-<meta name="twitter:description" content="Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider."/>
+<meta name="twitter:title" content="Takt Time - How to pick the right technology stack"/>
+<meta name="twitter:description" content="What’s takt time and why should you care about it? Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision."/>
 
       
 <script type="application/javascript">
@@ -165,124 +165,70 @@ if (!doNotTrack) {
           
         POSTS
       </p>
-      <h1 class="f1 athelas mb1">How to Start Writing Go Code</h1>
+      <h1 class="f1 athelas mb1">Takt Time - How to pick the right technology stack</h1>
       
-      <time class="f6 mv4 dib tracked" datetime="2019-04-28T09:53:03-03:00">April 28, 2019</time>      
+      <time class="f6 mv4 dib tracked" datetime="2019-05-08T20:32:13-03:00">May 8, 2019</time>      
       
       
         <span class="f6 mv4 dib tracked"> - 5 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 913 words</span>
+        <span class="f6 mv4 dib tracked"> - 1049 words</span>
       
     </header>
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-<p><img src="/post/how-to-start-writing-go-code/go.png"
+<p><img src="/post/takt-time-how-to-pick-a-technology-stack/dont-cut-corners.png"
      alt="Go logo"
      style="float: center; width:300px;" /></p>
 
-<h1 id="why-you-should-read-this">Why you should read this</h1>
+<h2 id="what-s-takt-time-and-why-should-you-care-about-it">What’s takt time and why should you care about it?</h2>
 
-<p>Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code)  to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.</p>
+<p>Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.</p>
 
-<h1 id="why-you-should-use-go-as-your-first-class-programming-language">Why you should use Go as your first-class programming language</h1>
+<p>In these important moments we should take into account the concept of takt time. Takt time is a discipline used mostly in production engineering and it’s defined as the time frame between the conception of a product and its delivery, that is, it’s calculated taking into account all the time needed to conceive, develop and deliver a product. In software engineering we use this same concept to describe the time between a specification and a production deployment. The smaller the takt time is, the better.</p>
 
-<p>I&rsquo;m not going to spend time on this topic too because we already have a lot of blog posts, talks and real life examples explaining why you should use Go programming language.
-If you are still uncertain about the future fo Go, you should give a chance to these following links:</p>
+<p>We should be very careful when defining takt time to avoid confusing it with “time to market”. Even though they both tend to have the same value in the beginning, they soon start to differ based on how much investment a project receives; and usually when you invest time in automation and planning, you tend to increase a little bit your time to market but reduce your long-term takt time.
+Software takt time is mainly influenced by the task itself (complex tasks tend to have higher takt time) and by programmers’ productivity. I’m not going to talk about the first topic because task complexity is big enough to have its own post. I’ll focus more on how to increase programmers’ productivity and, of course, how to keep it high.</p>
 
-<p><a href="https://github.com/golang/go/wiki/SuccessStories">Golang success stories</a></p>
+<p>So, if you want to reduce takt time you will need to invest in a tech stack that favours fast build, fast deployment and that will motivate you and your colleague programmers to do the job faster, i.e., a tech stack fun to work with.</p>
 
-<p><a href="https://movio.co/blog/migrate-Scala-to-Go/">Migrate from Scala to Go</a></p>
+<p><img src="/post/takt-time-how-to-pick-a-technology-stack/code-review.jpeg"
+     alt="Go logo"
+     style="float: center; width:300px;" /></p>
 
-<p><a href="https://medium.com/@Sandra_Parker/why-golang-is-the-future-part-1-ed7dd4f419d">Why Golang is the future</a></p>
+<h2 id="how-to-pick-the-right-stack">How to pick the right stack</h2>
 
-<p><a href="https://yourbasic.org/golang/advantages-over-java-python/">Go advantages over java and python</a></p>
+<p>In my opinion, the first thing that you should do to select the right stack is to keep your emotions aside. If you really want to choose the right stack to work with, i.e., the stack that will make your project more likely to succeed, you cannot get attached to your emotions or to what you have done before. If you want to pick the right stack, you need to know that there’s no silver bullet and that you won’t be able to do it right today just because you did it yesterday. So, forget about your past experiences and your emotional attachment to languages and frameworks.</p>
 
-<p><a href="https://medium.com/@kevalpatel2106/why-should-you-learn-go-f607681fad65">Why you should learn Go</a></p>
+<h3 id="1-benchmark-your-industry">1) Benchmark your industry</h3>
 
-<p><a href="https://www.slideshare.net/jpetazzo/docker-and-go-why-did-we-decide-to-write-docker-in-go">Docker and Go, why we decide to write docker in Go</a></p>
+<p>The first thing that you should do is benchmark your own industry. If you are working for an e-commerce business  you need to check and compare what other such companies are doing, investing and using. You can do this by reading papers, searching for common tech stacks and looking for opportunities to connect with programmers that work for those companies.
+One easy way to connect is going to tech events like TDC, QCon, Meetups and so on. There you can meet and share experiences. You have to always keep in mind that the whole tech industry is looking for solutions to reduce attrition and increase speed, so you can use that knowledge to advance with less effort. If you know that all fintechs are moving towards functional languages (Clojure, Scala, F#, Elixir or even Go) you would be better off betting on these techs instead of going with the old plain Java.
+Another good way to benchmark is through open source. Github has a lot of open repos that you can check to compare languages and frameworks.</p>
 
-<p>Also, you have to take into account that Google, Amazon, Datadog, HashiCorp and a lot of other companies are using it to build reliable server side software and infrastructure.</p>
+<h3 id="2-plan-innovate-and-invest-more-than-you-think-you-should">2) Plan, innovate and invest more than you think you should</h3>
 
-<h1 id="how-to-start-coding">How to start coding</h1>
+<p>You may think that if you pick a famous and common language like Java (with Spring) you won’t be wrong. Of course, it’s easier and safer to pick a famous language and/or framework because you will probably have more (and cheaper) professionals and more online available content. However, in the present times, if we want to reduce our takt time, we need to invest in our tech stack. And, please, don’t get me wrong, when I say invest, I’m not saying that your company needs to have an R&amp;D department or that you need to stop doing your current job or, even worse, that you need to create your own programming language. When I say invest, I mean more everything that will delay your instant result and create an asset that could improve and maintain your future productivity. Investing means the time you will spend thinking about your architecture before start programming. Yes. I’m talking about that time you know you should invest planning before doing.
+Investing in a tech stack means selecting the right tool for the job. It may sound a little cliché and obvious, but that’s not it. Investing means stepping out of our JVM’s comfort zone and trying a new approach using Python or Ruby or Go.
+I’ve seen a lot of teams avoiding new technologies, frameworks or process because they don’t want to learn something new or because they are too afraid to try it, or both. You need to reserve (invest) some time to make some Proof of Concept. And, after that, you need to try this new technology. Furthermore, you need to do this tech change knowing that you’ll be slower in the short term, but faster (with lower takt time) in the long term.</p>
 
-<p>As I said, we already have a lot of excellent articles explaining how to set-up your IDE, download Go framework and etc.</p>
+<h2 id="conclusion">Conclusion</h2>
 
-<p>We have two different types of content here:</p>
+<p>In the end, the conclusion is very simple and obvious. You need be aware of what tech stack your industry is using and be brave to try it. The most important thing to know is that you will need some courage to try this new feature and even more courage to say no to unrealistic deadlines. If you want to pick the right stack, you need to invest time in PoC, Innovations, new languages. However, always keep in mind the goal of it all, which is to reduce your takt time.</p>
 
-<h3 id="infrastructure-and-syntax-installing-go-ide-language-syntax-and-etc">Infrastructure and syntax: (Installing Go, IDE, language syntax and etc)</h3>
-
-<p>For this type I recommend starting with Golang Wiki, specially the “getting started” topic, then move to Dave Cheney’s blog <a href="https://dave.cheney.net/resources-for-new-go-programmers">https://dave.cheney.net/resources-for-new-go-programmers</a></p>
-
-<h3 id="how-to-write-idiomatic-go-write-go-as-a-gopher">How to write idiomatic Go  (“Write Go as a gopher”)</h3>
-
-<p>This is the most important topic for newcomers. Usually, programmers from differents languages tend to reproduce structure and behavior that they are used to. However, Go has a very strict and specific (opinionated) way of doing things. I recommend taking a look at these links:</p>
-
-<p>1) <a href="https://golang.org/doc/effective_go.html">Effective Go</a></p>
-
-<p>2) <a href="https://github.com/golang/go/wiki/CodeReviewComments">Code Review Comments</a></p>
-
-<p>3) <a href="https://dmitri.shuralyov.com/idiomatic-go">Idiomatic Go - Dmitri</a></p>
-
-<p>4) <a href="https://medium.com/@dgryski/idiomatic-go-resources-966535376dba">Idiomatic Go - Gryski</a></p>
-
-<p>5) <a href="https://dave.cheney.net/practical-go/presentations/qcon-china.html">Practical Go - Cheney</a></p>
-
-<p>6) <a href="https://www.youtube.com/watch?v=-wYLmsizBc0">dotGo Talk - Katrina Owen</a></p>
-
-<h1 id="should-i-use-a-web-framework">Should I use a web framework?</h1>
-
-<p>I don’t think you need a web framework to write a webserver and/or a microservice. In fact, the Go community will “recommend” using the standard library as much as possible, however, I think it will be easier for you to start coding using a framework because you will have a guideline to follow. Frameworks have specific rules and patterns that help us avoid mistakes.</p>
-
-<p>Of course, I’m a huge fan of the standard library and I like to write web servers using only the http.Server package. But, I believe sometimes we can cut some corners to sell, test or pivot an idea.</p>
-
-<h1 id="i-want-to-use-a-framework-which-one-should-i-pick">I want to use a framework. Which one should I pick?</h1>
-
-<p>If you really want to use a framework I suggest these (in order of preference)</p>
-
-<p>1) <a href="https://echo.labstack.com">Echo framework</a>: echo is a very good lightweight, minimalist web framework with a rich toolset and a lot of plug-ins. You have a plug-in for almost every most common task (Basic Auth, JWT, CORS, Http/2, Session and etc)</p>
-
-<p>2) <a href="https://gobuffalo.io/en">Buffalo</a>:  I have been noticing more content about buffalo. It is far from a light framework since it has templating, orm, testing and a lot of accessories for the  go development process. I think it could be a good option if you want to migrate from Java and, for unexplainable reasons, you like Spring.</p>
-
-<p>3) <a href="https://gokit.io/">Go kit</a>: go-kit isn’t a web framework, it’s more like a microservices tool. Its main goal is to facilitate the building and connection of microservices. It has circuit breaker, remote calls (rpc) and etc.</p>
-
-<h1 id="how-to-organize-your-code">How to organize your code</h1>
-
-<p>There’s no golden rule for how you should define your packages, however, some good practices may help you a lot:</p>
-
-<p>1) Don’t over package: it’s better to have fewer larger packages than small meaningless ones. In Go you don’t need a new package for everything. In a JVM world, people tend to create a new maven/gradle module for every new integration, database, messaging system or any other random tasks.</p>
-
-<p>There’s a famous <a href="https://dave.cheney.net/practical-go/presentations/qcon-china.html#_consider_fewer_larger_packages">quote by Cheney</a> about that:</p>
-
-<blockquote>
-<p>“Coming from Java?
-If you’re coming from a Java or C# background, consider this rule of thumb. - A Java package is equivalent to a single .go source file. - A Go package is equivalent to a whole Maven module or .NET assembly.”</p>
-</blockquote>
-
-<p>And remember, in Go, the fewer the better.</p>
-
-<p>2) Use simple and short names: in Go you won’t see a packaged named like “entiy_api_gateway” because we don’t split using underscore. In fact, we don’t split at all, because we don’t have more than one word in the same package name. Package names will have short and concise name like “http” or “fmt”.</p>
-
-<p>3) Pack by entity and not by layer: It’s very unusual to have a “controller” or a “commons” package in Go, because we don’t pack using layered architecture. Go packages are made of same entities. If you want to read more about entities, check out “Domain Driven Design” principles.</p>
-
-<h1 id="talk-is-cheap-show-me-the-code">Talk is cheap, show me the code</h1>
-
-<p>I’ve made some examples to help and guide you through this migration process from somewhere else to a nice and beautiful Go code paradise.
-Within the code repo you will be able to see how to connect to databases, log things, define a simple web server and so on.</p>
-
-<p>You can see it here : <a href="https://github.com/zamariola/go-echo-bootstrap">Go Echo Bootstrap</a></p>
+<p>And I almost forgot, If you are feeling braver now, how about trying a new language? <a href="https://zamariola.com.br/post/how-to-start-writing-go-code/">How about Go? CLICK HERE</a> to see how to start coding right now.</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/go" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">go</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/clean-code" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">clean-code</a>
-   </li>
-  
-   <li class="list">
      <a href="/tags/development" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">development</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/technology" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">technology</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/stack" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">stack</a>
    </li>
   
 </ul>
@@ -319,6 +265,10 @@ Within the code repo you will be able to see how to connect to databases, log th
     <p class="f5 b mb3">Related</p>
     <ul class="pa0 list">
 	   
+	     <li  class="mb2">
+          <a href="/post/how-to-start-writing-go-code/">How to Start Writing Go Code</a>
+        </li>
+	    
 	     <li  class="mb2">
           <a href="/post/hybris-good-practices-i/">Hybris Good Practices I</a>
         </li>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Leonardo Zamariola  | How to Start Writing Go Code</title>
+    <title>Leonardo Zamariola </title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,28 +27,23 @@
     
 
     
+      <link href="https://zamariola.com.br/tags/stack/index.xml" rel="alternate" type="application/rss+xml" title="Leonardo Zamariola" />
+      <link href="https://zamariola.com.br/tags/stack/index.xml" rel="feed" type="application/rss+xml" title="Leonardo Zamariola" />
+    
 
-    <meta property="og:title" content="How to Start Writing Go Code" />
-<meta property="og:description" content="Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://zamariola.com.br/post/how-to-start-writing-go-code/" />
-<meta property="article:published_time" content="2019-04-28T09:53:03-03:00"/>
-<meta property="article:modified_time" content="2019-04-28T09:53:03-03:00"/>
+    <meta property="og:title" content="stack" />
+<meta property="og:description" content="Software development and its philosophy" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://zamariola.com.br/tags/stack/" />
 
-<meta itemprop="name" content="How to Start Writing Go Code">
-<meta itemprop="description" content="Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.">
+<meta property="og:updated_time" content="2019-05-08T20:32:13-03:00"/>
 
+<meta itemprop="name" content="stack">
+<meta itemprop="description" content="Software development and its philosophy">
 
-<meta itemprop="datePublished" content="2019-04-28T09:53:03-03:00" />
-<meta itemprop="dateModified" content="2019-04-28T09:53:03-03:00" />
-<meta itemprop="wordCount" content="913">
-
-
-
-<meta itemprop="keywords" content="go,clean-code,development," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to Start Writing Go Code"/>
-<meta name="twitter:description" content="Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider."/>
+<meta name="twitter:title" content="stack"/>
+<meta name="twitter:description" content="Software development and its philosophy"/>
 
       
 <script type="application/javascript">
@@ -68,11 +63,11 @@ if (!doNotTrack) {
   <body class="ma0 avenir bg-near-white production">
 
     
-   
-  
 
-  <header>
-    <div class="bg-black">
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://zamariola.com.br/images/gohugo-default-sample-hero-image.jpg');">
+    <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://zamariola.com.br" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -150,185 +145,45 @@ if (!doNotTrack) {
   </div>
 </nav>
 
+      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
+          stack
+        </h1>
+        
+      </div>
     </div>
   </header>
 
 
-
     <main class="pb7" role="main">
       
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        POSTS
-      </p>
-      <h1 class="f1 athelas mb1">How to Start Writing Go Code</h1>
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
+      <p>Below you will find pages that utilize the taxonomy term “stack”</p>
+    </div>
+  </article>
+  <div class="mw8 center">    
+    <section class="flex-ns flex-wrap justify-around mt5">
       
-      <time class="f6 mv4 dib tracked" datetime="2019-04-28T09:53:03-03:00">April 28, 2019</time>      
-      
-      
-        <span class="f6 mv4 dib tracked"> - 5 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 913 words</span>
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-<p><img src="/post/how-to-start-writing-go-code/go.png"
-     alt="Go logo"
-     style="float: center; width:300px;" /></p>
-
-<h1 id="why-you-should-read-this">Why you should read this</h1>
-
-<p>Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code)  to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.</p>
-
-<h1 id="why-you-should-use-go-as-your-first-class-programming-language">Why you should use Go as your first-class programming language</h1>
-
-<p>I&rsquo;m not going to spend time on this topic too because we already have a lot of blog posts, talks and real life examples explaining why you should use Go programming language.
-If you are still uncertain about the future fo Go, you should give a chance to these following links:</p>
-
-<p><a href="https://github.com/golang/go/wiki/SuccessStories">Golang success stories</a></p>
-
-<p><a href="https://movio.co/blog/migrate-Scala-to-Go/">Migrate from Scala to Go</a></p>
-
-<p><a href="https://medium.com/@Sandra_Parker/why-golang-is-the-future-part-1-ed7dd4f419d">Why Golang is the future</a></p>
-
-<p><a href="https://yourbasic.org/golang/advantages-over-java-python/">Go advantages over java and python</a></p>
-
-<p><a href="https://medium.com/@kevalpatel2106/why-should-you-learn-go-f607681fad65">Why you should learn Go</a></p>
-
-<p><a href="https://www.slideshare.net/jpetazzo/docker-and-go-why-did-we-decide-to-write-docker-in-go">Docker and Go, why we decide to write docker in Go</a></p>
-
-<p>Also, you have to take into account that Google, Amazon, Datadog, HashiCorp and a lot of other companies are using it to build reliable server side software and infrastructure.</p>
-
-<h1 id="how-to-start-coding">How to start coding</h1>
-
-<p>As I said, we already have a lot of excellent articles explaining how to set-up your IDE, download Go framework and etc.</p>
-
-<p>We have two different types of content here:</p>
-
-<h3 id="infrastructure-and-syntax-installing-go-ide-language-syntax-and-etc">Infrastructure and syntax: (Installing Go, IDE, language syntax and etc)</h3>
-
-<p>For this type I recommend starting with Golang Wiki, specially the “getting started” topic, then move to Dave Cheney’s blog <a href="https://dave.cheney.net/resources-for-new-go-programmers">https://dave.cheney.net/resources-for-new-go-programmers</a></p>
-
-<h3 id="how-to-write-idiomatic-go-write-go-as-a-gopher">How to write idiomatic Go  (“Write Go as a gopher”)</h3>
-
-<p>This is the most important topic for newcomers. Usually, programmers from differents languages tend to reproduce structure and behavior that they are used to. However, Go has a very strict and specific (opinionated) way of doing things. I recommend taking a look at these links:</p>
-
-<p>1) <a href="https://golang.org/doc/effective_go.html">Effective Go</a></p>
-
-<p>2) <a href="https://github.com/golang/go/wiki/CodeReviewComments">Code Review Comments</a></p>
-
-<p>3) <a href="https://dmitri.shuralyov.com/idiomatic-go">Idiomatic Go - Dmitri</a></p>
-
-<p>4) <a href="https://medium.com/@dgryski/idiomatic-go-resources-966535376dba">Idiomatic Go - Gryski</a></p>
-
-<p>5) <a href="https://dave.cheney.net/practical-go/presentations/qcon-china.html">Practical Go - Cheney</a></p>
-
-<p>6) <a href="https://www.youtube.com/watch?v=-wYLmsizBc0">dotGo Talk - Katrina Owen</a></p>
-
-<h1 id="should-i-use-a-web-framework">Should I use a web framework?</h1>
-
-<p>I don’t think you need a web framework to write a webserver and/or a microservice. In fact, the Go community will “recommend” using the standard library as much as possible, however, I think it will be easier for you to start coding using a framework because you will have a guideline to follow. Frameworks have specific rules and patterns that help us avoid mistakes.</p>
-
-<p>Of course, I’m a huge fan of the standard library and I like to write web servers using only the http.Server package. But, I believe sometimes we can cut some corners to sell, test or pivot an idea.</p>
-
-<h1 id="i-want-to-use-a-framework-which-one-should-i-pick">I want to use a framework. Which one should I pick?</h1>
-
-<p>If you really want to use a framework I suggest these (in order of preference)</p>
-
-<p>1) <a href="https://echo.labstack.com">Echo framework</a>: echo is a very good lightweight, minimalist web framework with a rich toolset and a lot of plug-ins. You have a plug-in for almost every most common task (Basic Auth, JWT, CORS, Http/2, Session and etc)</p>
-
-<p>2) <a href="https://gobuffalo.io/en">Buffalo</a>:  I have been noticing more content about buffalo. It is far from a light framework since it has templating, orm, testing and a lot of accessories for the  go development process. I think it could be a good option if you want to migrate from Java and, for unexplainable reasons, you like Spring.</p>
-
-<p>3) <a href="https://gokit.io/">Go kit</a>: go-kit isn’t a web framework, it’s more like a microservices tool. Its main goal is to facilitate the building and connection of microservices. It has circuit breaker, remote calls (rpc) and etc.</p>
-
-<h1 id="how-to-organize-your-code">How to organize your code</h1>
-
-<p>There’s no golden rule for how you should define your packages, however, some good practices may help you a lot:</p>
-
-<p>1) Don’t over package: it’s better to have fewer larger packages than small meaningless ones. In Go you don’t need a new package for everything. In a JVM world, people tend to create a new maven/gradle module for every new integration, database, messaging system or any other random tasks.</p>
-
-<p>There’s a famous <a href="https://dave.cheney.net/practical-go/presentations/qcon-china.html#_consider_fewer_larger_packages">quote by Cheney</a> about that:</p>
-
-<blockquote>
-<p>“Coming from Java?
-If you’re coming from a Java or C# background, consider this rule of thumb. - A Java package is equivalent to a single .go source file. - A Go package is equivalent to a whole Maven module or .NET assembly.”</p>
-</blockquote>
-
-<p>And remember, in Go, the fewer the better.</p>
-
-<p>2) Use simple and short names: in Go you won’t see a packaged named like “entiy_api_gateway” because we don’t split using underscore. In fact, we don’t split at all, because we don’t have more than one word in the same package name. Package names will have short and concise name like “http” or “fmt”.</p>
-
-<p>3) Pack by entity and not by layer: It’s very unusual to have a “controller” or a “commons” package in Go, because we don’t pack using layered architecture. Go packages are made of same entities. If you want to read more about entities, check out “Domain Driven Design” principles.</p>
-
-<h1 id="talk-is-cheap-show-me-the-code">Talk is cheap, show me the code</h1>
-
-<p>I’ve made some examples to help and guide you through this migration process from somewhere else to a nice and beautiful Go code paradise.
-Within the code repo you will be able to see how to connect to databases, log things, define a simple web server and so on.</p>
-
-<p>You can see it here : <a href="https://github.com/zamariola/go-echo-bootstrap">Go Echo Bootstrap</a></p>
-<ul class="pa0">
-  
-   <li class="list">
-     <a href="/tags/go" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">go</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/clean-code" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">clean-code</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/development" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">development</a>
-   </li>
-  
-</ul>
-<div class="mt6">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/post/hybris-good-practices-i/">Hybris Good Practices I</a>
-        </li>
-	    
-    </ul>
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
+      <a href="/post/takt-time-how-to-pick-a-technology-stack/" class="link black dim">
+        Takt Time - How to pick the right technology stack
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      What’s takt time and why should you care about it? Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.
+    </div>
+  </div>
 </div>
 
-</aside>
-
-  </article>
+        </div>
+      
+    </section>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
