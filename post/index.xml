@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 May 2019 20:32:13 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 18:16:13 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why and how you should code to interfaces - and high-order functions</title>
+      <link>https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/</link>
+      <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/</guid>
+      <description>One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.</description>
+    </item>
     
     <item>
       <title>Takt Time - How to pick the right technology stack</title>

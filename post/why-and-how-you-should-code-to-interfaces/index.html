@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Leonardo Zamariola </title>
+    <title>Leonardo Zamariola  | Why and how you should code to interfaces - and high-order functions</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,23 +27,28 @@
     
 
     
-      <link href="https://zamariola.com.br/tags/clean-code/index.xml" rel="alternate" type="application/rss+xml" title="Leonardo Zamariola" />
-      <link href="https://zamariola.com.br/tags/clean-code/index.xml" rel="feed" type="application/rss+xml" title="Leonardo Zamariola" />
-    
 
-    <meta property="og:title" content="clean-code" />
-<meta property="og:description" content="Software development and its philosophy" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://zamariola.com.br/tags/clean-code/" />
+    <meta property="og:title" content="Why and how you should code to interfaces - and high-order functions" />
+<meta property="og:description" content="One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/" />
+<meta property="article:published_time" content="2019-05-16T18:16:13-03:00"/>
+<meta property="article:modified_time" content="2019-05-16T18:16:13-03:00"/>
 
-<meta property="og:updated_time" content="2019-05-16T18:16:13-03:00"/>
+<meta itemprop="name" content="Why and how you should code to interfaces - and high-order functions">
+<meta itemprop="description" content="One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.">
 
-<meta itemprop="name" content="clean-code">
-<meta itemprop="description" content="Software development and its philosophy">
 
+<meta itemprop="datePublished" content="2019-05-16T18:16:13-03:00" />
+<meta itemprop="dateModified" content="2019-05-16T18:16:13-03:00" />
+<meta itemprop="wordCount" content="1814">
+
+
+
+<meta itemprop="keywords" content="interfaces,clean-code,development,go,functions," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="clean-code"/>
-<meta name="twitter:description" content="Software development and its philosophy"/>
+<meta name="twitter:title" content="Why and how you should code to interfaces - and high-order functions"/>
+<meta name="twitter:description" content="One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to."/>
 
       
 <script type="application/javascript">
@@ -63,11 +68,11 @@ if (!doNotTrack) {
   <body class="ma0 avenir bg-near-white production">
 
     
+   
+  
 
-  
-  
-  <header class="cover bg-top" style="background-image: url('https://zamariola.com.br/images/gohugo-default-sample-hero-image.jpg');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://zamariola.com.br" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -145,80 +150,224 @@ if (!doNotTrack) {
   </div>
 </nav>
 
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          clean-code
-        </h1>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “clean-code”</p>
-    </div>
-  </article>
-  <div class="mw8 center">    
-    <section class="flex-ns flex-wrap justify-around mt5">
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Post</span>
-    <h1 class="f3 near-black">
-      <a href="/post/why-and-how-you-should-code-to-interfaces/" class="link black dim">
-        Why and how you should code to interfaces - and high-order functions
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.
-    </div>
-  </div>
-</div>
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
 
-        </div>
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Why and how you should code to interfaces - and high-order functions</h1>
       
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Post</span>
-    <h1 class="f3 near-black">
-      <a href="/post/how-to-start-writing-go-code/" class="link black dim">
-        How to Start Writing Go Code
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.
-    </div>
-  </div>
-</div>
+      <time class="f6 mv4 dib tracked" datetime="2019-05-16T18:16:13-03:00">May 16, 2019</time>      
+      
+      
+        <span class="f6 mv4 dib tracked"> - 9 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 1814 words</span>
+      
+    </header>
 
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Post</span>
-    <h1 class="f3 near-black">
-      <a href="/post/hybris-good-practices-i/" class="link black dim">
-        Hybris Good Practices I
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &ldquo;Coincidentally&rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).
-Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).
-    </div>
-  </div>
-</div>
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-        </div>
-      
+<p>One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.</p>
+
+<p>I won’t define here what an interface is, because I believe that you can have way better definitions out there in the web. However, it’s important to know that we are going to talk about programming language interfaces and if you have no idea what it is, you should search for <a href=”https://www.cs.utah.edu/~germain/PPS/Topics/interfaces.html”> it first </a>.</p>
+
+<h1 id="why-you-should-use-interfaces">Why you should use interfaces</h1>
+
+<p>If I was asked to summarize the importance of interfaces in one sentence, I would say that interfaces allow you to inject behavior in your methods and classes. Of course, there’s so much more to talk about and I’m planning to do it in the following sections, but that is the main reason that you should use interfaces while programming.</p>
+
+<p>Onto the reasons, then:</p>
+
+<h2 id="1-interfaces-allow-you-to-inject-behavior">1) Interfaces allow you to inject behavior</h2>
+
+<p>For me, the best example of behavior injection is the “Comparable” interfaces in Java and C# or the “sort.Interface” in Go. Sorting a collection is a well-known problem in computer science and we have a lot of different algorithms to do this. And all of those algorithms rely on the same basic function: how to compare different elements in the collection. When we create or code a sorting algorithm, we don&rsquo;t care how to compare different elements, we don&rsquo;t do this because we don&rsquo;t know which elements we are going to compare (their type) or how they can relate to each other. So, while coding those, we expect to receive a comparator injected in our method or our class and then just use this provided behavior.</p>
+
+<pre><code class="language-go">// Insertion sort
+func insertionSort(data Interface, a, b int) {    	    // Our original code
+	for i := a + 1; i &lt; b; i++ {			            // Our original code
+		for j := i; j &gt; a &amp;&amp; data.Less(j, j-1); j-- {   // Our code + provided behavior
+			data.Swap(j, j-1)		                    // Our original code
+		}
+	}
+}
+</code></pre>
+
+<p>Source: Go source code</p>
+
+<p>It’s impossible to make a code as simple as that without relying on injected behavior. And, considering that you are creating your source code before your API user, it&rsquo;s obvious that you can&rsquo;t have a regular class passed to your method, you need an interface (or an abstract class) so your user could implement it and inject that specific Less/Swap behavior.</p>
+
+<p>Another good example of injected behavior is strategy pattern. This design pattern  defines that  you can change the implementation (strategy) that will be executed at runtime based on program state (variables and etc). So, to create it you’ll need an interface (or an abstract class)  with two or more different implementations, inject then in your main class and then switch between them based on your state.</p>
+
+<pre><code class="language-go">type Operator interface {
+	Apply(int, int) int
+}
+
+type Operation struct {
+	Operator Operator
+}
+
+func (o *Operation) Operate(leftValue, rightValue int) int {
+	return o.Operator.Apply(leftValue, rightValue)
+}
+</code></pre>
+
+<p>Source: <a href="https://github.com/tmrts/go-patterns/blob/master/behavioral/strategy.md">https://github.com/tmrts/go-patterns/blob/master/behavioral/strategy.md</a></p>
+
+<h2 id="2-interfaces-force-you-to-re-think-about-your-code-s-behavior">2) Interfaces force you to [re]think about your code’s behavior</h2>
+
+<p>As I said, the main purpose of interfaces is to allow you to code based on behaviors. So, if you start using them you will be forced to rethink your code before writing it. This is really important because when you write your code based on behaviors you make it more declarative than imperative, so it&rsquo;s easier to read, maintain and improve.
+I&rsquo;m not saying that you need to start coding right away from interfaces. I think you can have interfaces that emerge from your code after a while. But, to do so it&rsquo;s important to reserve some time to reflect and rethink your code. It’s really important to stop for a while and make some improvements like behavioral extraction into interfaces. Your code should be the easiest to read as possible, so it needs to be neat and clean.</p>
+
+<h2 id="3-interfaces-make-you-code-with-a-more-reasonable-and-understandable-api">3) Interfaces make you code with a more reasonable and understandable API</h2>
+
+<p>If we take a look at all open source libraries, we will see that they usually define their API using interfaces. Take the <a href="https://github.com/apache/beam">Apache Beam repository </a>as an example. If we perform a simple search, we can see it has 849 interface keywords and 3,806 class keywords. It means that approximately 18% of the repo is composed of interfaces, it’s almost one interface for every 4 classes.
+Considering that coding to interfaces has been an industrial practice, new programmers that join a team expect to see them in the code base. So it’s a common task to start to read a code by its APIs, thus, by reading its interfaces.
+So, if you avoid using interfaces because you think you don’t need them or because you think it’s a waste of time, you are probably saving your own time in the short term, but making all other programmers’ life quite hard. Also, I really don’t believe that you’ll save time skipping interfaces when they are needed, because, as I said, they force you to think before action and they make your code more descriptive. However, if you still think it’s useless, at least think about the suffering that you may cause to your fellow coworker who will need to open the source file and read your entire class to understand how to use it correctly.</p>
+
+<h2 id="4-interfaces-make-your-code-more-testable">4) Interfaces make your code more testable</h2>
+
+<p>This topic is more a consequence of the three other topics. Of course, you can mock and test your code using only structs/classes, and don’t get me wrong here, I’m not saying that you should create interfaces just for the sake of testability. However,  abstractions will indeed make your code more testable.</p>
+
+<h1 id="how-to-code-to-interfaces">How to code to interfaces</h1>
+
+<p>There’s no golden rule here. Sometimes, it’s easier to start from an interface signature, but there are times that interfaces will emerge from an already existing code. The main point is: you don’t necessarily need to start from an interface every time you code, but if you don’t, you have to refactor your code as soon as possible to extract inner behavior and make the outer class with a single responsibility (as SOLID states).
+Personally, I like to stop and think before coding. When I know the entities and models that I’m working on, I tend to start with some interfaces to extract common or mutable behavior. However, we sometimes have no idea what to code, we don’t know our models and/or entities, so it’s easier to code with few interfaces and refactor later with more business knowledge.
+One last tip to code using interfaces is to receive an interface and return a concrete type. If you do so, you’ll make your code more general and easier to use, because your client won’t need to create adapters from their classes to yours. They will only need to implement an interface and it’s so much easier to do it than to create a whole new adapter class.
+The bottom line is: it doesn’t matter how you code, as long as you refactor it.</p>
+
+<h1 id="be-aware-of-high-order-functions">Be aware of High-Order Functions</h1>
+
+<p>So far, I have been saying that you should use interfaces to inject behavior in your classes, however we can do this using high-order functions as well.
+Pure functional languages as Haskell and some more modern languages like Kotlin, Scala and Go have high order functions, i.e., functions that take one or more functions as parameters and/or return a function. Even languages without high-order functions can simulate it using lambdas with functional interfaces (interfaces with only one method).
+So, almost every time we have a functional interface, we can achieve the same behavioral-injection results using functions and closures.
+Take a look at the example below, it is very similar to the sorting example, but instead of receiving an interface as a parameter, the method is receiving a function “f”, so it can delegate some behavior to this function. The method doesn’t know (and care) how to select an element, it just iterates over them and delegates this behavior to the function. It’s easier to make a SOLID code using these features.</p>
+
+<pre><code class="language-go">func filter(s []student, f func(student) bool) []student {  
+    var r []student
+    for _, v := range s {
+        if f(v) == true {				// Delegating behavior to “f”
+            r = append(r, v)
+        }
+    }
+    return r
+}
+</code></pre>
+
+<p>Source: <a href="https://golangbot.com/first-class-functions/">https://golangbot.com/first-class-functions/</a></p>
+
+<p>Of course, we can change the “f” function to a “Predicate” interface with only one method, but this will probably result in more code. Also, in the end, you will be passing data with behavior instead of behavior alone.</p>
+
+<p>So, every time that you create a interface with just one method, double check whether you can change it to a function.</p>
+
+<p>If you want to learn more about it, <a href="https://dave.cheney.net/2016/11/13/do-not-fear-first-class-functions">check this post by Cheney</a>.</p>
+
+<h1 id="avoid-interface-overuse-and-interface-pollution">Avoid interface overuse and interface pollution</h1>
+
+<p>There are two common errors that you should avoid when coding an interface: overuse and pollution.</p>
+
+<h2 id="interface-overuse">Interface overuse</h2>
+
+<p>As its name suggests, interface overuse occurs when we create too many interfaces, for example, when we create a new interface for every new class, as we see a lot in Spring Services. We have to keep in mind that interfaces should be used to inject behavior and make our code clean and maintainable. If they are making it harder to read and/or harder to maintain, then we should rethink and refactor our code.</p>
+
+<h2 id="interface-pollution">Interface pollution</h2>
+
+<blockquote>
+<p>The bigger the interface, the weaker the abstraction.
+— Rob Pike, Go Proverbs</p>
+</blockquote>
+
+<p>Interface pollution is the case when you have huge interfaces. Like classes, interfaces should deal with only one responsibility, so they have to be small and self contained.
+Besides, as the SOLID principle states, “Clients should not be forced to depend upon interfaces that they do not use”, so, even though your concrete type can be large, your client API should be small and easy to understand.
+If you have an interface with more than three methods, you should check whether it will need a refactor into smaller pieces.</p>
+
+<p>If you want to learn more about pollution, <a href="https://medium.com/@severinperez/avoiding-interface-pollution-with-the-interface-segregation-principle-5d3859c21013">check this link out.</a></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>As almost everything in software engineering, interfaces are a complex and controversial topic. There’s no golden rule dictating when and how to use them; however, if you are not using them at all, you are probably doing it wrong. So, let’s stop coding now and start refactoring all those bloated codes that you complain about all the time. Let’s refactor them looking for behaviors to be externalized and new ways to make them more descriptive, clean and maintainable.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/interfaces" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">interfaces</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/clean-code" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">clean-code</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/development" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">development</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/go" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">go</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/functions" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">functions</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
     </section>
-  </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/post/how-to-start-writing-go-code/">How to Start Writing Go Code</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/hybris-good-practices-i/">Hybris Good Practices I</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/takt-time-how-to-pick-a-technology-stack/">Takt Time - How to pick the right technology stack</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

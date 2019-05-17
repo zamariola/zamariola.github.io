@@ -6,17 +6,53 @@
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 May 2019 20:32:13 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 18:16:13 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>clean-code</title>
+      <link>https://zamariola.com.br/tags/clean-code/</link>
+      <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/clean-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>development</title>
       <link>https://zamariola.com.br/tags/development/</link>
-      <pubDate>Wed, 08 May 2019 20:32:13 -0300</pubDate>
+      <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>functions</title>
+      <link>https://zamariola.com.br/tags/functions/</link>
+      <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/functions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://zamariola.com.br/tags/go/</link>
+      <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interfaces</title>
+      <link>https://zamariola.com.br/tags/interfaces/</link>
+      <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/interfaces/</guid>
       <description></description>
     </item>
     
@@ -35,24 +71,6 @@
       <pubDate>Wed, 08 May 2019 20:32:13 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/technology/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>clean-code</title>
-      <link>https://zamariola.com.br/tags/clean-code/</link>
-      <pubDate>Sun, 28 Apr 2019 09:53:03 -0300</pubDate>
-      
-      <guid>https://zamariola.com.br/tags/clean-code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://zamariola.com.br/tags/go/</link>
-      <pubDate>Sun, 28 Apr 2019 09:53:03 -0300</pubDate>
-      
-      <guid>https://zamariola.com.br/tags/go/</guid>
       <description></description>
     </item>
     
