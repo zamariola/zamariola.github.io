@@ -84,6 +84,13 @@
   </url>
   
   <url>
+    <loc>https://zamariola.com.br/about/</loc>
+    <lastmod>2019-04-21T19:47:42-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://zamariola.com.br/post/hybris-good-practices-i/</loc>
     <lastmod>2018-06-26T21:01:44-03:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -97,9 +104,16 @@
   </url>
   
   <url>
-    <loc>https://zamariola.com.br/about/</loc>
+    <loc>https://zamariola.com.br/slides/demo-slideshow/</loc>
+    <lastmod>2018-06-02T16:43:02-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/slides/</loc>
+    <lastmod>2018-06-02T16:43:02-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

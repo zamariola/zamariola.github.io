@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slides on Leonardo Zamariola</title>
+    <link>https://zamariola.com.br/slides/</link>
+    <description>Recent content in Slides on Leonardo Zamariola</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Jun 2018 16:43:02 -0400</lastBuildDate>
+    
+	<atom:link href="https://zamariola.com.br/slides/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Demo Slideshow </title>
+      <link>https://zamariola.com.br/slides/demo-slideshow/</link>
+      <pubDate>Sat, 02 Jun 2018 16:43:02 -0400</pubDate>
+      
+      <guid>https://zamariola.com.br/slides/demo-slideshow/</guid>
+      <description>Example content</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -48,5 +48,14 @@
 Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).</description>
     </item>
     
+    <item>
+      <title>Demo Slideshow </title>
+      <link>https://zamariola.com.br/slides/demo-slideshow/</link>
+      <pubDate>Sat, 02 Jun 2018 16:43:02 -0400</pubDate>
+      
+      <guid>https://zamariola.com.br/slides/demo-slideshow/</guid>
+      <description>Example content</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,133 @@
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="/css/remark.css" />
+
+</head>
+<textarea id="source">
+class: center, middle
+# Title 
+## Sub Title; extra
+
+
+---
+
+# Title 
+
+- Conteúdo em texto
+
+```
+func teste(i string) string {
+    teste := &#34;content&#34;
+*  return &#34;teste&#34;
+}
+```
+conteúdo extra
+
+---
+
+.remark-full-width[![Right-aligned image](http://via.placeholder.com/1600x650)]
+.center[#Second slide teste]
+
+---
+
+name: meu-nome
+
+.title-left-column[
+##What is it?
+##Why use it?
+]
+
+.content-right-column[
+
+A simple, in-browser, Markdown-driven slideshow tool targeted at people who know their way around HTML and CSS, featuring:
+
+- Markdown formatting, with smart extensions
+
+- Presenter mode, with cloned slideshow view
+
+- Syntax highlighting, supporting a range of languages
+
+- Slide scaling, thus similar appearance on all devices / resolutions .red[*]
+
+- Touch support for smart phones and pads, i.e. swipe to navigate slides
+
+.footnote[ .red[*] At least browsers try their best ]
+
+]
+
+
+---
+
+.title-left-column[
+##What is it?
+###Why use it?
+###How to useit?
+
+]
+
+.content-right-column[
+
+A simple, in-browser, Markdown-driven slideshow tool targeted at people who know their way around HTML and CSS, featuring:
+
+- Markdown formatting, with smart extensions
+
+.pull-left[- Presenter mode, with cloned slideshow view
+
+- Syntax highlighting, supporting a range of languages
+]
+.pull-right[
+- Slide scaling, thus similar appearance on all devices / resolutions .red[*]
+
+- Touch support for smart phones and pads, i.e. swipe to navigate slides
+]
+
+.footnote[ .red[*] At least browsers try their best ]
+
+]
+
+---
+
+.title-left-column[
+##What is it?
+###Why use it?
+###How to useit?
+
+]
+
+.content-right-column[
+
+A simple, in-browser, Markdown-driven slideshow tool targeted at people who know their way around HTML and CSS, featuring:
+
+- Markdown formatting, with smart extensions
+
+.two-columns-left[- Presenter mode, with cloned slideshow view
+
+- Syntax highlighting, supporting a range of languages
+]
+.two-columns-right[
+- Slide scaling, thus similar appearance on all devices / resolutions .red[*]
+
+- Touch support for smart phones and pads, i.e. swipe to navigate slides
+]
+
+.footnote[ .red[*] At least browsers try their best ]
+
+]
+
+---
+
+background-image: url(http://via.placeholder.com/1600x900)
+&lt;!-- background-size: 100% --&gt;
+&lt;!-- background-position: center --&gt;
+</textarea>
+<script src="//gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+<script>
+	var slideshow = remark.create({
+        ratio: '16:9',
+        highlightLanguage: 'go',
+        highlightLines: true,
+        highlightSpans: true,
+        highlightStyle: 'github'
+        });
+</script>
