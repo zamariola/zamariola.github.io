@@ -91,6 +91,19 @@
   </url>
   
   <url>
+    <loc>https://zamariola.com.br/slides/devcamp2019/</loc>
+    <lastmod>2018-07-09T15:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/slides/</loc>
+    <lastmod>2018-07-09T15:00:00-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://zamariola.com.br/post/hybris-good-practices-i/</loc>
     <lastmod>2018-06-26T21:01:44-03:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -108,12 +121,6 @@
     <lastmod>2018-06-02T16:43:02-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zamariola.com.br/slides/</loc>
-    <lastmod>2018-06-02T16:43:02-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

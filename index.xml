@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>High Order Functions e Functional Interfaces</title>
+      <link>https://zamariola.com.br/slides/devcamp2019/</link>
+      <pubDate>Mon, 09 Jul 2018 15:00:00 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/slides/devcamp2019/</guid>
+      <description>Nova abordagem para os tradicionais desafios de um código limpo, desacoplado e coeso</description>
+    </item>
+    
+    <item>
       <title>Hybris Good Practices I</title>
       <link>https://zamariola.com.br/post/hybris-good-practices-i/</link>
       <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>

@@ -1,0 +1,1268 @@
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="/css/remark.css" />
+
+</head>
+<textarea id="source">
+class: center, middle
+## High Order Functions e Functional Interfaces 
+### Devcamp
+### 16/08/2019
+
+
+---
+
+# Sobre 
+
+.two-columns-left[
+
+- Especialista em desenvolvimento backend.
+
+- 11 anos em desenvolvimento 
+
+- Java Certified Associate
+
+- Go desde 2016
+
+]
+
+.two-columns-right[
+&lt;img src=&#34;/slides/devcamp2019/leonardo.png&#34;
+     alt=&#34;Leonardo Zamariola&#34;
+     style=&#34;float: right; width:300px;&#34; /&gt;
+]
+
+---
+
+.remark-full-width[![Right-aligned image](/slides/devcamp2019/idiom-definition.png)]
+.center[#Idiomático?!]
+
+---
+
+# Por que os exemplos em Go? 
+
+.two-columns-left[
+- Foco em simplicidade de soluções
+
+- Sintaxe simples
+
+- Uma única (ou poucas) formas de se fazer algo 
+
+- Leitura e escrita homogêneas por todo ecossistema
+]
+
+.two-columns-right[
+&lt;img src=&#34;/post/how-to-start-writing-go-code/go.png&#34;
+     alt=&#34;Go logo&#34;
+     style=&#34;float: right; width:300px;&#34; /&gt;
+]
+
+---
+
+# Idiomático 
+
+
+```java
+public class SimpleHashSetExample {
+ 
+  public static void main(String[] args) {
+    HashSet hSet = new HashSet();
+   
+    hSet.add(new Integer(&#34;1&#34;));
+    hSet.add(new Integer(&#34;2&#34;));
+    hSet.add(new Integer(&#34;3&#34;));
+   
+    System.out.println(&#34;HashSet contains..&#34; &#43; hSet);   
+  }
+}
+```
+---
+
+# Idiomático
+
+```kotlin
+class Animal(val name: String)
+
+class Zoo(val animals: List&lt;Animal&gt;) {
+
+    operator fun iterator(): Iterator&lt;Animal&gt; {             
+        return animals.iterator()                           
+    }
+}
+
+fun main() {
+
+    val zoo = Zoo(listOf(Animal(&#34;zebra&#34;), Animal(&#34;lion&#34;)))
+
+    for (animal in zoo) {                                   
+        println(&#34;Watch out, it&#39;s a ${animal.name}&#34;)
+    }
+
+}
+```
+---
+
+.remark-full-width[![Right-aligned image](/slides/devcamp2019/go-sample-dark_1600.png)]
+.center[#Funções idiomáticas]
+
+---
+
+# The right tool for the right job
+
+
+.two-columns-left[
+## Domínio
+
+- Estrutura das entidades
+- Composição ou herança
+- Estrutura de persistência 
+- 
+
+```go
+type Entity struct {
+    name string
+    ...
+}
+```
+]
+
+.two-columns-right[
+## Regra de negócio
+
+- Fluxo e manipulação de entidades
+- Regra de negócio
+- Adição ou remoção de etapas de processamento
+
+
+```go
+func (e Entity) transformedName() string {
+    return e.name &#43; &#34; with transformation&#34;
+}
+...
+```
+]
+
+---
+
+# Server simples em Go
+
+```go
+package main
+
+import (
+	&#34;log&#34;
+	&#34;net/http&#34;
+)
+
+func main() {
+	log.Println(NewServer(&#34;:8080&#34;))
+}
+
+func NewServer(address string) error {
+	r := http.NewServeMux()
+
+	r.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;My Web Server\n&#34;))
+	})
+
+	r.HandleFunc(&#34;/api&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;{\&#34;success\&#34;:true}&#34;))
+	})
+
+	srv := &amp;http.Server{
+		Addr:    address,
+		Handler: r,
+	}
+	return srv.ListenAndServe()
+}
+
+```
+
+---
+
+# Server simples em Go &#43; Timeout
+
+```go
+
+func main() {
+*	log.Println(NewServer(&#34;:8080&#34;, 2*time.Second, 5*time.Second))
+}
+
+*func NewServer(address string, rt, wt time.Duration) error {
+	r := http.NewServeMux()
+
+	r.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;My Web Server\n&#34;))
+	})
+
+	r.HandleFunc(&#34;/api&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;{\&#34;success\&#34;:true}&#34;))
+	})
+
+	srv := &amp;http.Server{
+		Addr:         address,
+		Handler:      r,
+*       ReadTimeout:  rt,
+*       WriteTimeout: wt,
+	}
+	return srv.ListenAndServe()
+}
+```
+
+---
+
+# Server simples em Go &#43; Timeout &#43; TLS
+
+
+```go
+
+func main() {
+*   log.Println(NewServer(&#34;:8080&#34;, &#34;cert.pem&#34;, &#34;key.pem&#34;, 2*time.Second, 5*time.Second))
+}
+
+*func NewServer(address, cert, key string, rt, wt time.Duration) error {
+	r := http.NewServeMux()
+
+	r.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;My Web Server\n&#34;))
+	})
+
+	r.HandleFunc(&#34;/api&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;{\&#34;success\&#34;:true}&#34;))
+	})
+
+	srv := &amp;http.Server{
+		Addr:         address,
+		Handler:      r,
+		ReadTimeout:  rt,
+		WriteTimeout: wt,
+	}
+*   return srv.ListenAndServeTLS(cert, key)
+}
+
+```
+
+---
+
+# Muitas assinaturas para &#34;mesma&#34; função
+
+```go
+func NewServer(address string) error {}
+
+func NewServer(address string, rt, wt time.Duration) error {}
+
+func NewServer(address, cert, key string) error {}
+
+func NewServer(address, cert, key string, rt, wt time.Duration) error {}
+```
+
+---
+
+# Server simples em Go &#43; Config
+
+```go
+
+type Config struct {
+	Address      string
+	CertPath     string
+	KeyPath      string
+	ReadTimeout  time.Duration
+	WriteTimeout time.Duration
+}
+
+func main() {
+
+	config := Config{&#34;:8080&#34;, &#34;cert.pem&#34;, &#34;key.pem&#34;, 2 * time.Second, 5 * time.Second}
+	log.Println(NewServer(config))
+}
+
+```
+
+---
+
+# Server simples em Go &#43; Config
+
+```go
+
+func NewServer(c Config) error {
+	r := http.NewServeMux()
+
+	r.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;My Web Server\n&#34;))
+	})
+
+	r.HandleFunc(&#34;/api&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;{\&#34;success\&#34;:true}&#34;))
+	})
+
+	srv := &amp;http.Server{
+		Addr:         c.Address,
+		Handler:      r,
+		ReadTimeout:  c.ReadTimeout,
+		WriteTimeout: c.WriteTimeout,
+	}
+	return srv.ListenAndServeTLS(c.CertPath, c.KeyPath)
+}
+
+```
+
+---
+
+# Configuration structs
+
+### Vantagens
+- Melhora a documentação e entendimento do código.
+
+- Permite utilizar &#34;zero values&#34; como regra
+
+- Crescimento das configurações sem quebrar assinatura
+
+---
+
+# Configuration structs
+
+### Desvantagens
+
+- Gera diversos possíveis problemas com &#34;zero values&#34;, exemplo: porta 0
+```go
+c := Config{
+    &#34;cert.pem&#34;, &#34;key.pem&#34;
+}
+```
+O cenário ideal para &#34;default&#34; value seria aleatoriamente escolher uma porta e não ir direto para a zero. Mas e se quisermos tentar a porta zero?
+
+**Quais campos são obrigatórios e quais são opcionais?**
+
+---
+# Configuration structs
+
+### Problema da mutabilidade
+
+```go
+	config := Config{
+        &#34;:8080&#34;, &#34;cert.pem&#34;, &#34;key.pem&#34;, 2 * time.Second, 5 * time.Second
+    }
+    
+    go func() {
+        config.Address = &#34;:9090&#34;
+    }()
+
+    log.Println(NewServer(config))
+```
+
+### Problema da obrigatoridade
+
+```go
+
+func main() {
+    //Quero o server mais simples possível!!
+	log.Println(NewServer(????))
+}
+
+```
+
+---
+
+# High-Order Function
+
+**Função que faz pelo menos uma das duas:**
+
+1. Recebe uma (ou mais) funções como parâmetros
+2. Retorna uma função
+
+*Exemplos:*
+
+- Cálculo: dy/dx (operador de diferencial) que recebe uma função e retorna a sua derivada
+- callbacks em Javascript
+- http.HandlerFunc(pattern, **handlerFunc**)
+
+
+---
+
+#High-Order Function &#43; first class citizen
+
+```go
+package main
+
+import &#34;fmt&#34;
+
+//High-Order: retorna uma função
+func myFunction() func(int, int) int {
+	return func(a, b int) int {
+		return a &#43; b
+	}
+}
+
+func main() {
+
+	//first class citizen: atribuir a uma variável
+	f := myFunction()
+
+	//first class citizen: chamar através da variável
+	soma := f(2, 3)
+
+	fmt.Println(soma)
+
+}
+
+
+```
+
+---
+
+#High-Order Function &#43; Type Alias
+
+```go
+package main
+
+import &#34;fmt&#34;
+
+//type alias
+*type SomaFunc func(int, int) int
+
+//High-Order: retorna uma função
+func myFunction() SomaFunc {
+	return func(a, b int) int {
+		return a &#43; b
+	}
+}
+
+func main() {
+
+	//first class citizen: atribuir a uma variável
+	f := myFunction()
+
+	//first class citizen: chamar através da variável
+	soma := f(2, 3)
+
+	fmt.Println(soma)
+}
+
+
+```
+
+---
+# High-Order na Prática
+
+```go
+package main
+
+import &#34;net/http&#34;
+
+func main() {
+
+	//first class citizen: atribuir a uma variável
+	f := handlerFunction()
+
+	http.HandleFunc(&#34;/&#34;, f)
+	http.ListenAndServe(&#34;:8080&#34;, nil)
+}
+
+//High-Order: retorna uma função
+func handlerFunction() func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;Content\n&#34;))
+	}
+}
+```
+
+---
+
+.remark-full-width[![Right-aligned image](/slides/devcamp2019/toolbox.jpg)]
+.center[#High-order functions como ferramenta]
+
+---
+
+# Relembrar: server deprecado
+
+```go
+func main() {
+   log.Println(NewServer(&#34;:8080&#34;, &#34;cert.pem&#34;, &#34;key.pem&#34;, 2*time.Second, 5*time.Second))
+}
+
+func NewServer(address, cert, key string, rt, wt time.Duration) error {
+	r := http.NewServeMux()
+
+	r.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;My Web Server\n&#34;))
+	})
+
+	r.HandleFunc(&#34;/api&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;{\&#34;success\&#34;:true}&#34;))
+	})
+
+	srv := &amp;http.Server{
+		Addr:         address,
+		Handler:      r,
+		ReadTimeout:  rt,
+		WriteTimeout: wt,
+	}
+   return srv.ListenAndServeTLS(cert, key)
+
+```
+
+---
+
+
+# Functional Server
+
+Ajuste na estrutura do server: criando a struct
+
+```go
+type Server struct {
+	Ltn          net.Listener
+	ReadTimeout  time.Duration
+	WriteTimeout time.Duration
+	Handler      http.Handler
+}
+
+func NewServer(addr string) (*Server, error) {
+
+	dftLtn, err := net.Listen(&#34;tcp&#34;, addr)
+
+	return &amp;Server{
+		Ltn:          dftLtn,
+		ReadTimeout:  3 * time.Second,
+		WriteTimeout: 5 * time.Second,
+	}, err
+}
+```
+
+---
+
+# Functional Server
+
+Ajuste na estrutura do server: usando a struct
+
+```go
+
+func (s *Server) Serve() error {
+
+	srv := &amp;http.Server{
+		Handler:      s.Handler,
+		ReadTimeout:  s.ReadTimeout,
+		WriteTimeout: s.WriteTimeout,
+	}
+
+	return srv.Serve(s.Ltn)
+}
+
+func main() {
+
+	sv, err := NewServer(&#34;:8080&#34;)
+	if err != nil {
+		panic(err)
+	}
+
+	log.Println(sv.Serve())
+}
+```
+---
+# Functional Server Com Options
+
+###Como inserir um read time out no nosso functional server?
+
+Opção 1: parametro na criação (muda algo?)
+
+```go
+*func NewServer(addr string, readTimeout time.Duration) (*Server, error) {
+
+	dftLtn, err := net.Listen(&#34;tcp&#34;, addr)
+
+	return &amp;Server{
+		Ltn:          dftLtn,
+*       ReadTimeout:  readTimeout,
+		WriteTimeout: 5 * time.Second,
+	}, err
+}
+```
+
+---
+# Functional Server Com Options
+
+Opção 2: mutar o server depois de criado
+
+```go
+func main() {
+
+	sv, err := NewServer(&#34;:8080&#34;)
+	if err != nil {
+		panic(err)
+	}
+
+*   sv.ReadTimeout = 3*time.Second
+
+	log.Println(sv.Serve())
+}
+```
+
+- Imperativo: baixo reaproveitamento
+- Poucas abstrações
+- Clara e distribuída quebra de imutabilidade
+
+---
+
+# Functional Server Com Options
+
+Opção 3: criar um método no server
+
+
+```go
+func (s *Server) setTimeout(timeout time.Duration) error {
+    sv.ReadTimeout = timeout
+}
+
+func main() {
+
+	sv, err := NewServer(&#34;:8080&#34;)
+	if err != nil {
+		panic(err)
+	}
+
+*   sv.setTimeout(3*time.Second)    
+
+	log.Println(sv.Serve())
+}
+```
+- Clara e distribuída quebra de imutabilidade
+
+---
+
+# Functional Server Com Options
+
+Opção 4: criar uma função que altera timeout
+
+
+```go
+func WithTimeout(read, write time.Duration) func(*Server) {
+	return func(s *Server) {
+		s.ReadTimeout = read
+		s.WriteTimeout = write
+	}
+}
+
+func main() {
+	sv, err := NewServer(&#34;:8080&#34;)
+	if err != nil {
+		panic(err)
+	}
+
+*   f := WithTimeout(3*time.Second, 5*time.Second)
+*   f(sv)    
+
+	log.Println(sv.Serve())
+}
+```
+- Sensação de maior encapsulamento
+- Clara e distribuída quebra de imutabilidade
+
+
+---
+# Functional Server Com Option
+
+Opção 5: criar uma função que altera timeout E recebê-la somente no **Serve**
+
+
+```go
+func WithTimeout(read, write time.Duration) func(*Server) {...}
+
+*func (s *Server) Serve(option func(*Server)) error {
+
+*   option(s)
+
+	srv := &amp;http.Server{
+		Handler:      s.Handler,
+		ReadTimeout:  s.ReadTimeout,
+		WriteTimeout: s.WriteTimeout,
+	}
+	return srv.Serve(s.Ltn)
+}
+
+func main() {
+	sv, err := NewServer(&#34;:8080&#34;)
+	if err != nil {
+		panic(err)
+	}
+	log.Println(sv.Serve(
+*       WithTimeout(3*time.Second, 5*time.Second)
+    ))
+}
+
+```
+- Mutação ainda acontece, mas somente no uso final
+---
+
+# Functional Server Com Options (**plural**)
+
+```go
+func (s *Server) Serve(options ...func(*Server)) error {
+
+*   for _, opt := range options {
+*       opt(s)
+*   }
+
+	srv := &amp;http.Server{
+		Handler:      s.Handler,
+		ReadTimeout:  s.ReadTimeout,
+		WriteTimeout: s.WriteTimeout,
+	}
+
+	return srv.Serve(s.Ltn)
+}
+
+func main() {
+	sv, err := NewServer(&#34;:8080&#34;)
+	if err != nil {
+		panic(err)
+	}
+	log.Println(sv.Serve(
+        WithTimeout(3*time.Second, 5*time.Second)
+    ))
+}
+
+```
+---
+# Functional Server Com Options (**plural**)
+
+### Inserindo rotas
+
+```go
+func WithRoutes() func(*Server) {
+
+	return func(s *Server) {
+
+		r := http.NewServeMux()
+
+		r.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) {
+			w.Write([]byte(&#34;My Web Server\n&#34;))
+		})
+
+		r.HandleFunc(&#34;/api&#34;, func(w http.ResponseWriter, r *http.Request) {
+			w.Write([]byte(&#34;{\&#34;success\&#34;:true}&#34;))
+		})
+
+		s.Handler = r
+	}
+}
+```
+---
+# Functional Server Com Options (**plural**)
+
+### Inserindo certificado
+
+```go
+func WithCertificate(cert, key string) func(*Server) {
+	return func(s *Server) {
+		cert, err := tls.LoadX509KeyPair(cert, key)
+		if err != nil {
+			panic(err)
+		}
+		config := &amp;tls.Config{Certificates: []tls.Certificate{cert}, InsecureSkipVerify: true}
+
+		//Close old listener
+		if err := s.Ltn.Close(); err != nil {
+			panic(err)
+		}
+
+		//Keep old address
+		originalAddr := s.Ltn.Addr().String()
+		ltn, err := tls.Listen(&#34;tcp&#34;, originalAddr, config)
+		if err != nil {
+			panic(err)
+		}
+		s.Ltn = ltn
+	}
+}
+```
+---
+
+
+.remark-full-width[![Right-aligned image](/slides/devcamp2019/go-sample-dark_1600.png)]
+.center[#Criando o server com Go idiomático]
+
+---
+
+# Functional Server Com Options (**plural**)
+
+### Criando o server
+
+```go
+func WithCertificate(cert, key string) func(*Server) {...}
+func WithTimeout(read, write time.Duration) func(*Server) {...}
+func WithRoutes() func(*Server) {...}
+
+func main() {
+
+	sv, err := NewServer(&#34;:8080&#34;)
+	if err != nil {
+		panic(err)
+	}
+
+	log.Println(sv.Serve(
+*       WithRoutes(),
+*       WithTimeout(2*time.Second, 3*time.Second),
+*       WithCertificate(&#34;cert.pem&#34;, &#34;key.pem&#34;),
+	))
+}
+
+```
+
+- Toda a configuração do server está no fluxo de criação do server
+- Permite o criação de uma API fluente 
+---
+
+.remark-full-width[![Right-aligned image](/slides/devcamp2019/go-sample-dark_1600.png)]
+.center[#Onde usar?]
+
+---
+#Onde usar?
+
+###Configuração de serviços, clientes ou structs
+
+###Definição de strategy pattern
+
+###Cenários de sincronia -&gt; passagem de comportamento vs passagem de dados
+
+---
+#Onde usar?
+
+###.gray[Configuração de serviços, clientes ou structs]
+
+###.gray[Definição de strategy pattern]
+
+###.gray[Cenários de sincronia -&gt; ].red[passagem de comportamento] .gray[vs passagem de dados]
+
+---
+
+#Mais simples bank account
+
+```go
+package main
+
+import &#34;fmt&#34;
+
+type BankAccount struct {
+	balance float64
+}
+
+func (b *BankAccount) Deposit(amount float64) { b.balance &#43;= amount }
+
+func (b *BankAccount) Withdraw(amount float64) { b.balance -= amount }
+
+func (b *BankAccount) Balance() float64 { return b.balance }
+
+func main() {
+
+	acc := BankAccount{}
+	acc.Deposit(50)
+	acc.Withdraw(40)
+	fmt.Println(acc.Balance())
+}
+
+```
+---
+
+#Cenário de simples &#34;concorrência&#34;
+
+```go
+
+type BankAccount struct{ balance float64 }
+
+func (b *BankAccount) Deposit(amount float64) { b.balance &#43;= amount }
+
+func (b *BankAccount) Withdraw(amount float64) { b.balance -= amount }
+
+func (b *BankAccount) Balance() float64 { return b.balance }
+
+func main() {
+
+	var wg sync.WaitGroup
+
+	acc := BankAccount{}
+	for i := 0; i &lt; 100000; i&#43;&#43; {
+		wg.Add(1)
+		go func(account *BankAccount) {
+			account.Deposit(10)
+			account.Withdraw(account.Balance() / 2)
+			wg.Done()
+		}(&amp;acc)
+	}
+	wg.Wait()
+	fmt.Println(acc.Balance())
+}
+
+
+```
+---
+
+#Tratamento padrão de concorrência
+
+```go
+
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sync&#34;
+)
+
+type BankAccount struct {
+	balance float64
+*	mu      sync.Mutex
+}
+
+func (b *BankAccount) Deposit(amount float64) {
+*	b.mu.Lock()
+*	defer b.mu.Unlock()
+	b.balance &#43;= amount
+}
+
+func (b *BankAccount) Withdraw(amount float64) {
+*	b.mu.Lock()
+*	defer b.mu.Unlock()
+	b.balance -= amount
+}
+
+...
+
+```
+---
+
+#Tratamento funcional de concorrência
+
+```go
+
+type BankAccount struct {
+	balance    float64
+*	operations chan func(float64) float64
+}
+
+func (b *BankAccount) Deposit(amount float64) {
+*	b.operations &lt;- func(oldBalance float64) float64 {
+*		return oldBalance &#43; amount
+*	}
+}
+
+func (b *BankAccount) Withdraw(amount float64) {
+*	b.operations &lt;- func(oldBalance float64) float64 {
+*		return oldBalance - amount
+*	}
+}
+
+```
+---
+
+#Tratamento funcional de concorrência
+
+```go
+
+func (b *BankAccount) Loop() {
+*	for op := range b.operations {
+*		b.balance = op(b.balance)
+*	}
+}
+
+func NewBankAccount() *BankAccount {
+	return &amp;BankAccount{
+		balance:    0,
+		operations: make(chan func(float64) float64),
+	}
+}
+
+func main() {
+
+*	acc := NewBankAccount()
+
+	...
+
+	go func(account *BankAccount) {
+		acc.Loop()
+	}(acc)
+```
+
+---
+
+.remark-full-width[![Right-aligned image](/slides/devcamp2019/go-sample-dark_1600.png)]
+.center[#func(func(func(func(func(func(...))))))]
+
+---
+#Simple Server Novamente
+
+```go
+package main
+
+import (
+	&#34;log&#34;
+	&#34;net/http&#34;
+)
+
+func main() {
+	log.Println(NewServer(&#34;:8080&#34;))
+}
+
+func NewServer(address string) error {
+	r := http.NewServeMux()
+
+	r.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;My Web Server\n&#34;))
+	})
+
+	srv := &amp;http.Server{
+		Addr:    address,
+		Handler: r,
+	}
+	return srv.ListenAndServe()
+}
+
+```
+
+---
+#Simple Server com Funções
+
+```go
+func main() {
+	log.Println(NewServer(&#34;:8080&#34;))
+}
+
+func NewServer(address string) error {
+	r := http.NewServeMux()
+
+*	r.HandleFunc(&#34;/&#34;, GetMainResponse())
+
+	srv := &amp;http.Server{
+		Addr:    address,
+		Handler: r,
+	}
+	return srv.ListenAndServe()
+}
+
+func GetMainResponse() func  (http.ResponseWriter,*http.Request) {
+*	return func(w http.ResponseWriter, r *http.Request) {
+*		w.Write([]byte(&#34;My Web Server\n&#34;))
+*	}
+} 
+
+
+```
+---
+
+#Simple Server - Assinatura
+
+```go
+func GetMainResponse() func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&#34;My Web Server\n&#34;))
+	}
+}
+```
+
+## func(w http.ResponseWriter, r *http.Request)
+---
+#Decorated Simple Server
+
+```go
+*func TraceRequest(f func(http.ResponseWriter, *http.Request)) func(http.ResponseWriter, *http.Request) {
+*	return func(w http.ResponseWriter, r *http.Request) {
+		log.Printf(&#34;Start request: %s&#34;, time.Now())
+*		f(w, r)
+		log.Printf(&#34;End request: %s&#34;, time.Now())
+	}
+}
+```
+---
+#Decorated Simple Server
+
+```go
+func Authenticate(f func(http.ResponseWriter, *http.Request)) func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		auth := r.Header.Get(&#34;Authorization&#34;)
+		if len(auth) == 0 { //Check token
+			w.WriteHeader(401)
+		} else {
+			f(w, r)
+		}
+	}
+}
+```
+---
+#Decorated Simple Server
+
+```go
+func NewServer(address string) error {
+	r := http.NewServeMux()
+
+*	r.HandleFunc(&#34;/&#34;, Authenticate(TraceRequest(GetMainResponse())))
+
+	srv := &amp;http.Server{
+		Addr:    address,
+		Handler: r,
+	}
+	return srv.ListenAndServe()
+}
+
+```
+
+---
+
+#Real world examples!!!
+
+####https://github.com/prometheus/prometheus/blob/master/web/api/v1/api.go
+
+```go
+
+type apiFunc func(r *http.Request) apiFuncResult
+
+func (api *API) Register(r *route.Router) {
+*	wrap := func(f apiFunc) http.HandlerFunc {
+		hf := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			httputil.SetCORS(w, api.CORSOrigin, r)
+*			result := f(r)
+			if result.err != nil {
+				api.respondError(w, result.err, result.data)
+			} else if result.data != nil {
+				api.respond(w, result.data, result.warnings)
+			} else {
+				w.WriteHeader(http.StatusNoContent)
+			}
+			if result.finalizer != nil {
+				result.finalizer()
+			}
+		})
+		return api.ready(httputil.CompressionHandler{
+			Handler: hf,
+		}.ServeHTTP)
+	}
+	...
+```
+
+---
+
+#Real world examples!!!
+
+####https://github.com/prometheus/prometheus/blob/master/web/api/v1/api.go
+
+```go
+
+	wrap := func(f apiFunc) http.HandlerFunc {}
+
+	r.Options(&#34;/*path&#34;, wrap(api.options))
+	r.Get(&#34;/query&#34;, wrap(api.query))
+	r.Post(&#34;/query&#34;, wrap(api.query))
+	r.Get(&#34;/query_range&#34;, wrap(api.queryRange))
+```
+---
+
+#Real world examples!!!
+####https://github.com/golang/text/blob/master/cases/cases.go#L93
+
+```go
+
+type Option func(o options) options
+
+func Fold(opts ...Option) Caser {
+	return Caser{makeFold(getOpts(opts...))}
+}
+
+func getOpts(o ...Option) (res options) {
+	for _, f := range o {
+*		res = f(res)
+	}
+	return
+}
+
+```
+
+---
+
+# Real world examples!!!
+
+### Gorm Database Client
+
+Formato com encadeamento de métodos
+```go
+db, _ := gorm.Open(...)
+var user User
+err := db.Where(&#34;email = ?&#34;, &#34;email@host.com&#34;).
+  Where(&#34;age &gt;= ?&#34;, 18).
+  First(&amp;user).
+  Error
+```
+
+Exige a codificação de uma estrutura
+
+```go
+var user User
+err = db.First(&amp;user,
+  Where(&#34;email = ?&#34;, &#34;jon@calhoun.io&#34;),
+  Where(&#34;id = ?&#34;, 2),
+)
+
+```
+
+---
+
+# The right tool for the right job
+
+
+.two-columns-left[
+## Vantagens
+
+- API mais fáceis e compreensíveis no uso
+- Possibilidade de se entregar a closure pronta para uso
+- Facilidade de se estender (novas closures)
+- Valores default já pré-configurados
+- Criação de fluent-API com encadeamento de closures
+- Decorator pattern com baixa complexidade
+]
+
+.two-columns-right[
+## Desvantagens
+
+- Mutabilidade da estrutura de configuração
+- Maior quantidade de código
+- Maior demanda cognitiva
+- Mudança de paradigma para criação soluções
+]
+
+
+---
+
+.remark-full-width[![Right-aligned image](/slides/devcamp2019/toolbox.jpg)]
+.center[#High-order functions como ferramenta]
+
+---
+
+&lt;br&gt;
+&lt;br&gt;
+.center.middle.large[Muito obrigado!]
+
+&lt;br&gt;
+
+.center.bottom[**Conteúdo**]
+
+
+** slides: https://zamariola.com.br/slides/devcamp2019  **
+
+** exemplos: https://github.com/zamariola **
+
+
+.center.bottom[**Referências**]
+
+- https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html 
+- https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis
+- https://www.youtube.com/watch?v=5IKcPMJXkKs
+- https://dave.cheney.net/2016/11/13/do-not-fear-first-class-functions
+- https://www.calhoun.io/using-functional-options-instead-of-method-chaining-in-go/
+</textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>
+	var slideshow = remark.create({
+        ratio: '16:9',
+        highlightLanguage: 'go',
+        highlightLines: true,
+        highlightSpans: true,
+        highlightStyle: 'github',
+        slideNumberFormat: "%current%"
+        });
+</script>
