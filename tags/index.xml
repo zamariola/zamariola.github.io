@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Leonardo Zamariola</title>
@@ -6,15 +6,24 @@
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Aug 2019 23:01:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 18:16:13 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>ansible</title>
+      <link>https://zamariola.com.br/tags/ansible/</link>
+      <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>architecture</title>
       <link>https://zamariola.com.br/tags/architecture/</link>
-      <pubDate>Wed, 28 Aug 2019 23:01:00 -0300</pubDate>
+      <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/architecture/</guid>
       <description></description>
@@ -23,9 +32,27 @@
     <item>
       <title>development</title>
       <link>https://zamariola.com.br/tags/development/</link>
-      <pubDate>Wed, 28 Aug 2019 23:01:00 -0300</pubDate>
+      <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://zamariola.com.br/tags/devops/</link>
+      <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stack</title>
+      <link>https://zamariola.com.br/tags/stack/</link>
+      <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/stack/</guid>
       <description></description>
     </item>
     
@@ -71,15 +98,6 @@
       <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/interfaces/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stack</title>
-      <link>https://zamariola.com.br/tags/stack/</link>
-      <pubDate>Wed, 08 May 2019 20:32:13 -0300</pubDate>
-      
-      <guid>https://zamariola.com.br/tags/stack/</guid>
       <description></description>
     </item>
     

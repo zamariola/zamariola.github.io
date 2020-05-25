@@ -4,3 +4,6 @@
 .rss:hover {
     fill: #FFA500;
 }
+.small-font {
+    font-size: small;
+}

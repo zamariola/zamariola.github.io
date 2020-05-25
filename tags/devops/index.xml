@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>stack on Leonardo Zamariola</title>
-    <link>https://zamariola.com.br/tags/stack/</link>
-    <description>Recent content in stack on Leonardo Zamariola</description>
+    <title>devops on Leonardo Zamariola</title>
+    <link>https://zamariola.com.br/tags/devops/</link>
+    <description>Recent content in devops on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 May 2020 18:16:13 -0300</lastBuildDate>
     
-	<atom:link href="https://zamariola.com.br/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zamariola.com.br/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <description>What Ansible is and what it isn&amp;rsquo;t Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:
 Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work. &amp;mdash; Ansible website
 I&amp;rsquo;m assuming that you&amp;rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here.</description>
-    </item>
-    
-    <item>
-      <title>Takt Time - How to pick the right technology stack</title>
-      <link>https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/</link>
-      <pubDate>Wed, 08 May 2019 20:32:13 -0300</pubDate>
-      
-      <guid>https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/</guid>
-      <description>What’s takt time and why should you care about it? Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.</description>
     </item>
     
   </channel>
