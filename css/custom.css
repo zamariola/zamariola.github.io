@@ -7,3 +7,6 @@
 .small-font {
     font-size: small;
 }
+.mw8 {
+    max-width: 86rem !important;
+}
