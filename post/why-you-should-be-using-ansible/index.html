@@ -43,7 +43,7 @@ I&rsquo;m assuming that you&rsquo;re familiar to the concepts of devops, infrast
 
 <meta itemprop="datePublished" content="2020-05-24T18:16:13-03:00" />
 <meta itemprop="dateModified" content="2020-05-24T18:16:13-03:00" />
-<meta itemprop="wordCount" content="897">
+<meta itemprop="wordCount" content="909">
 
 
 
@@ -147,6 +147,54 @@ if (!doNotTrack) {
 
 
 
+<a href="https://zamariola.com.br/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" aria-label="follow on rss in a new window">
+ <svg 
+ height="32px"  
+version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 455.731 455.731" style="enable-background:new 0 0 455.731 455.731;" xml:space="preserve">
+<g>
+	<g>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M296.208,159.16C234.445,97.397,152.266,63.382,64.81,63.382v64.348
+			c70.268,0,136.288,27.321,185.898,76.931c49.609,49.61,76.931,115.63,76.931,185.898h64.348
+			C391.986,303.103,357.971,220.923,296.208,159.16z"/>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M64.143,172.273v64.348c84.881,0,153.938,69.056,153.938,153.939h64.348
+			C282.429,270.196,184.507,172.273,64.143,172.273z"/>
+		<circle style="fill-rule:evenodd;clip-rule:evenodd;" cx="109.833" cy="346.26" r="46.088"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+</a>
 
     </div>
   </div>
@@ -174,7 +222,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 5 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 897 words</span>
+        <span class="f6 mv4 dib tracked"> - 909 words</span>
       
     </header>
 
@@ -206,9 +254,9 @@ if (!doNotTrack) {
 
 <h1 id="what-makes-ansible-different-from-chef-and-puppet">What makes Ansible different from Chef and Puppet</h1>
 
-<p>When I was introduced to Ansible, the first thing that came to my mind was: ok, How this is different (or better) from the configuration management tools that I already use (chef and puppet).</p>
+<p>When I was introduced to Ansible, the first thing that came to my mind was: ok, how is this different (or better) from the configuration management tools that I already use (chef and puppet).</p>
 
-<p>And I can tell you that after learning a little bit more about Ansible it’s definitely my first choice.</p>
+<p>And I can tell you that after learning a little bit more about Ansible, I can say that it’s definitely my first choice.</p>
 
 <h3 id="it-s-easier">It’s easier</h3>
 
@@ -221,11 +269,11 @@ if (!doNotTrack) {
 
 <h3 id="it-uses-the-push-model">It uses the push model</h3>
 
-<p>This is the most important feature for me. Usually, Configuration management tools require you to install an agent in your target server. Thus, if you want to configure a server to have pre-installed software, you will have to install the agent first. In a scenario that we have permission to customize the base image or container, this won’t be a bit deal. However, in most enterprise architecture scenarios, the technical team doesn’t have permission to update the base image or even permission to install the agent manually. That is the best scenario for Ansible because it just needs you to have ssh access to the server. Instead of requiring an agent to pull configuration from a server, Ansible uses a push approach. It creates a temporary runnable app in the master server and them pushes this runnable through SSH to the host servers. This runnable is responsible for executing and configuring the server to the desired state. Therefore, no software or agent is installed, everything is executed just using the SSH user permission.</p>
+<p>This is the most important feature for me. Usually, Configuration management tools require you to install an agent in your target server. Thus, if you want to configure a server to have pre-installed software, you will have to install the agent first. In a scenario that we have permission to customize the base image or container, this won’t be a bit deal. However, in most enterprise architecture scenarios, the technical team doesn’t have permission to update the base image or even permission to install the agent manually. That is the best scenario for Ansible because it just needs you to have ssh access to the server. Instead of requiring an agent to pull configuration from a server, Ansible uses a push approach. It creates a temporary runnable app in the master server and them pushes this runnable through SSH to the host servers. This runnable is responsible for executing and configuring the server to the desired state. Therefore, no software or agent is installed, everything is executed just using the SSH user&rsquo;s permission.</p>
 
 <h3 id="it-can-provision-infrastructure">It can provision infrastructure</h3>
 
-<p>Another good Ansible feature is its ability to provision infrastructure. It has modules to connect to famous public clouds (AWS, GCP and Azure) and then provision VMs, containers, services and etc. This is really useful because you don’t have to pull out a Terraform to create your infrastructure, you can just use Ansbile to do it and then have everything from provision to configuration in just one place.</p>
+<p>Another good Ansible feature is its ability to provision infrastructure. It has modules to connect to famous public clouds (AWS, GCP and Azure) and then provision VMs, containers, services and etc. This is really useful because you don’t have to pull out a Terraform to create your infrastructure, you can just use Ansbile to do it. With Ansible you can have everything from provision to configuration in just one place.</p>
 
 <h1 id="why-you-should-be-using-it">Why you should be using it</h1>
 
@@ -235,11 +283,11 @@ if (!doNotTrack) {
 
 <h4 id="you-can-leverage-it-to-create-your-local-environment">You can leverage it to create your local environment</h4>
 
-<p>I know that you can use shell scripts or anything else to create your local environment, I had done that myself before got Ansible, but not anymore. Using tasks and jobs made it really easy to debug issues and transform a shell execution in a more reproducible set of steps. I was able to reduce my local environment setup from a few hours to minutes.</p>
+<p>I know that you can use shell scripts or anything else to create your local environment, I had done that myself before I got Ansible, but not anymore. Using tasks and jobs made it really easy to debug issues and transform a shell execution in a more reproducible set of steps. I was able to reduce my local environment setup from a few hours to minutes.</p>
 
 <h4 id="the-red-hat-factor">The Red Hat Factor</h4>
 
-<p>It’s important to notice that Ansible is an open-source project sponsored by Red Hat. If you have a small infrastructure or a small cloud, you won’t be missing anything. However, in a more complex cloud (a couple of thousand servers), you can leverage the corporate power of <a href="https://www.ansible.com/products/tower">Ansible Tower</a>. This Red Hat product provides you with <em>visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.</em></p>
+<p>It’s important to notice that Ansible is an open-source project sponsored by Red Hat. If you have a small infrastructure or a small cloud, you won’t be missing anything using the plain open version. However, in a more complex cloud (a couple of thousand servers), you can leverage the corporate power of <a href="https://www.ansible.com/products/tower">Ansible Tower</a>. This Red Hat product provides you with <em>visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.</em></p>
 
 <h1 id="how-to-start-using-it">How to start using it</h1>
 
@@ -389,54 +437,6 @@ if (!doNotTrack) {
 
 
 
-<a href="https://zamariola.com.br/tags/architecture/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" aria-label="follow on rss in a new window">
- <svg 
- height="32px"  
-version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 455.731 455.731" style="enable-background:new 0 0 455.731 455.731;" xml:space="preserve">
-<g>
-	<g>
-		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M296.208,159.16C234.445,97.397,152.266,63.382,64.81,63.382v64.348
-			c70.268,0,136.288,27.321,185.898,76.931c49.609,49.61,76.931,115.63,76.931,185.898h64.348
-			C391.986,303.103,357.971,220.923,296.208,159.16z"/>
-		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M64.143,172.273v64.348c84.881,0,153.938,69.056,153.938,153.939h64.348
-			C282.429,270.196,184.507,172.273,64.143,172.273z"/>
-		<circle style="fill-rule:evenodd;clip-rule:evenodd;" cx="109.833" cy="346.26" r="46.088"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
-
-</a>
 </div>
   </div>
 </footer>
