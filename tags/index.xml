@@ -6,24 +6,15 @@
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 May 2020 18:16:13 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2020 13:09:13 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>ansible</title>
-      <link>https://zamariola.com.br/tags/ansible/</link>
-      <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
-      
-      <guid>https://zamariola.com.br/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>architecture</title>
       <link>https://zamariola.com.br/tags/architecture/</link>
-      <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
+      <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/architecture/</guid>
       <description></description>
@@ -32,9 +23,36 @@
     <item>
       <title>development</title>
       <link>https://zamariola.com.br/tags/development/</link>
-      <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
+      <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>high order functions</title>
+      <link>https://zamariola.com.br/tags/high-order-functions/</link>
+      <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/high-order-functions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oop</title>
+      <link>https://zamariola.com.br/tags/oop/</link>
+      <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>https://zamariola.com.br/tags/ansible/</link>
+      <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/ansible/</guid>
       <description></description>
     </item>
     

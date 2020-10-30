@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oop on Leonardo Zamariola</title>
+    <link>https://zamariola.com.br/tags/oop/</link>
+    <description>Recent content in oop on Leonardo Zamariola</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Oct 2020 13:09:13 -0300</lastBuildDate>
+    
+	<atom:link href="https://zamariola.com.br/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TDC Recife - From OOP to High Order Functions</title>
+      <link>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</link>
+      <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</guid>
+      <description>What it&amp;rsquo;s about Slides from the TDC Recife 2020 edition.
+On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.</description>
+    </item>
+    
+  </channel>
+</rss>

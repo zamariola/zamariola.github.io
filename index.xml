@@ -6,10 +6,20 @@
     <description>Recent content on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 May 2020 18:16:13 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2020 13:09:13 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TDC Recife - From OOP to High Order Functions</title>
+      <link>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</link>
+      <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</guid>
+      <description>What it&amp;rsquo;s about Slides from the TDC Recife 2020 edition.
+On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.</description>
+    </item>
     
     <item>
       <title>Why you should be using Ansible</title>
