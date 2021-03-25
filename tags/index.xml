@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Oct 2020 13:09:13 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 25 Mar 2021 10:13:13 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>development</title>
+      <link>https://zamariola.com.br/tags/development/</link>
+      <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>digital surgery</title>
+      <link>https://zamariola.com.br/tags/digital-surgery/</link>
+      <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/digital-surgery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://zamariola.com.br/tags/golang/</link>
+      <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>medical device</title>
+      <link>https://zamariola.com.br/tags/medical-device/</link>
+      <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/medical-device/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>architecture</title>
@@ -17,15 +53,6 @@
       <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/architecture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>development</title>
-      <link>https://zamariola.com.br/tags/development/</link>
-      <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
-      
-      <guid>https://zamariola.com.br/tags/development/</guid>
       <description></description>
     </item>
     

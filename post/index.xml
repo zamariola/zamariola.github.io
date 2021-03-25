@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Oct 2020 13:09:13 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 25 Mar 2021 10:13:13 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TDC Innovation - Golang in Digital Surgery and Integration with Medical Devices</title>
+      <link>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</link>
+      <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</guid>
+      <description>What it&amp;rsquo;s about Slides from the TDC Innovation 2021 edition.
+On this talk I touched some topics related Digital Surgery and Medical Devices Integration. It explains how we created a FHIR, DICOM and HL7 ADT Integration using plain Go protocols and resources.
+ The source code can be found here</description>
+    </item>
     
     <item>
       <title>TDC Recife - From OOP to High Order Functions</title>
