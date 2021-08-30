@@ -6,17 +6,44 @@
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Mar 2021 10:13:13 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 29 Aug 2021 21:42:00 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>ci&amp;t</title>
+      <link>https://zamariola.com.br/tags/cit/</link>
+      <pubDate>Sun, 29 Aug 2021 21:42:00 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/cit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>development</title>
       <link>https://zamariola.com.br/tags/development/</link>
-      <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
+      <pubDate>Sun, 29 Aug 2021 21:42:00 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://zamariola.com.br/tags/golang/</link>
+      <pubDate>Sun, 29 Aug 2021 21:42:00 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meetup</title>
+      <link>https://zamariola.com.br/tags/meetup/</link>
+      <pubDate>Sun, 29 Aug 2021 21:42:00 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/tags/meetup/</guid>
       <description></description>
     </item>
     
@@ -26,15 +53,6 @@
       <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
       
       <guid>https://zamariola.com.br/tags/digital-surgery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://zamariola.com.br/tags/golang/</link>
-      <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
-      
-      <guid>https://zamariola.com.br/tags/golang/</guid>
       <description></description>
     </item>
     

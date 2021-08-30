@@ -6,10 +6,20 @@
     <description>Recent content on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Mar 2021 10:13:13 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 29 Aug 2021 21:42:00 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CI&amp;T Meeting - Golang Getting Started and Best Practices</title>
+      <link>https://zamariola.com.br/post/ciandt-meetup-golang/</link>
+      <pubDate>Sun, 29 Aug 2021 21:42:00 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/post/ciandt-meetup-golang/</guid>
+      <description>What it&amp;rsquo;s about Slides from the CI&amp;amp;T Meetup 2021 Aug edition.
+ The source code can be found here</description>
+    </item>
     
     <item>
       <title>TDC Innovation - Golang in Digital Surgery and Integration with Medical Devices</title>
