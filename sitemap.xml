@@ -3,6 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zamariola.com.br/tags/certification/</loc>
+    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/development/</loc>
+    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/kubernetes/</loc>
+    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/</loc>
+    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/post/kubernetes-certification-philosophy/</loc>
+    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/post/</loc>
+    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/</loc>
+    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://zamariola.com.br/tags/cit/</loc>
     <lastmod>2021-08-29T21:42:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -17,13 +66,6 @@
   </url>
   
   <url>
-    <loc>https://zamariola.com.br/tags/development/</loc>
-    <lastmod>2021-08-29T21:42:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://zamariola.com.br/tags/golang/</loc>
     <lastmod>2021-08-29T21:42:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -31,28 +73,7 @@
   </url>
   
   <url>
-    <loc>https://zamariola.com.br/</loc>
-    <lastmod>2021-08-29T21:42:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://zamariola.com.br/tags/meetup/</loc>
-    <lastmod>2021-08-29T21:42:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zamariola.com.br/post/</loc>
-    <lastmod>2021-08-29T21:42:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zamariola.com.br/tags/</loc>
     <lastmod>2021-08-29T21:42:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

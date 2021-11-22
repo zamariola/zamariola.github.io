@@ -6,10 +6,19 @@
     <description>Recent content on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Aug 2021 21:42:00 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 18 Nov 2021 10:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://zamariola.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My Kubernetes Certifications and why you should be a certified professional</title>
+      <link>https://zamariola.com.br/post/kubernetes-certification-philosophy/</link>
+      <pubDate>Thu, 18 Nov 2021 10:00:00 -0300</pubDate>
+      
+      <guid>https://zamariola.com.br/post/kubernetes-certification-philosophy/</guid>
+      <description>The context I’ve never been a huge fan of IT Certifications. I tend to believe that one’s ability to search for information associated with a good practical expertise is much more valuable than plain memorization. On the other hand, some certifications force us to go the extra mile and to study an unusual topic. That singularity captivates me. Following that path, these last months I focused on two different Kubernetes certifications: CKA (Certified Kubernetes Administrator) and CKAD (Certified Kubernetes Application Developer).</description>
+    </item>
     
     <item>
       <title>CI&amp;T Meeting - Golang Getting Started and Best Practices</title>
