@@ -3,6 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zamariola.com.br/tags/architecture/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/book/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/distinguished/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/engineer/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/post/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/principal/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/staff/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/post/staff-software-engineer-book/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zamariola.com.br/tags/</loc>
+    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://zamariola.com.br/tags/certification/</loc>
     <lastmod>2021-11-18T10:00:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -24,28 +94,7 @@
   </url>
   
   <url>
-    <loc>https://zamariola.com.br/</loc>
-    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://zamariola.com.br/post/kubernetes-certification-philosophy/</loc>
-    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zamariola.com.br/post/</loc>
-    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zamariola.com.br/tags/</loc>
     <lastmod>2021-11-18T10:00:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -96,13 +145,6 @@
   <url>
     <loc>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</loc>
     <lastmod>2021-03-25T10:13:13-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zamariola.com.br/tags/architecture/</loc>
-    <lastmod>2020-10-30T13:09:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
