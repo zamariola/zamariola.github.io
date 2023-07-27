@@ -6,11 +6,7 @@
     <description>Recent content in certification on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Nov 2021 10:00:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://zamariola.com.br/tags/certification/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 18 Nov 2021 10:00:00 -0300</lastBuildDate><atom:link href="https://zamariola.com.br/tags/certification/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Kubernetes Certifications and why you should be a certified professional</title>
       <link>https://zamariola.com.br/post/kubernetes-certification-philosophy/</link>

@@ -6,7 +6,7 @@
     
     <title>Leonardo Zamariola  | Hybris Good Practices I</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.60.0-DEV" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -31,22 +31,16 @@
 <meta property="og:description" content="1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &ldquo;Coincidentally&rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).
 Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zamariola.com.br/post/hybris-good-practices-i/" />
+<meta property="og:url" content="https://zamariola.com.br/post/hybris-good-practices-i/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-06-26T21:01:44-03:00" />
 <meta property="article:modified_time" content="2018-06-26T21:01:44-03:00" />
+
 <meta itemprop="name" content="Hybris Good Practices I">
 <meta itemprop="description" content="1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &ldquo;Coincidentally&rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).
-Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).">
-
-
-<meta itemprop="datePublished" content="2018-06-26T21:01:44-03:00" />
+Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour)."><meta itemprop="datePublished" content="2018-06-26T21:01:44-03:00" />
 <meta itemprop="dateModified" content="2018-06-26T21:01:44-03:00" />
 <meta itemprop="wordCount" content="560">
-
-
-
-<meta itemprop="keywords" content="hybris,clean-code,development," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="hybris,clean-code,development," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hybris Good Practices I"/>
 <meta name="twitter:description" content="1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &ldquo;Coincidentally&rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).
 Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour)."/>
@@ -91,8 +85,6 @@ if (!doNotTrack) {
               About Me
             </a>
           </li>
-          
-          
           
           
           
@@ -152,7 +144,7 @@ if (!doNotTrack) {
 
 
 
-<a href="https://zamariola.com.br/tags/architecture/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" aria-label="follow on rss in a new window">
+<a href="https://zamariola.com.br/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" aria-label="follow on rss in a new window">
  <svg 
  height="32px"  
 version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -231,34 +223,19 @@ version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-<h3 id="1-name-your-classes-interfaces-with-specific-names-instead-of-default-or-yourcustumer-prefix">1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix.</h3>
-
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id="1-name-your-classesinterfaces-with-specific-names-instead-of-default-or-yourcustumer-prefix">1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix.</h3>
 <p>First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &ldquo;Coincidentally&rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).</p>
-
 <p>Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour). This new behavior is exclusive to your customer now, but it may not be in the future.</p>
-
 <p>So, don’t name your Class as “MyCustomerCartService” or “DefaultCartService” or, even worse, “DefaultCartServiceImpl”. Use the specific behavior name, for example, “SingleQuantityCartService”.</p>
-
 <h3 id="2-create-a-new-specific-interface-instead-of-extending-an-existing-one">2) Create a new specific interface instead of extending an existing one</h3>
-
 <p>The most common “mistake” that I see is inserting new methods into an existing (OOTB) interface. You should avoid it at all costs because otherwise, you will end up with a giant and too generic contract. Remember that one of the SOLID principles is the “Interface Segregation Principle”. It states that a client should not depend on methods that they don’t use.</p>
-
 <p>Therefore, if you need to create a new way (method) of doing something, you shouldn’t extend the existing interface, but create a new one that represents this new method.</p>
-
 <p>For example, suppose that we have to create a new cart using the CartFactory, but instead of creating an empty cart we have to create it with default products that we will receive as parameter. In this scenario, we shouldn’t extend the CartFactory inserting all our methods there because we are creating a giant interface and obviously breaking the Interface Segregation Principle. In this case, the most convenient way of customizing it is creating a new interface (or a new implementation of the old interface) named something like “FilledCartFactory” and insert our methods there.</p>
-
 <h3 id="3-you-should-use-decorators-over-inheritance">3) You should use decorators over inheritance</h3>
-
 <p>The concept of composition over inheritance is not new. <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">https://en.wikipedia.org/wiki/Composition_over_inheritance</a></p>
-
 <p>Sometimes extending a bean may seem easier than recreating it, but we have to remember that all components (facade, service, strategy, dao) implement a contract (interface), so we should stick to this contract whenever it is possible.</p>
-
 <p>There are situations that we have to adjust the functional aspect of a class (service, strategy e etc) and it may sound tempting to extend the default class through inheritance and override the default behavior. It’s natural to think like this because it’s an easy way to do it (and it’s how the trails teach us). However, using the java standard extension with hybris OOTB classes tends to generate a big technical debt in the long term. The java traditional extension creates big classes and big interfaces. Soon or later, we will break encapsulation, Single responsibility and/or Interface segregation principles. So, the best way to do this is by using decorators (the decorator pattern).</p>
-
 <p>I’m not going to write how to create decorators, because we have a lot of good content about it: <a href="https://www.yegor256.com/2015/02/26/composable-decorators.html">https://www.yegor256.com/2015/02/26/composable-decorators.html</a></p>
-
 <p>Therefore, everytime that you think about creating a new interface, extending an existing interface or extending an existing class, check if there is a better way of doing this, probably you will come up with a more elegant solution using decorators.</p>
 <ul class="pa0">
   
@@ -315,7 +292,7 @@ version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zamariola.com.br" >
-    &copy; 2022 Leonardo Zamariola
+    &copy; 2023 Leonardo Zamariola
   </a>
     <div>
 
@@ -356,54 +333,6 @@ version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
 
 
 
-<a href="https://zamariola.com.br/tags/principal/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" aria-label="follow on rss in a new window">
- <svg 
- height="32px"  
-version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 455.731 455.731" style="enable-background:new 0 0 455.731 455.731;" xml:space="preserve">
-<g>
-	<g>
-		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M296.208,159.16C234.445,97.397,152.266,63.382,64.81,63.382v64.348
-			c70.268,0,136.288,27.321,185.898,76.931c49.609,49.61,76.931,115.63,76.931,185.898h64.348
-			C391.986,303.103,357.971,220.923,296.208,159.16z"/>
-		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M64.143,172.273v64.348c84.881,0,153.938,69.056,153.938,153.939h64.348
-			C282.429,270.196,184.507,172.273,64.143,172.273z"/>
-		<circle style="fill-rule:evenodd;clip-rule:evenodd;" cx="109.833" cy="346.26" r="46.088"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
-
-</a>
 </div>
   </div>
 </footer>

@@ -1,326 +1,229 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://zamariola.com.br/tags/architecture/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/book/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/distinguished/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/engineer/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/principal/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/staff/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/staff-software-engineer-book/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/certification/</loc>
     <lastmod>2021-11-18T10:00:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/development/</loc>
     <lastmod>2021-11-18T10:00:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/kubernetes/</loc>
     <lastmod>2021-11-18T10:00:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/kubernetes-certification-philosophy/</loc>
     <lastmod>2021-11-18T10:00:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/cit/</loc>
     <lastmod>2021-08-29T21:42:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/ciandt-meetup-golang/</loc>
     <lastmod>2021-08-29T21:42:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/golang/</loc>
     <lastmod>2021-08-29T21:42:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/meetup/</loc>
     <lastmod>2021-08-29T21:42:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/digital-surgery/</loc>
     <lastmod>2021-03-25T10:13:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/medical-device/</loc>
     <lastmod>2021-03-25T10:13:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</loc>
     <lastmod>2021-03-25T10:13:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/high-order-functions/</loc>
     <lastmod>2020-10-30T13:09:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/oop/</loc>
     <lastmod>2020-10-30T13:09:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</loc>
     <lastmod>2020-10-30T13:09:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/ansible/</loc>
     <lastmod>2020-05-24T18:16:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/devops/</loc>
     <lastmod>2020-05-24T18:16:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/stack/</loc>
     <lastmod>2020-05-24T18:16:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/why-you-should-be-using-ansible/</loc>
     <lastmod>2020-05-24T18:16:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/application-evolution-and-monitoring/</loc>
     <lastmod>2019-08-28T23:01:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/monitoring/</loc>
     <lastmod>2019-08-28T23:01:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/clean-code/</loc>
     <lastmod>2019-05-16T18:16:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/functions/</loc>
     <lastmod>2019-05-16T18:16:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/go/</loc>
     <lastmod>2019-05-16T18:16:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/interfaces/</loc>
     <lastmod>2019-05-16T18:16:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/</loc>
     <lastmod>2019-05-16T18:16:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/</loc>
     <lastmod>2019-05-08T20:32:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/technology/</loc>
     <lastmod>2019-05-08T20:32:13-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/how-to-start-writing-go-code/</loc>
     <lastmod>2019-04-28T09:53:03-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/about/</loc>
     <lastmod>2019-04-21T19:47:42-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zamariola.com.br/cv_redirect/</loc>
-    <lastmod>2019-04-21T19:47:42-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/slides/devcamp2019/</loc>
     <lastmod>2018-07-09T15:00:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/slides/</loc>
     <lastmod>2018-07-09T15:00:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/tags/hybris/</loc>
     <lastmod>2018-06-26T21:01:44-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/post/hybris-good-practices-i/</loc>
     <lastmod>2018-06-26T21:01:44-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/slides/demo-slideshow/</loc>
     <lastmod>2018-06-02T16:43:02-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://zamariola.com.br/categories/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  
 </urlset>

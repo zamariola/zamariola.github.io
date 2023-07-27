@@ -6,7 +6,7 @@
     
     <title>Leonardo Zamariola  | Why you should be using Ansible</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.60.0-DEV" />
+    <meta name="generator" content="Hugo 0.92.2" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -32,23 +32,17 @@
 Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work. &mdash; Ansible website
 I&rsquo;m assuming that you&rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zamariola.com.br/post/why-you-should-be-using-ansible/" />
+<meta property="og:url" content="https://zamariola.com.br/post/why-you-should-be-using-ansible/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-05-24T18:16:13-03:00" />
 <meta property="article:modified_time" content="2020-05-24T18:16:13-03:00" />
+
 <meta itemprop="name" content="Why you should be using Ansible">
 <meta itemprop="description" content="What Ansible is and what it isn&rsquo;t Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:
 Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work. &mdash; Ansible website
-I&rsquo;m assuming that you&rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here.">
-
-
-<meta itemprop="datePublished" content="2020-05-24T18:16:13-03:00" />
+I&rsquo;m assuming that you&rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here."><meta itemprop="datePublished" content="2020-05-24T18:16:13-03:00" />
 <meta itemprop="dateModified" content="2020-05-24T18:16:13-03:00" />
-<meta itemprop="wordCount" content="909">
-
-
-
-<meta itemprop="keywords" content="development,devops,architecture,stack,ansible," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="901">
+<meta itemprop="keywords" content="development,devops,architecture,stack,ansible," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Why you should be using Ansible"/>
 <meta name="twitter:description" content="What Ansible is and what it isn&rsquo;t Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:
 Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work. &mdash; Ansible website
@@ -94,8 +88,6 @@ if (!doNotTrack) {
               About Me
             </a>
           </li>
-          
-          
           
           
           
@@ -155,7 +147,7 @@ if (!doNotTrack) {
 
 
 
-<a href="https://zamariola.com.br/tags/architecture/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" aria-label="follow on rss in a new window">
+<a href="https://zamariola.com.br/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" aria-label="follow on rss in a new window">
  <svg 
  height="32px"  
 version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -230,89 +222,50 @@ version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
       
       
         <span class="f6 mv4 dib tracked"> - 5 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 909 words</span>
+        <span class="f6 mv4 dib tracked"> - 901 words</span>
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-<p><img src="/post/why-you-should-be-using-ansible/ansible-logo.png"
-    alt="Ansible logo"
-    style="float: center; width:300px;" /></p>
-
-<h1 id="what-ansible-is-and-what-it-isn-t">What Ansible is and what it isn&rsquo;t</h1>
-
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><!-- raw HTML omitted --></p>
+<h1 id="what-ansible-is-and-what-it-isnt">What Ansible is and what it isn&rsquo;t</h1>
 <p>Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:</p>
-
 <p><em>Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work.</em> &mdash; <a href="https://www.ansible.com">Ansible website</a></p>
-
 <p>I&rsquo;m assuming that you&rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here.</p>
-
 <p>I see Ansible as a way to create and configure environments. It&rsquo;s mostly used to configure than to create them though.</p>
-
 <p>Ansible uses a set of modules to compose the final state to the desired configuration. So, for example, if you want to configure a Linux VM installing packages, downloading software and executing some shell scripts, you will need to compose this task using a group of modules. You will have to use the <strong>apt</strong> or <strong>yum</strong> module to update and install packages, then you will use the <strong>get_url</strong> to download software and finally you will use the <strong>command</strong> component to execute some shell commands.</p>
-
 <p>Using Ansible you can:</p>
-
 <ul>
 <li>Provision new environment (like Terraform) using AWS, GCP or Azure modules</li>
 <li>Configure new environments to make them ready to be used</li>
 <li>Configure and maintain (upgrade) existing environments</li>
 </ul>
-
 <h1 id="what-makes-ansible-different-from-chef-and-puppet">What makes Ansible different from Chef and Puppet</h1>
-
 <p>When I was introduced to Ansible, the first thing that came to my mind was: ok, how is this different (or better) from the configuration management tools that I already use (chef and puppet).</p>
-
 <p>And I can tell you that after learning a little bit more about Ansible, I can say that it’s definitely my first choice.</p>
-
-<h3 id="it-s-easier">It’s easier</h3>
-
+<h3 id="its-easier">It’s easier</h3>
 <p>As I said before, Ansible uses a module approach, so you compose your jobs as a set of module tasks. This is not that different from the existing tools; however, the way that Ansible requires you to build the jobs makes it easier to understand and maintain those tasks. It uses a more natural language to describe the final desired state.</p>
-
 <p>Here’s an example: this task is responsible for updating the yum packages and install a few others.</p>
-
 <script type="application/javascript" src="https://gist.github.com/zamariola/1f5752699c89b1a727e55943c0aa8650.js"></script>
 
-
 <h3 id="it-uses-the-push-model">It uses the push model</h3>
-
 <p>This is the most important feature for me. Usually, Configuration management tools require you to install an agent in your target server. Thus, if you want to configure a server to have pre-installed software, you will have to install the agent first. In a scenario that we have permission to customize the base image or container, this won’t be a bit deal. However, in most enterprise architecture scenarios, the technical team doesn’t have permission to update the base image or even permission to install the agent manually. That is the best scenario for Ansible because it just needs you to have ssh access to the server. Instead of requiring an agent to pull configuration from a server, Ansible uses a push approach. It creates a temporary runnable app in the master server and them pushes this runnable through SSH to the host servers. This runnable is responsible for executing and configuring the server to the desired state. Therefore, no software or agent is installed, everything is executed just using the SSH user&rsquo;s permission.</p>
-
 <h3 id="it-can-provision-infrastructure">It can provision infrastructure</h3>
-
 <p>Another good Ansible feature is its ability to provision infrastructure. It has modules to connect to famous public clouds (AWS, GCP and Azure) and then provision VMs, containers, services and etc. This is really useful because you don’t have to pull out a Terraform to create your infrastructure, you can just use Ansbile to do it. With Ansible you can have everything from provision to configuration in just one place.</p>
-
 <h1 id="why-you-should-be-using-it">Why you should be using it</h1>
-
 <p>For me, there are four main reasons to use Ansible. Two of them I have already covered in the last section: <strong>it’s really easy to create and maintain scripts</strong> and <strong>you don’t have to install agents</strong>.</p>
-
 <p>In addition to that, there is two more that you should be considering:</p>
-
 <h4 id="you-can-leverage-it-to-create-your-local-environment">You can leverage it to create your local environment</h4>
-
 <p>I know that you can use shell scripts or anything else to create your local environment, I had done that myself before I got Ansible, but not anymore. Using tasks and jobs made it really easy to debug issues and transform a shell execution in a more reproducible set of steps. I was able to reduce my local environment setup from a few hours to minutes.</p>
-
 <h4 id="the-red-hat-factor">The Red Hat Factor</h4>
-
 <p>It’s important to notice that Ansible is an open-source project sponsored by Red Hat. If you have a small infrastructure or a small cloud, you won’t be missing anything using the plain open version. However, in a more complex cloud (a couple of thousand servers), you can leverage the corporate power of <a href="https://www.ansible.com/products/tower">Ansible Tower</a>. This Red Hat product provides you with <em>visual dashboard, role-based access control, job scheduling, integrated notifications and graphical inventory management.</em></p>
-
 <h1 id="how-to-start-using-it">How to start using it</h1>
-
 <p>As I said, you can start using it right now in your local environment. Of course, if you already have servers to configure and maintain, it’s more fun to use Ansible to do that; however, you don’t need servers to practice your Ansible skills, you can do it just using your localhost as the target host.</p>
-
 <p>Here’s an example of my local environment set up using Ansible:</p>
-
 <p><a href="https://github.com/zamariola/local-environment">https://github.com/zamariola/local-environment</a></p>
-
-<p><img src="https://raw.githubusercontent.com/zamariola/local-environment/master/doc/local_env.png" alt="Local environment" /></p>
-
+<p><img src="https://raw.githubusercontent.com/zamariola/local-environment/master/doc/local_env.png" alt="Local environment"></p>
 <p><em>There is an official Red Hat course about it: <a href="https://www.redhat.com/en/services/training/do007-ansible-essentials-simplicity-automation-technical-overview">https://www.redhat.com/en/services/training/do007-ansible-essentials-simplicity-automation-technical-overview</a></em></p>
-
 <p>And a Quick start video:</p>
-
-<p><a href="https://www.ansible.com/resources/videos/quick-start-video?wvideo=qrqfj371b6"><img src="https://embedwistia-a.akamaihd.net/deliveries/886db2fb0026d39e8fa8080a641dcfc0af40b167.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=848992e0" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://www.ansible.com/resources/videos/quick-start-video?wvideo=qrqfj371b6">What is Ansible? | Ansible Quick Start Video</a></p>
-
+<!-- raw HTML omitted -->
 <p>Good luck!</p>
 <ul class="pa0">
   
@@ -404,7 +357,7 @@ version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zamariola.com.br" >
-    &copy; 2022 Leonardo Zamariola
+    &copy; 2023 Leonardo Zamariola
   </a>
     <div>
 
@@ -445,54 +398,6 @@ version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
 
 
 
-<a href="https://zamariola.com.br/tags/principal/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" aria-label="follow on rss in a new window">
- <svg 
- height="32px"  
-version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 455.731 455.731" style="enable-background:new 0 0 455.731 455.731;" xml:space="preserve">
-<g>
-	<g>
-		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M296.208,159.16C234.445,97.397,152.266,63.382,64.81,63.382v64.348
-			c70.268,0,136.288,27.321,185.898,76.931c49.609,49.61,76.931,115.63,76.931,185.898h64.348
-			C391.986,303.103,357.971,220.923,296.208,159.16z"/>
-		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M64.143,172.273v64.348c84.881,0,153.938,69.056,153.938,153.939h64.348
-			C282.429,270.196,184.507,172.273,64.143,172.273z"/>
-		<circle style="fill-rule:evenodd;clip-rule:evenodd;" cx="109.833" cy="346.26" r="46.088"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
-
-</a>
 </div>
   </div>
 </footer>

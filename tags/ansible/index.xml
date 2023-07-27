@@ -6,11 +6,7 @@
     <description>Recent content in ansible on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 May 2020 18:16:13 -0300</lastBuildDate>
-    
-	<atom:link href="https://zamariola.com.br/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 May 2020 18:16:13 -0300</lastBuildDate><atom:link href="https://zamariola.com.br/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why you should be using Ansible</title>
       <link>https://zamariola.com.br/post/why-you-should-be-using-ansible/</link>

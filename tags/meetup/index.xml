@@ -6,11 +6,7 @@
     <description>Recent content in meetup on Leonardo Zamariola</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Aug 2021 21:42:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://zamariola.com.br/tags/meetup/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 29 Aug 2021 21:42:00 -0300</lastBuildDate><atom:link href="https://zamariola.com.br/tags/meetup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CI&amp;T Meeting - Golang Getting Started and Best Practices</title>
       <link>https://zamariola.com.br/post/ciandt-meetup-golang/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://zamariola.com.br/post/ciandt-meetup-golang/</guid>
       <description>What it&amp;rsquo;s about Video and Slides from the CI&amp;amp;T Meetup 2021 Aug edition.
-  The source code can be found here</description>
+The source code can be found here</description>
     </item>
     
   </channel>
