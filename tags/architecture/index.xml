@@ -1,51 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>architecture on Leonardo Zamariola</title>
+    <title>Architecture on Leonardo Zamariola</title>
     <link>https://zamariola.com.br/tags/architecture/</link>
-    <description>Recent content in architecture on Leonardo Zamariola</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Architecture on Leonardo Zamariola</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Dec 2021 22:53:00 -0300</lastBuildDate><atom:link href="https://zamariola.com.br/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 22:53:00 -0300</lastBuildDate>
+    <atom:link href="https://zamariola.com.br/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Staff Engineer Book and why you should read it</title>
       <link>https://zamariola.com.br/post/staff-software-engineer-book/</link>
       <pubDate>Mon, 20 Dec 2021 22:53:00 -0300</pubDate>
-      
       <guid>https://zamariola.com.br/post/staff-software-engineer-book/</guid>
-      <description>If you are:
- Looking for a new book to read during the holidays. A senior software engineer looking for an opportunity to grow to staff/principal. A staff/principal/distinguished software engineer trying to fit yourself into this new career model or be better at it.  I have a great recommendation for you: Staff Engineer: Leadership beyond the management track by Will Larson. You can find it on its website and on Amazon</description>
+      <description>If you are:&#xA;Looking for a new book to read during the holidays. A senior software engineer looking for an opportunity to grow to staff/principal. A staff/principal/distinguished software engineer trying to fit yourself into this new career model or be better at it. I have a great recommendation for you: Staff Engineer: Leadership beyond the management track by Will Larson. You can find it on its website and on Amazon</description>
     </item>
-    
     <item>
       <title>TDC Recife - From OOP to High Order Functions</title>
       <link>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</link>
       <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
-      
       <guid>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</guid>
-      <description>What it&amp;rsquo;s about Slides from the TDC Recife 2020 edition.
-On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.</description>
+      <description>What it&amp;rsquo;s about Slides from the TDC Recife 2020 edition.&#xA;On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.</description>
     </item>
-    
     <item>
       <title>Why you should be using Ansible</title>
       <link>https://zamariola.com.br/post/why-you-should-be-using-ansible/</link>
       <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
-      
       <guid>https://zamariola.com.br/post/why-you-should-be-using-ansible/</guid>
-      <description>What Ansible is and what it isn&amp;rsquo;t Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:
-Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work. &amp;mdash; Ansible website
-I&amp;rsquo;m assuming that you&amp;rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here.</description>
+      <description>What Ansible is and what it isn&amp;rsquo;t Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:&#xA;Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work. &amp;mdash; Ansible website&#xA;I&amp;rsquo;m assuming that you&amp;rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here.</description>
     </item>
-    
     <item>
       <title>Application, Evolution and Monitoring</title>
       <link>https://zamariola.com.br/post/application-evolution-and-monitoring/</link>
       <pubDate>Wed, 28 Aug 2019 23:01:00 -0300</pubDate>
-      
       <guid>https://zamariola.com.br/post/application-evolution-and-monitoring/</guid>
       <description>The essence of software development I have already written here, that when we start coding the most important thing that we should keep in mind is maintainability. Even with other methods than scrum, like waterfall or “perfect planning”, it’s really hard to know beforehand exactly how to develop your system/application. So, if you want to deliver a good software and a great experience to your customers, you should invest time and energy building a high flexible system.</description>
     </item>
-    
   </channel>
 </rss>

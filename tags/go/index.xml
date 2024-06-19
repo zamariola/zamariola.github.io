@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>go on Leonardo Zamariola</title>
+    <title>Go on Leonardo Zamariola</title>
     <link>https://zamariola.com.br/tags/go/</link>
-    <description>Recent content in go on Leonardo Zamariola</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Go on Leonardo Zamariola</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 May 2019 18:16:13 -0300</lastBuildDate><atom:link href="https://zamariola.com.br/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 May 2019 18:16:13 -0300</lastBuildDate>
+    <atom:link href="https://zamariola.com.br/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why and how you should code to interfaces - and high-order functions</title>
       <link>https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/</link>
       <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
-      
       <guid>https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/</guid>
       <description>One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.</description>
     </item>
-    
     <item>
       <title>How to Start Writing Go Code</title>
       <link>https://zamariola.com.br/post/how-to-start-writing-go-code/</link>
       <pubDate>Sun, 28 Apr 2019 09:53:03 -0300</pubDate>
-      
       <guid>https://zamariola.com.br/post/how-to-start-writing-go-code/</guid>
       <description>Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.</description>
     </item>
-    
   </channel>
 </rss>

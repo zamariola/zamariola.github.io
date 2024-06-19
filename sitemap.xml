@@ -2,6 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zamariola.com.br/tags/career/</loc>
+    <lastmod>2024-06-18T18:09:01-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/carreira/</loc>
+    <lastmod>2024-06-18T18:09:01-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zamariola.com.br/post/como-iniciar-na-carreira-desenvolvedor-de-software/</loc>
+    <lastmod>2024-06-18T18:09:01-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/development/</loc>
+    <lastmod>2024-06-18T18:09:01-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zamariola.com.br/</loc>
+    <lastmod>2024-06-18T18:09:01-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zamariola.com.br/post/</loc>
+    <lastmod>2024-06-18T18:09:01-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/</loc>
+    <lastmod>2024-06-18T18:09:01-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zamariola.com.br/cv_redirect/</loc>
+    <lastmod>2023-07-27T19:47:42-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://zamariola.com.br/tags/architecture/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -22,16 +62,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zamariola.com.br/</loc>
-    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://zamariola.com.br/post/</loc>
-    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://zamariola.com.br/tags/principal/</loc>
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -47,17 +77,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zamariola.com.br/tags/</loc>
-    <lastmod>2021-12-20T22:53:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://zamariola.com.br/tags/certification/</loc>
-    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://zamariola.com.br/tags/development/</loc>
     <lastmod>2021-11-18T10:00:00-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

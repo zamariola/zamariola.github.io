@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>monitoring on Leonardo Zamariola</title>
+    <title>Monitoring on Leonardo Zamariola</title>
     <link>https://zamariola.com.br/tags/monitoring/</link>
-    <description>Recent content in monitoring on Leonardo Zamariola</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Monitoring on Leonardo Zamariola</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Aug 2019 23:01:00 -0300</lastBuildDate><atom:link href="https://zamariola.com.br/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Aug 2019 23:01:00 -0300</lastBuildDate>
+    <atom:link href="https://zamariola.com.br/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Application, Evolution and Monitoring</title>
       <link>https://zamariola.com.br/post/application-evolution-and-monitoring/</link>
       <pubDate>Wed, 28 Aug 2019 23:01:00 -0300</pubDate>
-      
       <guid>https://zamariola.com.br/post/application-evolution-and-monitoring/</guid>
       <description>The essence of software development I have already written here, that when we start coding the most important thing that we should keep in mind is maintainability. Even with other methods than scrum, like waterfall or “perfect planning”, it’s really hard to know beforehand exactly how to develop your system/application. So, if you want to deliver a good software and a great experience to your customers, you should invest time and energy building a high flexible system.</description>
     </item>
-    
   </channel>
 </rss>
