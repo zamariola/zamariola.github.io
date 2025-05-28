@@ -6,8 +6,36 @@
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jun 2024 18:09:01 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 27 May 2025 21:54:00 -0300</lastBuildDate>
     <atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backend</title>
+      <link>https://zamariola.com.br/tags/backend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/backend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>https://zamariola.com.br/tags/development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>https://zamariola.com.br/tags/go/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golang</title>
+      <link>https://zamariola.com.br/tags/golang/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/golang/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Career</title>
       <link>https://zamariola.com.br/tags/career/</link>
@@ -20,13 +48,6 @@
       <link>https://zamariola.com.br/tags/carreira/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://zamariola.com.br/tags/carreira/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Development</title>
-      <link>https://zamariola.com.br/tags/development/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://zamariola.com.br/tags/development/</guid>
       <description></description>
     </item>
     <item>
@@ -90,13 +111,6 @@
       <link>https://zamariola.com.br/tags/cit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://zamariola.com.br/tags/cit/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Golang</title>
-      <link>https://zamariola.com.br/tags/golang/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://zamariola.com.br/tags/golang/</guid>
       <description></description>
     </item>
     <item>
@@ -174,13 +188,6 @@
       <link>https://zamariola.com.br/tags/functions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://zamariola.com.br/tags/functions/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Go</title>
-      <link>https://zamariola.com.br/tags/go/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://zamariola.com.br/tags/go/</guid>
       <description></description>
     </item>
     <item>
