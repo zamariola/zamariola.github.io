@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Leonardo Zamariola  | Hybris Good Practices I</title>
+    <title>Leonardo Zamariola </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.126.2">
     
@@ -29,31 +29,24 @@
 
     
     
-    <meta property="og:url" content="https://zamariola.com.br/post/hybris-good-practices-i/">
+      <link href="/tags/solid/index.xml" rel="alternate" type="application/rss+xml" title="Leonardo Zamariola" />
+      <link href="/tags/solid/index.xml" rel="feed" type="application/rss+xml" title="Leonardo Zamariola" />
+      
+    
+    
+    <meta property="og:url" content="https://zamariola.com.br/tags/solid/">
   <meta property="og:site_name" content="Leonardo Zamariola">
-  <meta property="og:title" content="Hybris Good Practices I">
-  <meta property="og:description" content="1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. “Coincidentally”, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).
-Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).">
+  <meta property="og:title" content="Solid">
+  <meta property="og:description" content="Software development and its philosophy">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2018-06-26T21:01:44-03:00">
-    <meta property="article:modified_time" content="2018-06-26T21:01:44-03:00">
-    <meta property="article:tag" content="Hybris">
-    <meta property="article:tag" content="Clean-Code">
-    <meta property="article:tag" content="Development">
+  <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Hybris Good Practices I">
-  <meta itemprop="description" content="1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. “Coincidentally”, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).
-Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).">
-  <meta itemprop="datePublished" content="2018-06-26T21:01:44-03:00">
-  <meta itemprop="dateModified" content="2018-06-26T21:01:44-03:00">
-  <meta itemprop="wordCount" content="560">
-  <meta itemprop="keywords" content="Hybris,Clean-Code,Development">
+  <meta itemprop="name" content="Solid">
+  <meta itemprop="description" content="Software development and its philosophy">
+  <meta itemprop="dateModified" content="2025-08-23T18:09:27-03:00">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hybris Good Practices I">
-  <meta name="twitter:description" content="1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. “Coincidentally”, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).
-Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).">
+  <meta name="twitter:title" content="Solid">
+  <meta name="twitter:description" content="Software development and its philosophy">
 
       
   
@@ -69,11 +62,11 @@ Suppose that you are defining a new way of adding a product to cart, that is, yo
   <body class="ma0 avenir bg-near-white production">
 
     
-   
-  
 
-  <header>
-    <div class="bg-black">
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://zamariola.com.br/images/bg-landscape-site-sm.jpg');">
+    <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://zamariola.com.br/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -205,96 +198,46 @@ version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
   </div>
 </nav>
 
+      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
+          Solid
+        </h1>
+        
+      </div>
     </div>
   </header>
 
 
-
     <main class="pb7" role="main">
       
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        POSTS
-      </p>
-      <h1 class="f1 athelas mb1">Hybris Good Practices I</h1>
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2018-06-26T21:01:44-03:00">June 26, 2018</time>
-      
-      
-        <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 560 words</span>
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id="1-name-your-classesinterfaces-with-specific-names-instead-of-default-or-yourcustumer-prefix">1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix.</h3>
-<p>First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &ldquo;Coincidentally&rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).</p>
-<p>Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour). This new behavior is exclusive to your customer now, but it may not be in the future.</p>
-<p>So, don’t name your Class as “MyCustomerCartService” or “DefaultCartService” or, even worse, “DefaultCartServiceImpl”. Use the specific behavior name, for example, “SingleQuantityCartService”.</p>
-<h3 id="2-create-a-new-specific-interface-instead-of-extending-an-existing-one">2) Create a new specific interface instead of extending an existing one</h3>
-<p>The most common “mistake” that I see is inserting new methods into an existing (OOTB) interface. You should avoid it at all costs because otherwise, you will end up with a giant and too generic contract. Remember that one of the SOLID principles is the “Interface Segregation Principle”. It states that a client should not depend on methods that they don’t use.</p>
-<p>Therefore, if you need to create a new way (method) of doing something, you shouldn’t extend the existing interface, but create a new one that represents this new method.</p>
-<p>For example, suppose that we have to create a new cart using the CartFactory, but instead of creating an empty cart we have to create it with default products that we will receive as parameter. In this scenario, we shouldn’t extend the CartFactory inserting all our methods there because we are creating a giant interface and obviously breaking the Interface Segregation Principle. In this case, the most convenient way of customizing it is creating a new interface (or a new implementation of the old interface) named something like “FilledCartFactory” and insert our methods there.</p>
-<h3 id="3-you-should-use-decorators-over-inheritance">3) You should use decorators over inheritance</h3>
-<p>The concept of composition over inheritance is not new. <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">https://en.wikipedia.org/wiki/Composition_over_inheritance</a></p>
-<p>Sometimes extending a bean may seem easier than recreating it, but we have to remember that all components (facade, service, strategy, dao) implement a contract (interface), so we should stick to this contract whenever it is possible.</p>
-<p>There are situations that we have to adjust the functional aspect of a class (service, strategy e etc) and it may sound tempting to extend the default class through inheritance and override the default behavior. It’s natural to think like this because it’s an easy way to do it (and it’s how the trails teach us). However, using the java standard extension with hybris OOTB classes tends to generate a big technical debt in the long term. The java traditional extension creates big classes and big interfaces. Soon or later, we will break encapsulation, Single responsibility and/or Interface segregation principles. So, the best way to do this is by using decorators (the decorator pattern).</p>
-<p>I’m not going to write how to create decorators, because we have a lot of good content about it: <a href="https://www.yegor256.com/2015/02/26/composable-decorators.html">https://www.yegor256.com/2015/02/26/composable-decorators.html</a></p>
-<p>Therefore, everytime that you think about creating a new interface, extending an existing interface or extending an existing class, check if there is a better way of doing this, probably you will come up with a more elegant solution using decorators.</p>
-<ul class="pa0">
-  
-   <li class="list">
-     <a href="/tags/hybris" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">hybris</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/clean-code" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">clean-code</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/development" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">development</a>
-   </li>
-  
-</ul>
-<div class="mt6">
-      
-        <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      
-      
-      </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
+      <p>Below you will find pages that utilize the taxonomy term “Solid”</p>
+    </div>
   </article>
+  <div class="mw8 center">    
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Post</span>
+    <h1 class="f3 near-black">
+      <a href="https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/" class="link black dim">
+        What is the SOLID pattern and why you should avoid it
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      What is SOLID The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.
+💡 Disclaimer: I&rsquo;m not giving a full description of the SOLID pattern because a lot of folks have done that. Digital Ocean has done that and the Uncle Bob himself has done that Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

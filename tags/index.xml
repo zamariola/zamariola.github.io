@@ -6,13 +6,13 @@
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 May 2025 21:54:00 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 23 Aug 2025 18:09:27 -0300</lastBuildDate>
     <atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Backend</title>
-      <link>https://zamariola.com.br/tags/backend/</link>
+      <title>Clean-Code</title>
+      <link>https://zamariola.com.br/tags/clean-code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://zamariola.com.br/tags/backend/</guid>
+      <guid>https://zamariola.com.br/tags/clean-code/</guid>
       <description></description>
     </item>
     <item>
@@ -23,10 +23,52 @@
       <description></description>
     </item>
     <item>
+      <title>Functions</title>
+      <link>https://zamariola.com.br/tags/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/functions/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Go</title>
       <link>https://zamariola.com.br/tags/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://zamariola.com.br/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interfaces</title>
+      <link>https://zamariola.com.br/tags/interfaces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/interfaces/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://zamariola.com.br/tags/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Locality of Behavior</title>
+      <link>https://zamariola.com.br/tags/locality-of-behavior/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/locality-of-behavior/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Solid</title>
+      <link>https://zamariola.com.br/tags/solid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/solid/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Backend</title>
+      <link>https://zamariola.com.br/tags/backend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zamariola.com.br/tags/backend/</guid>
       <description></description>
     </item>
     <item>
@@ -174,27 +216,6 @@
       <link>https://zamariola.com.br/tags/monitoring/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://zamariola.com.br/tags/monitoring/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Clean-Code</title>
-      <link>https://zamariola.com.br/tags/clean-code/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://zamariola.com.br/tags/clean-code/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Functions</title>
-      <link>https://zamariola.com.br/tags/functions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://zamariola.com.br/tags/functions/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Interfaces</title>
-      <link>https://zamariola.com.br/tags/interfaces/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://zamariola.com.br/tags/interfaces/</guid>
       <description></description>
     </item>
     <item>

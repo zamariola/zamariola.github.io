@@ -6,8 +6,15 @@
     <description>Recent content in Go on Leonardo Zamariola</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 May 2025 21:54:00 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 23 Aug 2025 18:09:27 -0300</lastBuildDate>
     <atom:link href="https://zamariola.com.br/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is the SOLID pattern and why you should avoid it</title>
+      <link>https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/</link>
+      <pubDate>Sat, 23 Aug 2025 18:09:27 -0300</pubDate>
+      <guid>https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/</guid>
+      <description>What is SOLID The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.&#xA;💡 Disclaimer: I&amp;rsquo;m not giving a full description of the SOLID pattern because a lot of folks have done that. Digital Ocean has done that and the Uncle Bob himself has done that Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.</description>
+    </item>
     <item>
       <title>The 3 main reasons why golang is the future of backend development</title>
       <link>https://zamariola.com.br/post/yt-3-reasons-golang-future-backend/</link>

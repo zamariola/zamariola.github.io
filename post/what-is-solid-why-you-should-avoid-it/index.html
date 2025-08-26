@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Leonardo Zamariola  | What is the SOLID pattern and why you should avoid it</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.126.2">
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+      <link rel="stylesheet" href="/css/custom.css">
+    
+
+    
+      
+<link rel="shortcut icon" href="/images/fav.png" type="image/x-icon" />
+
+    
+
+    
+    
+    <meta property="og:url" content="https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/">
+  <meta property="og:site_name" content="Leonardo Zamariola">
+  <meta property="og:title" content="What is the SOLID pattern and why you should avoid it">
+  <meta property="og:description" content="What is SOLID The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.
+💡 Disclaimer: I’m not giving a full description of the SOLID pattern because a lot of folks have done that. Digital Ocean has done that and the Uncle Bob himself has done that Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-08-23T18:09:27-03:00">
+    <meta property="article:modified_time" content="2025-08-23T18:09:27-03:00">
+    <meta property="article:tag" content="Solid">
+    <meta property="article:tag" content="Locality of Behavior">
+    <meta property="article:tag" content="Interfaces">
+    <meta property="article:tag" content="Clean-Code">
+    <meta property="article:tag" content="Development">
+    <meta property="article:tag" content="Go">
+
+  <meta itemprop="name" content="What is the SOLID pattern and why you should avoid it">
+  <meta itemprop="description" content="What is SOLID The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.
+💡 Disclaimer: I’m not giving a full description of the SOLID pattern because a lot of folks have done that. Digital Ocean has done that and the Uncle Bob himself has done that Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.">
+  <meta itemprop="datePublished" content="2025-08-23T18:09:27-03:00">
+  <meta itemprop="dateModified" content="2025-08-23T18:09:27-03:00">
+  <meta itemprop="wordCount" content="1914">
+  <meta itemprop="keywords" content="Solid,Locality of Behavior,Interfaces,Clean-Code,Development,Go,Java,Functions">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What is the SOLID pattern and why you should avoid it">
+  <meta name="twitter:description" content="What is SOLID The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.
+💡 Disclaimer: I’m not giving a full description of the SOLID pattern because a lot of folks have done that. Digital Ocean has done that and the Uncle Bob himself has done that Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.">
+
+      
+  
+    
+      
+    
+  
+
+
+    
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://zamariola.com.br/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Leonardo Zamariola
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/post/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/slides/" title="Slides page">
+              Slides
+            </a>
+          </li>
+          
+          
+        </ul>
+      
+      
+
+
+
+
+<a href="https://www.youtube.com/c/LeonardoZamariola" target="_blank" class="link-transition youtube link dib z-999 pt3 pt0-l mr1" title="Youtube link" rel="noopener" aria-label="follow on Youtube——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M42.527,41.34c-0.278,0-0.478,0.078-0.6,0.244  c-0.121,0.156-0.18,0.424-0.18,0.796v0.896h1.543V42.38c0-0.372-0.062-0.64-0.185-0.796C42.989,41.418,42.792,41.34,42.527,41.34z   M36.509,41.309c0.234,0,0.417,0.076,0.544,0.23c0.123,0.155,0.185,0.383,0.185,0.682v4.584c0,0.286-0.053,0.487-0.153,0.611  c-0.1,0.127-0.256,0.189-0.47,0.189c-0.148,0-0.287-0.033-0.421-0.096c-0.135-0.062-0.274-0.171-0.415-0.313v-5.531  c0.119-0.122,0.239-0.213,0.36-0.271C36.26,41.335,36.383,41.309,36.509,41.309z M41.748,44.658v1.672  c0,0.468,0.057,0.792,0.17,0.974c0.118,0.181,0.313,0.269,0.592,0.269c0.289,0,0.491-0.076,0.606-0.229  c0.114-0.153,0.175-0.489,0.175-1.013v-0.405h1.795v0.456c0,0.911-0.217,1.596-0.657,2.059c-0.435,0.459-1.089,0.687-1.958,0.687  c-0.781,0-1.398-0.242-1.847-0.731c-0.448-0.486-0.676-1.157-0.676-2.014v-3.986c0-0.768,0.249-1.398,0.742-1.882  c0.493-0.484,1.128-0.727,1.911-0.727c0.799,0,1.413,0.225,1.843,0.674c0.429,0.448,0.642,1.093,0.642,1.935v2.264H41.748z   M38.623,48.495c-0.271,0.336-0.669,0.501-1.187,0.501c-0.343,0-0.646-0.062-0.912-0.192c-0.267-0.129-0.519-0.327-0.746-0.601  v0.681h-1.764V36.852h1.764v3.875c0.237-0.27,0.485-0.478,0.748-0.616c0.267-0.143,0.534-0.212,0.805-0.212  c0.554,0,0.975,0.189,1.265,0.565c0.294,0.379,0.438,0.933,0.438,1.66v4.926C39.034,47.678,38.897,48.159,38.623,48.495z   M30.958,48.884v-0.976c-0.325,0.361-0.658,0.636-1.009,0.822c-0.349,0.191-0.686,0.282-1.014,0.282  c-0.405,0-0.705-0.129-0.913-0.396c-0.201-0.266-0.305-0.658-0.305-1.189v-7.422h1.744v6.809c0,0.211,0.037,0.362,0.107,0.457  c0.077,0.095,0.196,0.141,0.358,0.141c0.128,0,0.292-0.062,0.488-0.188c0.197-0.125,0.375-0.283,0.542-0.475v-6.744h1.744v8.878  H30.958z M24.916,38.6v10.284h-1.968V38.6h-2.034v-1.748h6.036V38.6H24.916z M32.994,32.978c0-0.001,12.08,0.018,13.514,1.45  c1.439,1.435,1.455,8.514,1.455,8.555c0,0-0.012,7.117-1.455,8.556C45.074,52.969,32.994,53,32.994,53s-12.079-0.031-13.516-1.462  c-1.438-1.435-1.441-8.502-1.441-8.556c0-0.041,0.004-7.12,1.441-8.555C20.916,32.996,32.994,32.977,32.994,32.978z M42.52,29.255  h-1.966v-1.08c-0.358,0.397-0.736,0.703-1.13,0.909c-0.392,0.208-0.771,0.312-1.14,0.312c-0.458,0-0.797-0.146-1.027-0.437  c-0.229-0.291-0.345-0.727-0.345-1.311v-8.172h1.962v7.497c0,0.231,0.045,0.399,0.127,0.502c0.08,0.104,0.216,0.156,0.399,0.156  c0.143,0,0.327-0.069,0.548-0.206c0.22-0.137,0.423-0.312,0.605-0.527v-7.422h1.966V29.255z M31.847,27.588  c0.139,0.147,0.339,0.219,0.6,0.219c0.266,0,0.476-0.075,0.634-0.223c0.157-0.152,0.235-0.358,0.235-0.618v-5.327  c0-0.214-0.08-0.387-0.241-0.519c-0.16-0.131-0.37-0.196-0.628-0.196c-0.241,0-0.435,0.065-0.586,0.196  c-0.148,0.132-0.225,0.305-0.225,0.519v5.327C31.636,27.233,31.708,27.439,31.847,27.588z M30.408,19.903  c0.528-0.449,1.241-0.674,2.132-0.674c0.812,0,1.48,0.237,2.001,0.711c0.517,0.473,0.777,1.083,0.777,1.828v5.051  c0,0.836-0.255,1.491-0.762,1.968c-0.513,0.476-1.212,0.714-2.106,0.714c-0.858,0-1.547-0.246-2.064-0.736  c-0.513-0.492-0.772-1.152-0.772-1.983v-5.068C29.613,20.954,29.877,20.351,30.408,19.903z M24.262,16h-2.229l2.634,8.003v5.252  h2.213v-5.5L29.454,16h-2.25l-1.366,5.298h-0.139L24.262,16z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30  S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://www.linkedin.com/in/leozamariola/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/zamariola/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://zamariola.com.br/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" aria-label="follow on rss in a new window">
+ <svg 
+ height="32px"  
+version="1.1" id="rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 455.731 455.731" style="enable-background:new 0 0 455.731 455.731;" xml:space="preserve">
+<g>
+	<g>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M296.208,159.16C234.445,97.397,152.266,63.382,64.81,63.382v64.348
+			c70.268,0,136.288,27.321,185.898,76.931c49.609,49.61,76.931,115.63,76.931,185.898h64.348
+			C391.986,303.103,357.971,220.923,296.208,159.16z"/>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M64.143,172.273v64.348c84.881,0,153.938,69.056,153.938,153.939h64.348
+			C282.429,270.196,184.507,172.273,64.143,172.273z"/>
+		<circle style="fill-rule:evenodd;clip-rule:evenodd;" cx="109.833" cy="346.26" r="46.088"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+</a>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">What is the SOLID pattern and why you should avoid it</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-08-23T18:09:27-03:00">August 23, 2025</time>
+      
+      
+        <span class="f6 mv4 dib tracked"> - 9 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 1914 words</span>
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="what-is-solid">What is SOLID</h1>
+<p>The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.</p>
+<div class="highlight-box">
+  💡 <strong>Disclaimer:</strong> I&rsquo;m not giving a full description of the SOLID pattern because a <a href="https://en.wikipedia.org/wiki/SOLID">lot of folks have done that</a>.
+Digital Ocean <a href="https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">has done that</a> and the Uncle Bob himself <a href="https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html">has done that</a>
+</div>
+<p><img src="/post/what-is-solid-why-you-should-avoid-it/solid.png" alt="SOLID"></p>
+<p>Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.</p>
+<h3 id="single-responsibility-principle">Single Responsibility Principle</h3>
+<p>It dictates that there should be only one reason for a piece (class, function) to change. As a consequence, it is usually stated as &ldquo;a class/method&rdquo; should do only one thing.</p>
+<h3 id="open--closed-principle">Open / Closed Principle</h3>
+<p>This principle aims to help with maintainability. It says that a piece (class / function) should be open for extension, but closed for modification. In that sense, it is indirectly saying that software should be built in a way that adding a new feature should not, or should not try to, modify existing code.</p>
+<h3 id="liskov-substitution-principle">Liskov substitution Principle</h3>
+<p>This one is based on the roots of polymorphism. It was introduced by Barbara Liskov and it is also called <em>strong behavioral subtyping</em>. it says that a subclass (subtype) can replace the parent and this does not break the program.</p>
+<h3 id="interface-segregation-principle">Interface Segregation Principle</h3>
+<p>The interface segregation principle is the simplest one in my opinion. It states that clients should not be forced to depend on methods they do not use; Therefore, interfaces should be small.</p>
+<h3 id="dependecy-inversion">Dependecy Inversion</h3>
+<p>The final principle is the base of the concepts of IoC (Inversion of Control) and DI (Dependecy Injection) that we constantly see in frameworks like Spring, Hilt, DependencyInjection, Symphony and etc. In practice, it indicates that a piece (class/function) should depend on abstractions and not on real implementations, i.e., the class should not actively instatiate a concrete implementation but receive the instance/pointer as a parameter during creation.</p>
+<h1 id="the-issue-with-solid">The issue with SOLID</h1>
+<div class="highlight-box">
+  💡 <strong>Disclaimer II:</strong> Everything that I&rsquo;m going to say from now on is purely based on my personal experience and my views on the trade-offs of the decisions I&rsquo;ve had to make. There&rsquo;s no hard science to back this up and it is based on anecdotal facts. Easy, pretty and maintainable are all attributes based not only on the code itself but on the maintainer. Maybe, a thing that I find easy to understand could be hard for others. I do code using the following LELIS principles and I do not regret letting the SOLID go, though.
+</div>
+<h2 id="1-the-froggy-navigation-and-code-reading-of-single-responsibility">1. The froggy navigation and code reading of Single Responsibility</h2>
+<p>My main issue with the Single responsibility principle is that it forces the developer to spread the functionality across a lot of different files and methods. This principle is really misleading, tricky and tempting because when you read the statement (&ldquo;your code should do only one thing&rdquo;) it makes sense. It seems to be fair and more maintainable, also, the code seems &ldquo;neat&rdquo; after you refactor it. Small methods and classes seem &ldquo;pretier&rdquo; compared to a long &ldquo;legacy&rdquo; code.</p>
+<p>However, in my opinion, the beauty of the &ldquo;clean&rdquo; code happens only to the eyes of the author because it already has the mental model of the code. If a person knows everything about a algorithm or business rules, having a lot of method calls seems simpler; however, for a newcomer, having the code spread across a lot of different methods and classes only adds complexity and cognitive loading. Instead of reading everything from top to bottom, the new reader needs to keep moving and jumping from one place to another trying to collect the pieces and keeping the sequence in their heads. This adds load to the short term memory.</p>
+<p>Let&rsquo;s see a real example. I&rsquo;m going to extrapolate for the sake of the exercise.</p>
+<p>Here&rsquo;s a piece of code from kubernetes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// SINGLE FUNCTION
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// converts `go mod graph` output modStr into a map of from-&gt;[]to references and the main module
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">convertToMap</span>(<span style="color:#a6e22e">modStr</span> <span style="color:#66d9ef">string</span>) ([]<span style="color:#a6e22e">module</span>, <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">module</span>][]<span style="color:#a6e22e">module</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> (
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mainModulesList</span> = []<span style="color:#a6e22e">module</span>{}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mainModules</span>     = <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">module</span>]<span style="color:#66d9ef">bool</span>{}
+</span></span><span style="display:flex;"><span>	)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">modMap</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">module</span>][]<span style="color:#a6e22e">module</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">modStr</span>, <span style="color:#e6db74">&#34;\n&#34;</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">line</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">deps</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">line</span>, <span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">deps</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">first</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">parseModule</span>(<span style="color:#a6e22e">deps</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">second</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">parseModule</span>(<span style="color:#a6e22e">deps</span>[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">first</span>.<span style="color:#a6e22e">version</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">first</span>.<span style="color:#a6e22e">version</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;v0.0.0&#34;</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">mainModules</span>[<span style="color:#a6e22e">first</span>] {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">mainModules</span>[<span style="color:#a6e22e">first</span>] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">mainModulesList</span> = append(<span style="color:#a6e22e">mainModulesList</span>, <span style="color:#a6e22e">first</span>)
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">modMap</span>[<span style="color:#a6e22e">first</span>] = append(<span style="color:#a6e22e">modMap</span>[<span style="color:#a6e22e">first</span>], <span style="color:#a6e22e">second</span>)
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// skip invalid line
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;!!!invalid line in mod.graph: %s&#34;</span>, <span style="color:#a6e22e">line</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mainModulesList</span>, <span style="color:#a6e22e">modMap</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Original <a href="https://github.com/kubernetes/kubernetes/blob/091f87c10bc3532041b77a783a5f832de5506dc8/cmd/dependencyverifier/dependencyverifier.go#L94">here</a></p>
+<p>As you can see, it&rsquo;s a function doing a lot of different steps (iterating, spliggin, checking, adding, verifying with a else (<em>you see clean coders.. you can use else</em>)) it&rsquo;s relatively long 30 lines.</p>
+<p>If I had to rewrite this using the purest SOLID (ps: It&rsquo;s not the same rules but you will get the idea)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// SOLIDIFIED VERSION
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// converts `go mod graph` output modStr into a map of from-&gt;[]to references and the main module
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">convertToMap</span>(<span style="color:#a6e22e">modStr</span> <span style="color:#66d9ef">string</span>) ([]<span style="color:#a6e22e">module</span>, <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">module</span>][]<span style="color:#a6e22e">module</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">mainModulesList</span>, <span style="color:#a6e22e">mainModules</span> = <span style="color:#a6e22e">createVariables</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">modMap</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">module</span>][]<span style="color:#a6e22e">module</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">line</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">splitLinex</span>(<span style="color:#a6e22e">modStr</span>){
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">populateModules</span>(<span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">mainModyleList</span>, <span style="color:#a6e22e">mainModules</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mainModulesList</span>, <span style="color:#a6e22e">modMap</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">populateModules</span>(<span style="color:#a6e22e">line</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">mainModuleList</span> []<span style="color:#a6e22e">module</span>, <span style="color:#a6e22e">modMap</span> <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">module</span>]<span style="color:#66d9ef">bool</span> ) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">line</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">deps</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">splitSpaces</span>(<span style="color:#a6e22e">line</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">deps</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span> {
+</span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// skip invalid line
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;!!!invalid line in mod.graph: %s&#34;</span>, <span style="color:#a6e22e">line</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">parseMainModule</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">first</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">parseModule</span>(<span style="color:#a6e22e">deps</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">second</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">parseModule</span>(<span style="color:#a6e22e">deps</span>[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span>  <span style="color:#a6e22e">isValidVersion</span>(<span style="color:#a6e22e">first</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">mainModules</span>[<span style="color:#a6e22e">first</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">mainModules</span>[<span style="color:#a6e22e">first</span>] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">mainModulesList</span> = append(<span style="color:#a6e22e">mainModulesList</span>, <span style="color:#a6e22e">first</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">modMap</span>[<span style="color:#a6e22e">first</span>] = append(<span style="color:#a6e22e">modMap</span>[<span style="color:#a6e22e">first</span>], <span style="color:#a6e22e">second</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">createVariables</span>() ([]<span style="color:#a6e22e">module</span>, <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">module</span>]<span style="color:#66d9ef">bool</span>){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> ([]<span style="color:#a6e22e">module</span>{}, <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">module</span>]<span style="color:#66d9ef">bool</span>{})
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">splitLines</span>(<span style="color:#a6e22e">text</span> <span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">text</span>, <span style="color:#e6db74">&#34;\n&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">splitSpaces</span>(<span style="color:#a6e22e">line</span> <span style="color:#66d9ef">string</span>) []<span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Split</span>(<span style="color:#a6e22e">line</span>, <span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValidVersion</span>(<span style="color:#a6e22e">mod</span> <span style="color:#a6e22e">module</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mod</span>.<span style="color:#a6e22e">version</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">mod</span>.<span style="color:#a6e22e">version</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;v0.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As you can see, the second block (the SOLIDified version) looks “prettier,” “cleaner,” and more SonarQube-friendly — and I agree with that. What was originally a single function has been split into seven smaller ones. While these smaller functions are easier to read individually, I find that understanding the full algorithm and its business logic has actually become harder (at least for me). The original function was larger, but it kept all the context in one place, making it easier to grasp as a whole. In contrast, the SOLIDified version forces me to constantly jump around in my IDE, piecing together small fragments of logic in my head to reconstruct the bigger picture.</p>
+<h2 id="2-the-open-to-premature-abstraction-and-closed-to-deliver-value">2. The Open to premature abstraction and Closed to deliver value</h2>
+<p>My next discomfort with SOLID revolves around the combination of the Open / Closed principle with the Dependecy Inversion. The &ldquo;Closed&rdquo; in the Open / Closed subtly states that the introduction of a new functionality should not touch the existing code. A developer trying to follow this proposition might incur in the premature abstraction. It&rsquo;s really common to see in the Java and .NET world a lot of dependecy injection being made to things that will not change nor will be tested. Creating software trying to predict the next features, changes, issues and behaviors increases a lot the probability of rework or useless pieces. The most maintainable software is the one that as not coded.</p>
+<p>To be fair, I&rsquo;ve seen some modern languages like Rust, Go, Odin avoiding this incentive to premature abstraction. It&rsquo;s still common in enterprise environments, though.</p>
+<h2 id="3-when-everything-is-a-dependency-your-entire-software-is-inverted">3. When everything is a dependency, your entire software is inverted</h2>
+<p>As I mentioned earlier when talking about premature abstraction, this topic is closely tied to the concept of “Open to Extension.” The issue I want to address here is the overuse of Dependency Inversion. Specifically, when every single thing a class needs is injected into it instead of being created within it. I understand the reasoning behind this practice and some of its benefits, but I also see it being taken too far. Supporters usually lean on two main arguments to justify this approach:</p>
+<ol>
+<li>
+<p>Framework dictatorship: Many frameworks push developers toward this style by forcing everything to be injected—whether as a Spring Java “Bean” or a .NET service. (If you’ve ever tried building a Spring web server in Java without Managed Bean annotations, you know exactly what I mean.)</p>
+</li>
+<li>
+<p>The unit-testing obsession: At some point, the industry developed an obsession with the test pyramid (particularly with unit testing). The narrative became that achieving high code coverage is more important than actually building bug-free, reliable software. As a result, teams often end up writing more mocks and injecting more dependencies than necessary, all in service of hitting that coverage target.</p>
+</li>
+</ol>
+<p>I&rsquo;m not saying that we shouldn&rsquo;t do unit tests or do Dependency Inversion. I&rsquo;m just saying that we should do it because the software design needs it, because adding a new inversion will unlock the software to evolve. Adding a new interface just to achieve coverage or to preemptively prepare for a change is a waste of time and brainpower.</p>
+<h1 id="the-alternative">The alternative</h1>
+<p>As you may have noticed, I like Liskov and Interface segregation principles.</p>
+<p>My alternative suggestion for the other three are the LELIS acronym.</p>
+<p><img src="/post/what-is-solid-why-you-should-avoid-it/lelis.png" alt="LELIS"></p>
+<h3 id="locality-of-behavior-instead-of-srp"><strong>L</strong>ocality of Behavior (instead of SRP)</h3>
+<p>Instead of trying to create short classes, methods, and functions, we should try to make the software more cohesive, i.e., pieces that work together should be close. Having everything that defines a behavior together makes it easier to undertand and maintain the software. Remember that our main objective is bug-free, reliable and maintainable software.</p>
+<h3 id="evolve-your-abstractions-instead-of-openclosed"><strong>E</strong>volve your Abstractions (instead of Open/Closed)</h3>
+<p>Here I&rsquo;m supporting the idea that you should not try to predict the future beforehand. Create software today and refactor it tomorrow. Extract the abstraction (and the interfaces) when they are needed. Your software shouldn&rsquo;t need to be clever. When adding a new feature is extremally expected to touch existing code and that&rsquo;s the main reason why <em>we should rely more on <strong>integration tests</strong></em> than unit tests. Integration tests need to change less frequently (sometimes they don&rsquo;t change at all) when refactoring the code. Unit tests are britle and they constantly break when change anything in a piece (class/function).</p>
+<h3 id="some-dependecy-inversion"><strong>S</strong>ome Dependecy Inversion</h3>
+<p>This is the cherry on top. And as Uncle Bob himself said: &ldquo;[About Dependency Injection] they understand the pros, but not the cons. Many developers, especially juniors, tend to apply DI everywhere, without fully grasping the trade-offs&rdquo;</p>
+<p>Dependency Inversion is a great way of decoupling modules and creating composable software but it should not be overly used. TBH, I don&rsquo;t know how much is too much but I don&rsquo;t create everything as a interface anymore. Small classes/structs, small components, pieces that work together can be created together, there&rsquo;s no need to inject everything. Afterall, why is it ok to create a list (with its on encapsulated business rules) inline when needed</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> myList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span></code></pre></div><p>but if I have to use a Formatter that was created exclusively to format that class I have to inject it?</p>
+<p>(I&rsquo;m leaning more torwards inner and static inner classes today)</p>
+<h3 id="integration-tests-to-the-game">Integration tests to the game</h3>
+<p>One final suggestion that is not related to the SOLID but can help to build (or counter) the arguments that supports it; Bug-free maintainable software is the goal. Maintaing a software is synonymous of touching existing code and refactoring it; Integration tests is the best tool to make that happen.</p>
+<hr>
+<p>Good luck!</p>
+<div class="highlight-box">
+  💡 <strong>Disclaimer III:</strong> Take all the suggestions with a pinch of salt. I can change my opinion tomorrow.
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/solid" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">solid</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/locality-of-behavior" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">locality of behavior</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/interfaces" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">interfaces</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/clean-code" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">clean-code</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/development" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">development</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/go" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">go</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/java" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">java</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/functions" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">functions</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+      
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/post/why-and-how-you-should-code-to-interfaces/">Why and how you should code to interfaces - and high-order functions</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/how-to-start-writing-go-code/">How to Start Writing Go Code</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/yt-3-reasons-golang-future-backend/">The 3 main reasons why golang is the future of backend development</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/hybris-good-practices-i/">Hybris Good Practices I</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/como-iniciar-na-carreira-desenvolvedor-de-software/">Como iniciar na carreira de desenvolvedor de software</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/kubernetes-certification-philosophy/">My Kubernetes Certifications and why you should be a certified professional</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/ciandt-meetup-golang/">CI&amp;T Meeting - Golang Getting Started and Best Practices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/tdc-digital-surgery-medical-devices/">TDC Innovation - Golang in Digital Surgery and Integration with Medical Devices</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/tdc-from-oop-to-high-order-functions/">TDC Recife - From OOP to High Order Functions</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/why-you-should-be-using-ansible/">Why you should be using Ansible</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/application-evolution-and-monitoring/">Application, Evolution and Monitoring</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/takt-time-how-to-pick-a-technology-stack/">Takt Time - How to pick the right technology stack</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zamariola.com.br/" >
+    &copy; 2025 Leonardo Zamariola
+  </a>
+    <div>
+
+
+
+
+<a href="https://www.youtube.com/c/LeonardoZamariola" target="_blank" class="link-transition youtube link dib z-999 pt3 pt0-l mr1" title="Youtube link" rel="noopener" aria-label="follow on Youtube——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M42.527,41.34c-0.278,0-0.478,0.078-0.6,0.244  c-0.121,0.156-0.18,0.424-0.18,0.796v0.896h1.543V42.38c0-0.372-0.062-0.64-0.185-0.796C42.989,41.418,42.792,41.34,42.527,41.34z   M36.509,41.309c0.234,0,0.417,0.076,0.544,0.23c0.123,0.155,0.185,0.383,0.185,0.682v4.584c0,0.286-0.053,0.487-0.153,0.611  c-0.1,0.127-0.256,0.189-0.47,0.189c-0.148,0-0.287-0.033-0.421-0.096c-0.135-0.062-0.274-0.171-0.415-0.313v-5.531  c0.119-0.122,0.239-0.213,0.36-0.271C36.26,41.335,36.383,41.309,36.509,41.309z M41.748,44.658v1.672  c0,0.468,0.057,0.792,0.17,0.974c0.118,0.181,0.313,0.269,0.592,0.269c0.289,0,0.491-0.076,0.606-0.229  c0.114-0.153,0.175-0.489,0.175-1.013v-0.405h1.795v0.456c0,0.911-0.217,1.596-0.657,2.059c-0.435,0.459-1.089,0.687-1.958,0.687  c-0.781,0-1.398-0.242-1.847-0.731c-0.448-0.486-0.676-1.157-0.676-2.014v-3.986c0-0.768,0.249-1.398,0.742-1.882  c0.493-0.484,1.128-0.727,1.911-0.727c0.799,0,1.413,0.225,1.843,0.674c0.429,0.448,0.642,1.093,0.642,1.935v2.264H41.748z   M38.623,48.495c-0.271,0.336-0.669,0.501-1.187,0.501c-0.343,0-0.646-0.062-0.912-0.192c-0.267-0.129-0.519-0.327-0.746-0.601  v0.681h-1.764V36.852h1.764v3.875c0.237-0.27,0.485-0.478,0.748-0.616c0.267-0.143,0.534-0.212,0.805-0.212  c0.554,0,0.975,0.189,1.265,0.565c0.294,0.379,0.438,0.933,0.438,1.66v4.926C39.034,47.678,38.897,48.159,38.623,48.495z   M30.958,48.884v-0.976c-0.325,0.361-0.658,0.636-1.009,0.822c-0.349,0.191-0.686,0.282-1.014,0.282  c-0.405,0-0.705-0.129-0.913-0.396c-0.201-0.266-0.305-0.658-0.305-1.189v-7.422h1.744v6.809c0,0.211,0.037,0.362,0.107,0.457  c0.077,0.095,0.196,0.141,0.358,0.141c0.128,0,0.292-0.062,0.488-0.188c0.197-0.125,0.375-0.283,0.542-0.475v-6.744h1.744v8.878  H30.958z M24.916,38.6v10.284h-1.968V38.6h-2.034v-1.748h6.036V38.6H24.916z M32.994,32.978c0-0.001,12.08,0.018,13.514,1.45  c1.439,1.435,1.455,8.514,1.455,8.555c0,0-0.012,7.117-1.455,8.556C45.074,52.969,32.994,53,32.994,53s-12.079-0.031-13.516-1.462  c-1.438-1.435-1.441-8.502-1.441-8.556c0-0.041,0.004-7.12,1.441-8.555C20.916,32.996,32.994,32.977,32.994,32.978z M42.52,29.255  h-1.966v-1.08c-0.358,0.397-0.736,0.703-1.13,0.909c-0.392,0.208-0.771,0.312-1.14,0.312c-0.458,0-0.797-0.146-1.027-0.437  c-0.229-0.291-0.345-0.727-0.345-1.311v-8.172h1.962v7.497c0,0.231,0.045,0.399,0.127,0.502c0.08,0.104,0.216,0.156,0.399,0.156  c0.143,0,0.327-0.069,0.548-0.206c0.22-0.137,0.423-0.312,0.605-0.527v-7.422h1.966V29.255z M31.847,27.588  c0.139,0.147,0.339,0.219,0.6,0.219c0.266,0,0.476-0.075,0.634-0.223c0.157-0.152,0.235-0.358,0.235-0.618v-5.327  c0-0.214-0.08-0.387-0.241-0.519c-0.16-0.131-0.37-0.196-0.628-0.196c-0.241,0-0.435,0.065-0.586,0.196  c-0.148,0.132-0.225,0.305-0.225,0.519v5.327C31.636,27.233,31.708,27.439,31.847,27.588z M30.408,19.903  c0.528-0.449,1.241-0.674,2.132-0.674c0.812,0,1.48,0.237,2.001,0.711c0.517,0.473,0.777,1.083,0.777,1.828v5.051  c0,0.836-0.255,1.491-0.762,1.968c-0.513,0.476-1.212,0.714-2.106,0.714c-0.858,0-1.547-0.246-2.064-0.736  c-0.513-0.492-0.772-1.152-0.772-1.983v-5.068C29.613,20.954,29.877,20.351,30.408,19.903z M24.262,16h-2.229l2.634,8.003v5.252  h2.213v-5.5L29.454,16h-2.25l-1.366,5.298h-0.139L24.262,16z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30  S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://www.linkedin.com/in/leozamariola/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/zamariola/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
