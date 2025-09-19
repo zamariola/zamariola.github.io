@@ -13,28 +13,28 @@
       <link>https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/</link>
       <pubDate>Sat, 23 Aug 2025 18:09:27 -0300</pubDate>
       <guid>https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/</guid>
-      <description>What is SOLID The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.&#xA;💡 Disclaimer: I&amp;rsquo;m not giving a full description of the SOLID pattern because a lot of folks have done that. Digital Ocean has done that and the Uncle Bob himself has done that Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.</description>
+      <description>&lt;h1 id=&#34;what-is-solid&#34;&gt;What is SOLID&lt;/h1&gt;&#xA;&lt;p&gt;The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight-box&#34;&gt;&#xA;  💡 &lt;strong&gt;Disclaimer:&lt;/strong&gt; I&amp;rsquo;m not giving a full description of the SOLID pattern because a &lt;a href=&#34;https://en.wikipedia.org/wiki/SOLID&#34;&gt;lot of folks have done that&lt;/a&gt;.&#xA;Digital Ocean &lt;a href=&#34;https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design&#34;&gt;has done that&lt;/a&gt; and the Uncle Bob himself &lt;a href=&#34;https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html&#34;&gt;has done that&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/solid.png&#34; alt=&#34;SOLID&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The 3 main reasons why golang is the future of backend development</title>
       <link>https://zamariola.com.br/post/yt-3-reasons-golang-future-backend/</link>
       <pubDate>Tue, 27 May 2025 21:54:00 -0300</pubDate>
       <guid>https://zamariola.com.br/post/yt-3-reasons-golang-future-backend/</guid>
-      <description>The future of development brings many innovations with artificial intelligence, autonomous agents, and dedicated edge hardware. Golang has a short learning curve, consistency across domains, and fast build times — three of the main drivers of productivity. (See more in the video below)</description>
+      <description>&lt;p&gt;The future of development brings many innovations with artificial intelligence, autonomous agents, and dedicated edge hardware. Golang has a short learning curve, consistency across domains, and fast build times — three of the main drivers of productivity. (See more in the video below)&lt;/p&gt;&#xA;&#xA;    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/JOcjrkzov-g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;</description>
     </item>
     <item>
       <title>Why and how you should code to interfaces - and high-order functions</title>
       <link>https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/</link>
       <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/</guid>
-      <description>One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.</description>
+      <description>&lt;p&gt;One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Start Writing Go Code</title>
       <link>https://zamariola.com.br/post/how-to-start-writing-go-code/</link>
       <pubDate>Sun, 28 Apr 2019 09:53:03 -0300</pubDate>
       <guid>https://zamariola.com.br/post/how-to-start-writing-go-code/</guid>
-      <description>Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;why-you-should-read-this&#34;&gt;Why you should read this&lt;/h1&gt;&#xA;&lt;p&gt;Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code)  to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

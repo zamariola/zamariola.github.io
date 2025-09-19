@@ -13,28 +13,28 @@
       <link>https://zamariola.com.br/post/staff-software-engineer-book/</link>
       <pubDate>Mon, 20 Dec 2021 22:53:00 -0300</pubDate>
       <guid>https://zamariola.com.br/post/staff-software-engineer-book/</guid>
-      <description>If you are:&#xA;Looking for a new book to read during the holidays. A senior software engineer looking for an opportunity to grow to staff/principal. A staff/principal/distinguished software engineer trying to fit yourself into this new career model or be better at it. I have a great recommendation for you: Staff Engineer: Leadership beyond the management track by Will Larson. You can find it on its website and on Amazon</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you are:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Looking for a new book to read during the holidays.&lt;/li&gt;&#xA;&lt;li&gt;A senior software engineer looking for an opportunity to grow to staff/principal.&lt;/li&gt;&#xA;&lt;li&gt;A staff/principal/distinguished software engineer trying to fit yourself into this new career model or be better at it.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I have a great recommendation for you:  &lt;strong&gt;Staff Engineer&lt;/strong&gt;: Leadership beyond the management track by &lt;em&gt;Will Larson&lt;/em&gt;. You can find it on its &lt;a href=&#34;https://staffeng.com/book&#34;&gt;website&lt;/a&gt; and on &lt;a href=&#34;https://www.amazon.com/gp/product/B08RMSHYGG&#34;&gt;Amazon&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>TDC Recife - From OOP to High Order Functions</title>
       <link>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</link>
       <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</guid>
-      <description>What it&amp;rsquo;s about Slides from the TDC Recife 2020 edition.&#xA;On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.</description>
+      <description>&lt;h1 id=&#34;what-its-about&#34;&gt;What it&amp;rsquo;s about&lt;/h1&gt;&#xA;&lt;p&gt;Slides from the TDC Recife 2020 edition.&lt;/p&gt;&#xA;&lt;p&gt;On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Why you should be using Ansible</title>
       <link>https://zamariola.com.br/post/why-you-should-be-using-ansible/</link>
       <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/why-you-should-be-using-ansible/</guid>
-      <description>What Ansible is and what it isn&amp;rsquo;t Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:&#xA;Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work. &amp;mdash; Ansible website&#xA;I&amp;rsquo;m assuming that you&amp;rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here.</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-ansible-is-and-what-it-isnt&#34;&gt;What Ansible is and what it isn&amp;rsquo;t&lt;/h1&gt;&#xA;&lt;p&gt;Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work.&lt;/em&gt; &amp;mdash; &lt;a href=&#34;https://www.ansible.com&#34;&gt;Ansible website&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m assuming that you&amp;rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Application, Evolution and Monitoring</title>
       <link>https://zamariola.com.br/post/application-evolution-and-monitoring/</link>
       <pubDate>Wed, 28 Aug 2019 23:01:00 -0300</pubDate>
       <guid>https://zamariola.com.br/post/application-evolution-and-monitoring/</guid>
-      <description>The essence of software development I have already written here, that when we start coding the most important thing that we should keep in mind is maintainability. Even with other methods than scrum, like waterfall or “perfect planning”, it’s really hard to know beforehand exactly how to develop your system/application. So, if you want to deliver a good software and a great experience to your customers, you should invest time and energy building a high flexible system.</description>
+      <description>&lt;h1 id=&#34;the-essence-of-software-development&#34;&gt;The essence of software development&lt;/h1&gt;&#xA;&lt;p&gt;I have already written &lt;a href=&#34;https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/&#34;&gt;here&lt;/a&gt;, that when we start coding the most important thing that we should keep in mind is maintainability.&#xA;Even with other methods than scrum, like waterfall or “perfect planning”, it’s really hard to know beforehand exactly how to develop your system/application. So, if you want to deliver a good software and a great experience to your customers, you should invest time and energy building a high flexible system.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

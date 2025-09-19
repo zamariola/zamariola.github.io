@@ -13,7 +13,7 @@
       <link>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</link>
       <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</guid>
-      <description>What it&amp;rsquo;s about Slides from the TDC Recife 2020 edition.&#xA;On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.</description>
+      <description>&lt;h1 id=&#34;what-its-about&#34;&gt;What it&amp;rsquo;s about&lt;/h1&gt;&#xA;&lt;p&gt;Slides from the TDC Recife 2020 edition.&lt;/p&gt;&#xA;&lt;p&gt;On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

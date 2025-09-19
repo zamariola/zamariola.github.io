@@ -13,91 +13,91 @@
       <link>https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/</link>
       <pubDate>Sat, 23 Aug 2025 18:09:27 -0300</pubDate>
       <guid>https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/</guid>
-      <description>What is SOLID The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.&#xA;💡 Disclaimer: I&amp;rsquo;m not giving a full description of the SOLID pattern because a lot of folks have done that. Digital Ocean has done that and the Uncle Bob himself has done that Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.</description>
+      <description>&lt;h1 id=&#34;what-is-solid&#34;&gt;What is SOLID&lt;/h1&gt;&#xA;&lt;p&gt;The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight-box&#34;&gt;&#xA;  💡 &lt;strong&gt;Disclaimer:&lt;/strong&gt; I&amp;rsquo;m not giving a full description of the SOLID pattern because a &lt;a href=&#34;https://en.wikipedia.org/wiki/SOLID&#34;&gt;lot of folks have done that&lt;/a&gt;.&#xA;Digital Ocean &lt;a href=&#34;https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design&#34;&gt;has done that&lt;/a&gt; and the Uncle Bob himself &lt;a href=&#34;https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html&#34;&gt;has done that&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://zamariola.com.br/post/what-is-solid-why-you-should-avoid-it/solid.png&#34; alt=&#34;SOLID&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The 3 main reasons why golang is the future of backend development</title>
       <link>https://zamariola.com.br/post/yt-3-reasons-golang-future-backend/</link>
       <pubDate>Tue, 27 May 2025 21:54:00 -0300</pubDate>
       <guid>https://zamariola.com.br/post/yt-3-reasons-golang-future-backend/</guid>
-      <description>The future of development brings many innovations with artificial intelligence, autonomous agents, and dedicated edge hardware. Golang has a short learning curve, consistency across domains, and fast build times — three of the main drivers of productivity. (See more in the video below)</description>
+      <description>&lt;p&gt;The future of development brings many innovations with artificial intelligence, autonomous agents, and dedicated edge hardware. Golang has a short learning curve, consistency across domains, and fast build times — three of the main drivers of productivity. (See more in the video below)&lt;/p&gt;&#xA;&#xA;    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/JOcjrkzov-g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;</description>
     </item>
     <item>
       <title>Como iniciar na carreira de desenvolvedor de software</title>
       <link>https://zamariola.com.br/post/como-iniciar-na-carreira-desenvolvedor-de-software/</link>
       <pubDate>Tue, 18 Jun 2024 18:09:01 -0300</pubDate>
       <guid>https://zamariola.com.br/post/como-iniciar-na-carreira-desenvolvedor-de-software/</guid>
-      <description>Como iniciar na carreira de desenvolvedor de software Ainda vale a pena ser um programador? A carreira de desenvolvimento de software teve um crescimento gigantesco nos ultimos anos. No final do seculo passado havia somente os processadores de dados e quase todo o foco de desenvolvimento era para aplicações desktop. A internet ainda caminhava a passos lentos e os telefones, além de ligacoes, apenas enviavam SMS.&#xA;O advento da internet e dos dispositivos móveis fez crescer de forma vertiginosa as modelos de negócio baseados na web e nas redes sociais (modelo web2.</description>
+      <description>&lt;h1 id=&#34;como-iniciar-na-carreira-de-desenvolvedor-de-software&#34;&gt;Como iniciar na carreira de desenvolvedor de software&lt;/h1&gt;&#xA;&lt;h2 id=&#34;ainda-vale-a-pena-ser-um-programador&#34;&gt;Ainda vale a pena ser um programador?&lt;/h2&gt;&#xA;&lt;p&gt;A carreira de desenvolvimento de software teve um crescimento gigantesco nos ultimos anos. No final do seculo passado havia somente os processadores de dados e quase todo o foco de desenvolvimento era para aplicações desktop. A internet ainda caminhava a passos lentos e os telefones, além de ligacoes, apenas enviavam SMS.&lt;/p&gt;&#xA;&lt;p&gt;O advento da internet e dos dispositivos móveis fez crescer de forma vertiginosa as modelos de negócio baseados na web e nas redes sociais (modelo web2.0) e, por consequencia, a necessidade por programadores.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My Kubernetes Certifications and why you should be a certified professional</title>
       <link>https://zamariola.com.br/post/kubernetes-certification-philosophy/</link>
       <pubDate>Thu, 18 Nov 2021 10:00:00 -0300</pubDate>
       <guid>https://zamariola.com.br/post/kubernetes-certification-philosophy/</guid>
-      <description>The context I’ve never been a huge fan of IT Certifications. I tend to believe that one’s ability to search for information associated with a good practical expertise is much more valuable than plain memorization. On the other hand, some certifications force us to go the extra mile and to study an unusual topic. That singularity captivates me. Following that path, these last months I focused on two different Kubernetes certifications: CKA (Certified Kubernetes Administrator) and CKAD (Certified Kubernetes Application Developer).</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;the-context&#34;&gt;The context&lt;/h2&gt;&#xA;&lt;p&gt;I’ve never been a huge fan of IT Certifications. I tend to believe that one’s ability to search for information associated with a good practical expertise is much more valuable than plain memorization. On the other hand, some certifications force us to go the extra mile and to study an unusual topic. That singularity captivates me.&#xA;Following that path, these last months I focused on two different Kubernetes certifications: &lt;a href=&#34;https://www.credly.com/badges/bf887781-1211-47c3-b84d-f171a7e8970c&#34;&gt;CKA&lt;/a&gt;  (Certified Kubernetes Administrator) and &lt;a href=&#34;https://www.credly.com/badges/c6ad6c2a-19dc-4656-a7d2-53788dd8d270&#34;&gt;CKAD&lt;/a&gt; (Certified Kubernetes Application Developer). Even though I wouldn&amp;rsquo;t call myself a DevOps/SR engineer, they seemed to be the natural path for an application developer working with containers and cloud computing. By the way, I strongly recommend taking these two, specially the CKAD because “Earners of this designation demonstrated the skills, knowledge and competencies to perform the responsibilities of a Kubernetes Application Developer. Earners are able to define application resources and use core primitives to build, monitor, and troubleshoot scalable applications and tools in Kubernetes”.&lt;/p&gt;</description>
     </item>
     <item>
       <title>CI&amp;T Meeting - Golang Getting Started and Best Practices</title>
       <link>https://zamariola.com.br/post/ciandt-meetup-golang/</link>
       <pubDate>Sun, 29 Aug 2021 21:42:00 -0300</pubDate>
       <guid>https://zamariola.com.br/post/ciandt-meetup-golang/</guid>
-      <description>What it&amp;rsquo;s about Video and Slides from the CI&amp;amp;T Meetup 2021 Aug edition.&#xA;The source code can be found here</description>
+      <description>&lt;h1 id=&#34;what-its-about&#34;&gt;What it&amp;rsquo;s about&lt;/h1&gt;&#xA;&lt;p&gt;Video and Slides from the CI&amp;amp;T Meetup 2021 Aug edition.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The source code &lt;a href=&#34;https://github.com/zamariola&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>TDC Innovation - Golang in Digital Surgery and Integration with Medical Devices</title>
       <link>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</link>
       <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</guid>
-      <description>What it&amp;rsquo;s about Slides from the TDC Innovation 2021 edition.&#xA;On this talk I touched some topics related Digital Surgery and Medical Devices Integration. It explains how we created a FHIR, DICOM and HL7 ADT Integration using plain Go protocols and resources.&#xA;The source code can be found here</description>
+      <description>&lt;h1 id=&#34;what-its-about&#34;&gt;What it&amp;rsquo;s about&lt;/h1&gt;&#xA;&lt;p&gt;Slides from the TDC Innovation 2021 edition.&lt;/p&gt;&#xA;&lt;p&gt;On this talk I touched some topics related Digital Surgery and Medical Devices Integration. It explains how we created a FHIR, DICOM and HL7 ADT Integration using plain Go protocols and resources.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The source code &lt;a href=&#34;https://github.com/zamariola&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>TDC Recife - From OOP to High Order Functions</title>
       <link>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</link>
       <pubDate>Fri, 30 Oct 2020 13:09:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/tdc-from-oop-to-high-order-functions/</guid>
-      <description>What it&amp;rsquo;s about Slides from the TDC Recife 2020 edition.&#xA;On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.</description>
+      <description>&lt;h1 id=&#34;what-its-about&#34;&gt;What it&amp;rsquo;s about&lt;/h1&gt;&#xA;&lt;p&gt;Slides from the TDC Recife 2020 edition.&lt;/p&gt;&#xA;&lt;p&gt;On this talk I touched some topics related to a past experience moving from OOP to High Order Functions in Go. Our team was used to Java using plain Object oriented and they had to move to Golang. Righ after the transition phase they were coding using a more procedural/OOP approach, but after a couple of weeks the code evolved to a more idiomatic Golang.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Why you should be using Ansible</title>
       <link>https://zamariola.com.br/post/why-you-should-be-using-ansible/</link>
       <pubDate>Sun, 24 May 2020 18:16:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/why-you-should-be-using-ansible/</guid>
-      <description>What Ansible is and what it isn&amp;rsquo;t Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:&#xA;Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work. &amp;mdash; Ansible website&#xA;I&amp;rsquo;m assuming that you&amp;rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here.</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-ansible-is-and-what-it-isnt&#34;&gt;What Ansible is and what it isn&amp;rsquo;t&lt;/h1&gt;&#xA;&lt;p&gt;Ansible can be categorized as a Devops Automation Tool and a Configuration Management Tool. Redhat defines it as:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work.&lt;/em&gt; &amp;mdash; &lt;a href=&#34;https://www.ansible.com&#34;&gt;Ansible website&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m assuming that you&amp;rsquo;re familiar to the concepts of devops, infrastructure as code and configuration management, so I’m not going to detail them here.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Application, Evolution and Monitoring</title>
       <link>https://zamariola.com.br/post/application-evolution-and-monitoring/</link>
       <pubDate>Wed, 28 Aug 2019 23:01:00 -0300</pubDate>
       <guid>https://zamariola.com.br/post/application-evolution-and-monitoring/</guid>
-      <description>The essence of software development I have already written here, that when we start coding the most important thing that we should keep in mind is maintainability. Even with other methods than scrum, like waterfall or “perfect planning”, it’s really hard to know beforehand exactly how to develop your system/application. So, if you want to deliver a good software and a great experience to your customers, you should invest time and energy building a high flexible system.</description>
+      <description>&lt;h1 id=&#34;the-essence-of-software-development&#34;&gt;The essence of software development&lt;/h1&gt;&#xA;&lt;p&gt;I have already written &lt;a href=&#34;https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/&#34;&gt;here&lt;/a&gt;, that when we start coding the most important thing that we should keep in mind is maintainability.&#xA;Even with other methods than scrum, like waterfall or “perfect planning”, it’s really hard to know beforehand exactly how to develop your system/application. So, if you want to deliver a good software and a great experience to your customers, you should invest time and energy building a high flexible system.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Why and how you should code to interfaces - and high-order functions</title>
       <link>https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/</link>
       <pubDate>Thu, 16 May 2019 18:16:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/why-and-how-you-should-code-to-interfaces/</guid>
-      <description>One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.</description>
+      <description>&lt;p&gt;One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Takt Time - How to pick the right technology stack</title>
       <link>https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/</link>
       <pubDate>Wed, 08 May 2019 20:32:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/takt-time-how-to-pick-a-technology-stack/</guid>
-      <description>What’s takt time and why should you care about it? Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;whats-takt-time-and-why-should-you-care-about-it&#34;&gt;What’s takt time and why should you care about it?&lt;/h2&gt;&#xA;&lt;p&gt;Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Start Writing Go Code</title>
       <link>https://zamariola.com.br/post/how-to-start-writing-go-code/</link>
       <pubDate>Sun, 28 Apr 2019 09:53:03 -0300</pubDate>
       <guid>https://zamariola.com.br/post/how-to-start-writing-go-code/</guid>
-      <description>Why you should read this Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;why-you-should-read-this&#34;&gt;Why you should read this&lt;/h1&gt;&#xA;&lt;p&gt;Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code)  to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hybris Good Practices I</title>
       <link>https://zamariola.com.br/post/hybris-good-practices-i/</link>
       <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>
       <guid>https://zamariola.com.br/post/hybris-good-practices-i/</guid>
-      <description>1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &amp;ldquo;Coincidentally&amp;rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).&#xA;Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).</description>
+      <description>&lt;h3 id=&#34;1-name-your-classesinterfaces-with-specific-names-instead-of-default-or-yourcustumer-prefix&#34;&gt;1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix.&lt;/h3&gt;&#xA;&lt;p&gt;First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &amp;ldquo;Coincidentally&amp;rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).&lt;/p&gt;&#xA;&lt;p&gt;Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour). This new behavior is exclusive to your customer now, but it may not be in the future.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

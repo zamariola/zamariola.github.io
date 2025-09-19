@@ -13,7 +13,7 @@
       <link>https://zamariola.com.br/post/hybris-good-practices-i/</link>
       <pubDate>Tue, 26 Jun 2018 21:01:44 -0300</pubDate>
       <guid>https://zamariola.com.br/post/hybris-good-practices-i/</guid>
-      <description>1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &amp;ldquo;Coincidentally&amp;rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).&#xA;Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour).</description>
+      <description>&lt;h3 id=&#34;1-name-your-classesinterfaces-with-specific-names-instead-of-default-or-yourcustumer-prefix&#34;&gt;1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix.&lt;/h3&gt;&#xA;&lt;p&gt;First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &amp;ldquo;Coincidentally&amp;rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).&lt;/p&gt;&#xA;&lt;p&gt;Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour). This new behavior is exclusive to your customer now, but it may not be in the future.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

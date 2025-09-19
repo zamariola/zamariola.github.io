@@ -13,21 +13,21 @@
       <link>https://zamariola.com.br/post/yt-3-reasons-golang-future-backend/</link>
       <pubDate>Tue, 27 May 2025 21:54:00 -0300</pubDate>
       <guid>https://zamariola.com.br/post/yt-3-reasons-golang-future-backend/</guid>
-      <description>The future of development brings many innovations with artificial intelligence, autonomous agents, and dedicated edge hardware. Golang has a short learning curve, consistency across domains, and fast build times — three of the main drivers of productivity. (See more in the video below)</description>
+      <description>&lt;p&gt;The future of development brings many innovations with artificial intelligence, autonomous agents, and dedicated edge hardware. Golang has a short learning curve, consistency across domains, and fast build times — three of the main drivers of productivity. (See more in the video below)&lt;/p&gt;&#xA;&#xA;    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/JOcjrkzov-g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;</description>
     </item>
     <item>
       <title>CI&amp;T Meeting - Golang Getting Started and Best Practices</title>
       <link>https://zamariola.com.br/post/ciandt-meetup-golang/</link>
       <pubDate>Sun, 29 Aug 2021 21:42:00 -0300</pubDate>
       <guid>https://zamariola.com.br/post/ciandt-meetup-golang/</guid>
-      <description>What it&amp;rsquo;s about Video and Slides from the CI&amp;amp;T Meetup 2021 Aug edition.&#xA;The source code can be found here</description>
+      <description>&lt;h1 id=&#34;what-its-about&#34;&gt;What it&amp;rsquo;s about&lt;/h1&gt;&#xA;&lt;p&gt;Video and Slides from the CI&amp;amp;T Meetup 2021 Aug edition.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The source code &lt;a href=&#34;https://github.com/zamariola&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>TDC Innovation - Golang in Digital Surgery and Integration with Medical Devices</title>
       <link>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</link>
       <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
       <guid>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</guid>
-      <description>What it&amp;rsquo;s about Slides from the TDC Innovation 2021 edition.&#xA;On this talk I touched some topics related Digital Surgery and Medical Devices Integration. It explains how we created a FHIR, DICOM and HL7 ADT Integration using plain Go protocols and resources.&#xA;The source code can be found here</description>
+      <description>&lt;h1 id=&#34;what-its-about&#34;&gt;What it&amp;rsquo;s about&lt;/h1&gt;&#xA;&lt;p&gt;Slides from the TDC Innovation 2021 edition.&lt;/p&gt;&#xA;&lt;p&gt;On this talk I touched some topics related Digital Surgery and Medical Devices Integration. It explains how we created a FHIR, DICOM and HL7 ADT Integration using plain Go protocols and resources.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The source code &lt;a href=&#34;https://github.com/zamariola&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
