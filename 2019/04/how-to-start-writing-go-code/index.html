@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  How to Start Writing Go Code · Leonardo Zamariola
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Leonardo Zamariola">
+<meta name="description" content="
+
+  Why you should read this
+  
+    
+    Link to heading
+  
+
+Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code)  to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Start Writing Go Code">
+  <meta name="twitter:description" content="Why you should read this Link to heading Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.">
+
+<meta property="og:url" content="https://zamariola.com.br/2019/04/how-to-start-writing-go-code/">
+  <meta property="og:site_name" content="Leonardo Zamariola">
+  <meta property="og:title" content="How to Start Writing Go Code">
+  <meta property="og:description" content="Why you should read this Link to heading Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code) to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-04-28T09:53:03-03:00">
+    <meta property="article:modified_time" content="2019-04-28T09:53:03-03:00">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Clean-Code">
+    <meta property="article:tag" content="Development">
+
+
+
+
+<link rel="canonical" href="https://zamariola.com.br/2019/04/how-to-start-writing-go-code/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://zamariola.com.br/">
+      Leonardo Zamariola
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zamariola.com.br/2019/04/how-to-start-writing-go-code/">
+              How to Start Writing Go Code
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2019-04-28T09:53:03-03:00">
+                April 28, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/go/">Go</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/clean-code/">Clean-Code</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/development/">Development</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <p><!-- raw HTML omitted --></p>
+<h1 id="why-you-should-read-this">
+  Why you should read this
+  <a class="heading-link" href="#why-you-should-read-this">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Ok, I know we have thousands of different (and better) articles explaining how to start coding in Golang (tour of Go, Effective Go and etc). Considering it, I’m going to focus on real examples (and some code)  to make your Go journey a little bit easier, i.e., how to organize your go code, how to connect to a database, how to log things and what framework options (if any) to consider.</p>
+<h1 id="why-you-should-use-go-as-your-first-class-programming-language">
+  Why you should use Go as your first-class programming language
+  <a class="heading-link" href="#why-you-should-use-go-as-your-first-class-programming-language">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>I&rsquo;m not going to spend time on this topic too because we already have a lot of blog posts, talks and real life examples explaining why you should use Go programming language.
+If you are still uncertain about the future fo Go, you should give a chance to these following links:</p>
+<p><a href="https://github.com/golang/go/wiki/SuccessStories"  class="external-link" target="_blank" rel="noopener">Golang success stories</a></p>
+<p><a href="https://movio.co/blog/migrate-Scala-to-Go/"  class="external-link" target="_blank" rel="noopener">Migrate from Scala to Go</a></p>
+<p><a href="https://medium.com/@Sandra_Parker/why-golang-is-the-future-part-1-ed7dd4f419d"  class="external-link" target="_blank" rel="noopener">Why Golang is the future</a></p>
+<p><a href="https://yourbasic.org/golang/advantages-over-java-python/"  class="external-link" target="_blank" rel="noopener">Go advantages over java and python</a></p>
+<p><a href="https://medium.com/@kevalpatel2106/why-should-you-learn-go-f607681fad65"  class="external-link" target="_blank" rel="noopener">Why you should learn Go</a></p>
+<p><a href="https://www.slideshare.net/jpetazzo/docker-and-go-why-did-we-decide-to-write-docker-in-go"  class="external-link" target="_blank" rel="noopener">Docker and Go, why we decide to write docker in Go</a></p>
+<p>Also, you have to take into account that Google, Amazon, Datadog, HashiCorp and a lot of other companies are using it to build reliable server side software and infrastructure.</p>
+<h1 id="how-to-start-coding">
+  How to start coding
+  <a class="heading-link" href="#how-to-start-coding">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>As I said, we already have a lot of excellent articles explaining how to set-up your IDE, download Go framework and etc.</p>
+<p>We have two different types of content here:</p>
+<h3 id="infrastructure-and-syntax-installing-go-ide-language-syntax-and-etc">
+  Infrastructure and syntax: (Installing Go, IDE, language syntax and etc)
+  <a class="heading-link" href="#infrastructure-and-syntax-installing-go-ide-language-syntax-and-etc">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>For this type I recommend starting with Golang Wiki, specially the “getting started” topic, then move to Dave Cheney’s blog <a href="https://dave.cheney.net/resources-for-new-go-programmers"  class="external-link" target="_blank" rel="noopener">https://dave.cheney.net/resources-for-new-go-programmers</a></p>
+<h3 id="how-to-write-idiomatic-go--write-go-as-a-gopher">
+  How to write idiomatic Go  (“Write Go as a gopher”)
+  <a class="heading-link" href="#how-to-write-idiomatic-go--write-go-as-a-gopher">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This is the most important topic for newcomers. Usually, programmers from differents languages tend to reproduce structure and behavior that they are used to. However, Go has a very strict and specific (opinionated) way of doing things. I recommend taking a look at these links:</p>
+<ol>
+<li>
+<p><a href="https://golang.org/doc/effective_go.html"  class="external-link" target="_blank" rel="noopener">Effective Go</a></p>
+</li>
+<li>
+<p><a href="https://github.com/golang/go/wiki/CodeReviewComments"  class="external-link" target="_blank" rel="noopener">Code Review Comments</a></p>
+</li>
+<li>
+<p><a href="https://dmitri.shuralyov.com/idiomatic-go"  class="external-link" target="_blank" rel="noopener">Idiomatic Go - Dmitri</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/@dgryski/idiomatic-go-resources-966535376dba"  class="external-link" target="_blank" rel="noopener">Idiomatic Go - Gryski</a></p>
+</li>
+<li>
+<p><a href="https://dave.cheney.net/practical-go/presentations/qcon-china.html"  class="external-link" target="_blank" rel="noopener">Practical Go - Cheney</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=-wYLmsizBc0"  class="external-link" target="_blank" rel="noopener">dotGo Talk - Katrina Owen</a></p>
+</li>
+</ol>
+<h1 id="should-i-use-a-web-framework">
+  Should I use a web framework?
+  <a class="heading-link" href="#should-i-use-a-web-framework">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>I don’t think you need a web framework to write a webserver and/or a microservice. In fact, the Go community will “recommend” using the standard library as much as possible, however, I think it will be easier for you to start coding using a framework because you will have a guideline to follow. Frameworks have specific rules and patterns that help us avoid mistakes.</p>
+<p>Of course, I’m a huge fan of the standard library and I like to write web servers using only the http.Server package. But, I believe sometimes we can cut some corners to sell, test or pivot an idea.</p>
+<h1 id="i-want-to-use-a-framework-which-one-should-i-pick">
+  I want to use a framework. Which one should I pick?
+  <a class="heading-link" href="#i-want-to-use-a-framework-which-one-should-i-pick">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>If you really want to use a framework I suggest these (in order of preference)</p>
+<ol>
+<li>
+<p><a href="https://echo.labstack.com"  class="external-link" target="_blank" rel="noopener">Echo framework</a>: echo is a very good lightweight, minimalist web framework with a rich toolset and a lot of plug-ins. You have a plug-in for almost every most common task (Basic Auth, JWT, CORS, Http/2, Session and etc)</p>
+</li>
+<li>
+<p><a href="https://gobuffalo.io/en"  class="external-link" target="_blank" rel="noopener">Buffalo</a>:  I have been noticing more content about buffalo. It is far from a light framework since it has templating, orm, testing and a lot of accessories for the  go development process. I think it could be a good option if you want to migrate from Java and, for unexplainable reasons, you like Spring.</p>
+</li>
+<li>
+<p><a href="https://gokit.io/"  class="external-link" target="_blank" rel="noopener">Go kit</a>: go-kit isn’t a web framework, it’s more like a microservices tool. Its main goal is to facilitate the building and connection of microservices. It has circuit breaker, remote calls (rpc) and etc.</p>
+</li>
+</ol>
+<h1 id="how-to-organize-your-code">
+  How to organize your code
+  <a class="heading-link" href="#how-to-organize-your-code">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>There’s no golden rule for how you should define your packages, however, some good practices may help you a lot:</p>
+<ol>
+<li>Don’t over package: it’s better to have fewer larger packages than small meaningless ones. In Go you don’t need a new package for everything. In a JVM world, people tend to create a new maven/gradle module for every new integration, database, messaging system or any other random tasks.</li>
+</ol>
+<p>There’s a famous <a href="https://dave.cheney.net/practical-go/presentations/qcon-china.html#_consider_fewer_larger_packages"  class="external-link" target="_blank" rel="noopener">quote by Cheney</a> about that:</p>
+<blockquote>
+<p>“Coming from Java?
+If you’re coming from a Java or C# background, consider this rule of thumb. - A Java package is equivalent to a single .go source file. - A Go package is equivalent to a whole Maven module or .NET assembly.”</p>
+</blockquote>
+<p>And remember, in Go, the fewer the better.</p>
+<ol start="2">
+<li>
+<p>Use simple and short names: in Go you won’t see a packaged named like “entiy_api_gateway” because we don’t split using underscore. In fact, we don’t split at all, because we don’t have more than one word in the same package name. Package names will have short and concise name like “http” or “fmt”.</p>
+</li>
+<li>
+<p>Pack by entity and not by layer: It’s very unusual to have a “controller” or a “commons” package in Go, because we don’t pack using layered architecture. Go packages are made of same entities. If you want to read more about entities, check out “Domain Driven Design” principles.</p>
+</li>
+</ol>
+<h1 id="talk-is-cheap-show-me-the-code">
+  Talk is cheap, show me the code
+  <a class="heading-link" href="#talk-is-cheap-show-me-the-code">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>I’ve made some examples to help and guide you through this migration process from somewhere else to a nice and beautiful Go code paradise.
+Within the code repo you will be able to see how to connect to databases, log things, define a simple web server and so on.</p>
+<p>You can see it here : <a href="https://github.com/zamariola/go-echo-bootstrap"  class="external-link" target="_blank" rel="noopener">Go Echo Bootstrap</a></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2026
+     Leonardo Zamariola 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MS8JW6F532"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MS8JW6F532');
+        }
+      </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

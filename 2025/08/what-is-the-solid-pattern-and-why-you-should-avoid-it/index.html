@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  What is the SOLID pattern and why you should avoid it · Leonardo Zamariola
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Leonardo Zamariola">
+<meta name="description" content="
+  What is SOLID
+  
+    
+    Link to heading
+  
+
+The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.
+
+  💡 Disclaimer: I&rsquo;m not giving a full description of the SOLID pattern because a lot of folks have done that.
+Digital Ocean has done that and the Uncle Bob himself has done that
+
+
+Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What is the SOLID pattern and why you should avoid it">
+  <meta name="twitter:description" content="What is SOLID Link to heading The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.
+💡 Disclaimer: I’m not giving a full description of the SOLID pattern because a lot of folks have done that. Digital Ocean has done that and the Uncle Bob himself has done that Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.">
+
+<meta property="og:url" content="https://zamariola.com.br/2025/08/what-is-the-solid-pattern-and-why-you-should-avoid-it/">
+  <meta property="og:site_name" content="Leonardo Zamariola">
+  <meta property="og:title" content="What is the SOLID pattern and why you should avoid it">
+  <meta property="og:description" content="What is SOLID Link to heading The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.
+💡 Disclaimer: I’m not giving a full description of the SOLID pattern because a lot of folks have done that. Digital Ocean has done that and the Uncle Bob himself has done that Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-23T18:09:27-03:00">
+    <meta property="article:modified_time" content="2025-08-23T18:09:27-03:00">
+    <meta property="article:tag" content="Solid">
+    <meta property="article:tag" content="Locality of Behavior">
+    <meta property="article:tag" content="Interfaces">
+    <meta property="article:tag" content="Clean-Code">
+    <meta property="article:tag" content="Development">
+    <meta property="article:tag" content="Go">
+
+
+
+
+<link rel="canonical" href="https://zamariola.com.br/2025/08/what-is-the-solid-pattern-and-why-you-should-avoid-it/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://zamariola.com.br/">
+      Leonardo Zamariola
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zamariola.com.br/2025/08/what-is-the-solid-pattern-and-why-you-should-avoid-it/">
+              What is the SOLID pattern and why you should avoid it
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-08-23T18:09:27-03:00">
+                August 23, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              10-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/solid/">Solid</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/locality-of-behavior/">Locality of Behavior</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/interfaces/">Interfaces</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/clean-code/">Clean-Code</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/development/">Development</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/go/">Go</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/java/">Java</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/functions/">Functions</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <h1 id="what-is-solid">
+  What is SOLID
+  <a class="heading-link" href="#what-is-solid">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>The SOLID is an acronym created in 2004 based on principles that Uncle Bob introduced in the 2000s to identify the best practices of software design.</p>
+<div class="highlight-box">
+  💡 <strong>Disclaimer:</strong> I&rsquo;m not giving a full description of the SOLID pattern because a <a href="https://en.wikipedia.org/wiki/SOLID"  class="external-link" target="_blank" rel="noopener">lot of folks have done that</a>.
+Digital Ocean <a href="https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design"  class="external-link" target="_blank" rel="noopener">has done that</a> and the Uncle Bob himself <a href="https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html"  class="external-link" target="_blank" rel="noopener">has done that</a>
+</div>
+<p><img src="/post/what-is-solid-why-you-should-avoid-it/solid.png" alt="SOLID"></p>
+<p>Although the SOLID principles may apply to any object-oriented design, they usually bring with them the Clean Code and Clean Architecture philosophies.</p>
+<h3 id="single-responsibility-principle">
+  Single Responsibility Principle
+  <a class="heading-link" href="#single-responsibility-principle">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>It dictates that there should be only one reason for a piece (class, function) to change. As a consequence, it is usually stated as &ldquo;a class/method&rdquo; should do only one thing.</p>
+<h3 id="open--closed-principle">
+  Open / Closed Principle
+  <a class="heading-link" href="#open--closed-principle">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This principle aims to help with maintainability. It says that a piece (class / function) should be open for extension, but closed for modification. In that sense, it is indirectly saying that software should be built in a way that adding a new feature should not, or should not try to, modify existing code.</p>
+<h3 id="liskov-substitution-principle">
+  Liskov substitution Principle
+  <a class="heading-link" href="#liskov-substitution-principle">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This one is based on the roots of polymorphism. It was introduced by Barbara Liskov and it is also called <em>strong behavioral subtyping</em>. it says that a subclass (subtype) can replace the parent and this does not break the program.</p>
+<h3 id="interface-segregation-principle">
+  Interface Segregation Principle
+  <a class="heading-link" href="#interface-segregation-principle">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The interface segregation principle is the simplest one in my opinion. It states that clients should not be forced to depend on methods they do not use; Therefore, interfaces should be small.</p>
+<h3 id="dependecy-inversion">
+  Dependecy Inversion
+  <a class="heading-link" href="#dependecy-inversion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The final principle is the base of the concepts of IoC (Inversion of Control) and DI (Dependecy Injection) that we constantly see in frameworks like Spring, Hilt, DependencyInjection, Symphony and etc. In practice, it indicates that a piece (class/function) should depend on abstractions and not on real implementations, i.e., the class should not actively instatiate a concrete implementation but receive the instance/pointer as a parameter during creation.</p>
+<h1 id="the-issue-with-solid">
+  The issue with SOLID
+  <a class="heading-link" href="#the-issue-with-solid">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<div class="highlight-box">
+  💡 <strong>Disclaimer II:</strong> Everything that I&rsquo;m going to say from now on is purely based on my personal experience and my views on the trade-offs of the decisions I&rsquo;ve had to make. There&rsquo;s no hard science to back this up and it is based on anecdotal facts. Easy, pretty and maintainable are all attributes based not only on the code itself but on the maintainer. Maybe, a thing that I find easy to understand could be hard for others. I do code using the following LELIS principles and I do not regret letting the SOLID go, though.
+</div>
+<h2 id="1-the-froggy-navigation-and-code-reading-of-single-responsibility">
+  1. The froggy navigation and code reading of Single Responsibility
+  <a class="heading-link" href="#1-the-froggy-navigation-and-code-reading-of-single-responsibility">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>My main issue with the Single responsibility principle is that it forces the developer to spread the functionality across a lot of different files and methods. This principle is really misleading, tricky and tempting because when you read the statement (&ldquo;your code should do only one thing&rdquo;) it makes sense. It seems to be fair and more maintainable, also, the code seems &ldquo;neat&rdquo; after you refactor it. Small methods and classes seem &ldquo;pretier&rdquo; compared to a long &ldquo;legacy&rdquo; code.</p>
+<p>However, in my opinion, the beauty of the &ldquo;clean&rdquo; code happens only to the eyes of the author because it already has the mental model of the code. If a person knows everything about a algorithm or business rules, having a lot of method calls seems simpler; however, for a newcomer, having the code spread across a lot of different methods and classes only adds complexity and cognitive loading. Instead of reading everything from top to bottom, the new reader needs to keep moving and jumping from one place to another trying to collect the pieces and keeping the sequence in their heads. This adds load to the short term memory.</p>
+<p>Let&rsquo;s see a real example. I&rsquo;m going to extrapolate for the sake of the exercise.</p>
+<p>Here&rsquo;s a piece of code from kubernetes</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#57606a">// SINGLE FUNCTION</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a">// converts `go mod graph` output modStr into a map of from-&gt;[]to references and the main module</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">convertToMap</span><span style="color:#1f2328">(</span><span style="color:#1f2328">modStr</span><span style="color:#fff"> </span><span style="color:#cf222e">string</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">([]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#cf222e">map</span><span style="color:#1f2328">[</span><span style="color:#1f2328">module</span><span style="color:#1f2328">][]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">var</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">mainModulesList</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#1f2328">[]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">{}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">mainModules</span><span style="color:#fff">     </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#cf222e">map</span><span style="color:#1f2328">[</span><span style="color:#1f2328">module</span><span style="color:#1f2328">]</span><span style="color:#cf222e">bool</span><span style="color:#1f2328">{}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">modMap</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#6639ba">make</span><span style="color:#1f2328">(</span><span style="color:#cf222e">map</span><span style="color:#1f2328">[</span><span style="color:#1f2328">module</span><span style="color:#1f2328">][]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">for</span><span style="color:#fff"> </span><span style="color:#1f2328">_</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">line</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#cf222e">range</span><span style="color:#fff"> </span><span style="color:#1f2328">strings</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Split</span><span style="color:#1f2328">(</span><span style="color:#1f2328">modStr</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;\n&#34;</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#6639ba">len</span><span style="color:#1f2328">(</span><span style="color:#1f2328">line</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#0550ae">0</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#cf222e">continue</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">deps</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#1f2328">strings</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Split</span><span style="color:#1f2328">(</span><span style="color:#1f2328">line</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34; &#34;</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#6639ba">len</span><span style="color:#1f2328">(</span><span style="color:#1f2328">deps</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#0550ae">2</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#1f2328">first</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#6639ba">parseModule</span><span style="color:#1f2328">(</span><span style="color:#1f2328">deps</span><span style="color:#1f2328">[</span><span style="color:#0550ae">0</span><span style="color:#1f2328">])</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#1f2328">second</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#6639ba">parseModule</span><span style="color:#1f2328">(</span><span style="color:#1f2328">deps</span><span style="color:#1f2328">[</span><span style="color:#0550ae">1</span><span style="color:#1f2328">])</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#1f2328">first</span><span style="color:#1f2328">.</span><span style="color:#1f2328">version</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;&#34;</span><span style="color:#fff"> </span><span style="color:#0550ae">||</span><span style="color:#fff"> </span><span style="color:#1f2328">first</span><span style="color:#1f2328">.</span><span style="color:#1f2328">version</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;v0.0.0&#34;</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">				</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#1f2328">!</span><span style="color:#1f2328">mainModules</span><span style="color:#1f2328">[</span><span style="color:#1f2328">first</span><span style="color:#1f2328">]</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">					</span><span style="color:#1f2328">mainModules</span><span style="color:#1f2328">[</span><span style="color:#1f2328">first</span><span style="color:#1f2328">]</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#cf222e">true</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">					</span><span style="color:#1f2328">mainModulesList</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#6639ba">append</span><span style="color:#1f2328">(</span><span style="color:#1f2328">mainModulesList</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">first</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">				</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#1f2328">modMap</span><span style="color:#1f2328">[</span><span style="color:#1f2328">first</span><span style="color:#1f2328">]</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#6639ba">append</span><span style="color:#1f2328">(</span><span style="color:#1f2328">modMap</span><span style="color:#1f2328">[</span><span style="color:#1f2328">first</span><span style="color:#1f2328">],</span><span style="color:#fff"> </span><span style="color:#1f2328">second</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">}</span><span style="color:#fff"> </span><span style="color:#cf222e">else</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#57606a">// skip invalid line</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#1f2328">log</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Printf</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;!!!invalid line in mod.graph: %s&#34;</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">line</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#cf222e">continue</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">return</span><span style="color:#fff"> </span><span style="color:#1f2328">mainModulesList</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">modMap</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>Original <a href="https://github.com/kubernetes/kubernetes/blob/091f87c10bc3532041b77a783a5f832de5506dc8/cmd/dependencyverifier/dependencyverifier.go#L94"  class="external-link" target="_blank" rel="noopener">here</a></p>
+<p>As you can see, it&rsquo;s a function doing a lot of different steps (iterating, spliggin, checking, adding, verifying with a else (<em>you see clean coders.. you can use else</em>)) it&rsquo;s relatively long 30 lines.</p>
+<p>If I had to rewrite this using the purest SOLID (ps: It&rsquo;s not the same rules but you will get the idea)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#57606a">// SOLIDIFIED VERSION</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a">// converts `go mod graph` output modStr into a map of from-&gt;[]to references and the main module</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">convertToMap</span><span style="color:#1f2328">(</span><span style="color:#1f2328">modStr</span><span style="color:#fff"> </span><span style="color:#cf222e">string</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">([]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#cf222e">map</span><span style="color:#1f2328">[</span><span style="color:#1f2328">module</span><span style="color:#1f2328">][]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">mainModulesList</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">mainModules</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#6639ba">createVariables</span><span style="color:#1f2328">()</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">modMap</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#6639ba">make</span><span style="color:#1f2328">(</span><span style="color:#cf222e">map</span><span style="color:#1f2328">[</span><span style="color:#1f2328">module</span><span style="color:#1f2328">][]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">for</span><span style="color:#fff"> </span><span style="color:#1f2328">_</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">line</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#cf222e">range</span><span style="color:#fff"> </span><span style="color:#6639ba">splitLinex</span><span style="color:#1f2328">(</span><span style="color:#1f2328">modStr</span><span style="color:#1f2328">){</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#6639ba">populateModules</span><span style="color:#1f2328">(</span><span style="color:#1f2328">line</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">mainModyleList</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">mainModules</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">return</span><span style="color:#fff"> </span><span style="color:#1f2328">mainModulesList</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">modMap</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">populateModules</span><span style="color:#1f2328">(</span><span style="color:#1f2328">line</span><span style="color:#fff"> </span><span style="color:#cf222e">string</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">mainModuleList</span><span style="color:#fff"> </span><span style="color:#1f2328">[]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">modMap</span><span style="color:#fff"> </span><span style="color:#cf222e">map</span><span style="color:#1f2328">[</span><span style="color:#1f2328">module</span><span style="color:#1f2328">]</span><span style="color:#cf222e">bool</span><span style="color:#fff"> </span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#6639ba">len</span><span style="color:#1f2328">(</span><span style="color:#1f2328">line</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#0550ae">0</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">return</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">deps</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#6639ba">splitSpaces</span><span style="color:#1f2328">(</span><span style="color:#1f2328">line</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#6639ba">len</span><span style="color:#1f2328">(</span><span style="color:#1f2328">deps</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#0550ae">2</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff"> </span><span style="color:#cf222e">else</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#57606a">// skip invalid line</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">log</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Printf</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;!!!invalid line in mod.graph: %s&#34;</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">line</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">return</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">parseMainModule</span><span style="color:#1f2328">()</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">first</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#6639ba">parseModule</span><span style="color:#1f2328">(</span><span style="color:#1f2328">deps</span><span style="color:#1f2328">[</span><span style="color:#0550ae">0</span><span style="color:#1f2328">])</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">second</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#6639ba">parseModule</span><span style="color:#1f2328">(</span><span style="color:#1f2328">deps</span><span style="color:#1f2328">[</span><span style="color:#0550ae">1</span><span style="color:#1f2328">])</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">if</span><span style="color:#fff">  </span><span style="color:#6639ba">isValidVersion</span><span style="color:#1f2328">(</span><span style="color:#1f2328">first</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#1f2328">!</span><span style="color:#1f2328">mainModules</span><span style="color:#1f2328">[</span><span style="color:#1f2328">first</span><span style="color:#1f2328">]</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#1f2328">mainModules</span><span style="color:#1f2328">[</span><span style="color:#1f2328">first</span><span style="color:#1f2328">]</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#cf222e">true</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#1f2328">mainModulesList</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#6639ba">append</span><span style="color:#1f2328">(</span><span style="color:#1f2328">mainModulesList</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">first</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">modMap</span><span style="color:#1f2328">[</span><span style="color:#1f2328">first</span><span style="color:#1f2328">]</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#6639ba">append</span><span style="color:#1f2328">(</span><span style="color:#1f2328">modMap</span><span style="color:#1f2328">[</span><span style="color:#1f2328">first</span><span style="color:#1f2328">],</span><span style="color:#fff"> </span><span style="color:#1f2328">second</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">createVariables</span><span style="color:#1f2328">()</span><span style="color:#fff"> </span><span style="color:#1f2328">([]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#cf222e">map</span><span style="color:#1f2328">[</span><span style="color:#1f2328">module</span><span style="color:#1f2328">]</span><span style="color:#cf222e">bool</span><span style="color:#1f2328">){</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">return</span><span style="color:#fff"> </span><span style="color:#1f2328">([]</span><span style="color:#1f2328">module</span><span style="color:#1f2328">{},</span><span style="color:#fff"> </span><span style="color:#cf222e">map</span><span style="color:#1f2328">[</span><span style="color:#1f2328">module</span><span style="color:#1f2328">]</span><span style="color:#cf222e">bool</span><span style="color:#1f2328">{})</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">splitLines</span><span style="color:#1f2328">(</span><span style="color:#1f2328">text</span><span style="color:#fff"> </span><span style="color:#cf222e">string</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">[]</span><span style="color:#cf222e">string</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">return</span><span style="color:#fff"> </span><span style="color:#1f2328">strings</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Split</span><span style="color:#1f2328">(</span><span style="color:#1f2328">text</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;\n&#34;</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">splitSpaces</span><span style="color:#1f2328">(</span><span style="color:#1f2328">line</span><span style="color:#fff"> </span><span style="color:#cf222e">string</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">[]</span><span style="color:#cf222e">string</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">return</span><span style="color:#fff"> </span><span style="color:#1f2328">strings</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Split</span><span style="color:#1f2328">(</span><span style="color:#1f2328">line</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34; &#34;</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">isValidVersion</span><span style="color:#1f2328">(</span><span style="color:#1f2328">mod</span><span style="color:#fff"> </span><span style="color:#1f2328">module</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">bool</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">return</span><span style="color:#fff"> </span><span style="color:#1f2328">mod</span><span style="color:#1f2328">.</span><span style="color:#1f2328">version</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;&#34;</span><span style="color:#fff"> </span><span style="color:#0550ae">||</span><span style="color:#fff"> </span><span style="color:#1f2328">mod</span><span style="color:#1f2328">.</span><span style="color:#1f2328">version</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;v0.0.0&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>As you can see, the second block (the SOLIDified version) looks “prettier,” “cleaner,” and more SonarQube-friendly — and I agree with that. What was originally a single function has been split into seven smaller ones. While these smaller functions are easier to read individually, I find that understanding the full algorithm and its business logic has actually become harder (at least for me). The original function was larger, but it kept all the context in one place, making it easier to grasp as a whole. In contrast, the SOLIDified version forces me to constantly jump around in my IDE, piecing together small fragments of logic in my head to reconstruct the bigger picture.</p>
+<h2 id="2-the-open-to-premature-abstraction-and-closed-to-deliver-value">
+  2. The Open to premature abstraction and Closed to deliver value
+  <a class="heading-link" href="#2-the-open-to-premature-abstraction-and-closed-to-deliver-value">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>My next discomfort with SOLID revolves around the combination of the Open / Closed principle with the Dependecy Inversion. The &ldquo;Closed&rdquo; in the Open / Closed subtly states that the introduction of a new functionality should not touch the existing code. A developer trying to follow this proposition might incur in the premature abstraction. It&rsquo;s really common to see in the Java and .NET world a lot of dependecy injection being made to things that will not change nor will be tested. Creating software trying to predict the next features, changes, issues and behaviors increases a lot the probability of rework or useless pieces. The most maintainable software is the one that as not coded.</p>
+<p>To be fair, I&rsquo;ve seen some modern languages like Rust, Go, Odin avoiding this incentive to premature abstraction. It&rsquo;s still common in enterprise environments, though.</p>
+<h2 id="3-when-everything-is-a-dependency-your-entire-software-is-inverted">
+  3. When everything is a dependency, your entire software is inverted
+  <a class="heading-link" href="#3-when-everything-is-a-dependency-your-entire-software-is-inverted">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>As I mentioned earlier when talking about premature abstraction, this topic is closely tied to the concept of “Open to Extension.” The issue I want to address here is the overuse of Dependency Inversion. Specifically, when every single thing a class needs is injected into it instead of being created within it. I understand the reasoning behind this practice and some of its benefits, but I also see it being taken too far. Supporters usually lean on two main arguments to justify this approach:</p>
+<ol>
+<li>
+<p>Framework dictatorship: Many frameworks push developers toward this style by forcing everything to be injected—whether as a Spring Java “Bean” or a .NET service. (If you’ve ever tried building a Spring web server in Java without Managed Bean annotations, you know exactly what I mean.)</p>
+</li>
+<li>
+<p>The unit-testing obsession: At some point, the industry developed an obsession with the test pyramid (particularly with unit testing). The narrative became that achieving high code coverage is more important than actually building bug-free, reliable software. As a result, teams often end up writing more mocks and injecting more dependencies than necessary, all in service of hitting that coverage target.</p>
+</li>
+</ol>
+<p>I&rsquo;m not saying that we shouldn&rsquo;t do unit tests or do Dependency Inversion. I&rsquo;m just saying that we should do it because the software design needs it, because adding a new inversion will unlock the software to evolve. Adding a new interface just to achieve coverage or to preemptively prepare for a change is a waste of time and brainpower.</p>
+<h1 id="the-alternative">
+  The alternative
+  <a class="heading-link" href="#the-alternative">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>As you may have noticed, I like Liskov and Interface segregation principles.</p>
+<p>My alternative suggestion for the other three are the LELIS acronym.</p>
+<p><img src="/post/what-is-solid-why-you-should-avoid-it/lelis.png" alt="LELIS"></p>
+<h3 id="locality-of-behavior-instead-of-srp">
+  <strong>L</strong>ocality of Behavior (instead of SRP)
+  <a class="heading-link" href="#locality-of-behavior-instead-of-srp">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Instead of trying to create short classes, methods, and functions, we should try to make the software more cohesive, i.e., pieces that work together should be close. Having everything that defines a behavior together makes it easier to undertand and maintain the software. Remember that our main objective is bug-free, reliable and maintainable software.</p>
+<h3 id="evolve-your-abstractions-instead-of-openclosed">
+  <strong>E</strong>volve your Abstractions (instead of Open/Closed)
+  <a class="heading-link" href="#evolve-your-abstractions-instead-of-openclosed">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Here I&rsquo;m supporting the idea that you should not try to predict the future beforehand. Create software today and refactor it tomorrow. Extract the abstraction (and the interfaces) when they are needed. Your software shouldn&rsquo;t need to be clever. When adding a new feature is extremally expected to touch existing code and that&rsquo;s the main reason why <em>we should rely more on <strong>integration tests</strong></em> than unit tests. Integration tests need to change less frequently (sometimes they don&rsquo;t change at all) when refactoring the code. Unit tests are britle and they constantly break when change anything in a piece (class/function).</p>
+<h3 id="some-dependecy-inversion">
+  <strong>S</strong>ome Dependecy Inversion
+  <a class="heading-link" href="#some-dependecy-inversion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This is the cherry on top. And as Uncle Bob himself said: &ldquo;[About Dependency Injection] they understand the pros, but not the cons. Many developers, especially juniors, tend to apply DI everywhere, without fully grasping the trade-offs&rdquo;</p>
+<p>Dependency Inversion is a great way of decoupling modules and creating composable software but it should not be overly used. TBH, I don&rsquo;t know how much is too much but I don&rsquo;t create everything as a interface anymore. Small classes/structs, small components, pieces that work together can be created together, there&rsquo;s no need to inject everything. Afterall, why is it ok to create a list (with its on encapsulated business rules) inline when needed</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#0550ae">&lt;</span>String<span style="color:#0550ae">&gt;</span><span style="color:#fff"> </span>myList<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#cf222e">new</span><span style="color:#fff"> </span>ArrayList<span style="color:#0550ae">&lt;&gt;</span><span style="color:#1f2328">();</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>but if I have to use a Formatter that was created exclusively to format that class I have to inject it?</p>
+<p>(I&rsquo;m leaning more torwards inner and static inner classes today)</p>
+<h3 id="integration-tests-to-the-game">
+  Integration tests to the game
+  <a class="heading-link" href="#integration-tests-to-the-game">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>One final suggestion that is not related to the SOLID but can help to build (or counter) the arguments that supports it; Bug-free maintainable software is the goal. Maintaing a software is synonymous of touching existing code and refactoring it; Integration tests is the best tool to make that happen.</p>
+<hr>
+<p>Good luck!</p>
+<div class="highlight-box">
+  💡 <strong>Disclaimer III:</strong> Take all the suggestions with a pinch of salt. I can change my opinion tomorrow.
+</div>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2026
+     Leonardo Zamariola 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MS8JW6F532"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MS8JW6F532');
+        }
+      </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

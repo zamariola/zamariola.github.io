@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Takt Time - How to pick the right technology stack · Leonardo Zamariola
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Leonardo Zamariola">
+<meta name="description" content="
+
+  What’s takt time and why should you care about it?
+  
+    
+    Link to heading
+  
+
+Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Takt Time - How to pick the right technology stack">
+  <meta name="twitter:description" content="What’s takt time and why should you care about it? Link to heading Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.">
+
+<meta property="og:url" content="https://zamariola.com.br/2019/05/takt-time-how-to-pick-the-right-technology-stack/">
+  <meta property="og:site_name" content="Leonardo Zamariola">
+  <meta property="og:title" content="Takt Time - How to pick the right technology stack">
+  <meta property="og:description" content="What’s takt time and why should you care about it? Link to heading Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-05-08T20:32:13-03:00">
+    <meta property="article:modified_time" content="2019-05-08T20:32:13-03:00">
+    <meta property="article:tag" content="Development">
+    <meta property="article:tag" content="Technology">
+    <meta property="article:tag" content="Stack">
+
+
+
+
+<link rel="canonical" href="https://zamariola.com.br/2019/05/takt-time-how-to-pick-the-right-technology-stack/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://zamariola.com.br/">
+      Leonardo Zamariola
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zamariola.com.br/2019/05/takt-time-how-to-pick-the-right-technology-stack/">
+              Takt Time - How to pick the right technology stack
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2019-05-08T20:32:13-03:00">
+                May 8, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/development/">Development</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/technology/">Technology</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/stack/">Stack</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <p><!-- raw HTML omitted --></p>
+<h2 id="whats-takt-time-and-why-should-you-care-about-it">
+  What’s takt time and why should you care about it?
+  <a class="heading-link" href="#whats-takt-time-and-why-should-you-care-about-it">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Every time we start a new project, a startup or even a little app, we are faced with a big decision: which technology we should use. Usually, we programmers choose our infrastructure, frameworks and programming languages (tech stack) based on what we think will make ourselves happier. However, that selection approach based on feeling may not result in the most assertive decision.</p>
+<p>In these important moments we should take into account the concept of takt time. Takt time is a discipline used mostly in production engineering and it’s defined as the time frame between the conception of a product and its delivery, that is, it’s calculated taking into account all the time needed to conceive, develop and deliver a product. In software engineering we use this same concept to describe the time between a specification and a production deployment. The smaller the takt time is, the better.</p>
+<p>We should be very careful when defining takt time to avoid confusing it with “time to market”. Even though they both tend to have the same value in the beginning, they soon start to differ based on how much investment a project receives; and usually when you invest time in automation and planning, you tend to increase a little bit your time to market but reduce your long-term takt time.
+Software takt time is mainly influenced by the task itself (complex tasks tend to have higher takt time) and by programmers’ productivity. I’m not going to talk about the first topic because task complexity is big enough to have its own post. I’ll focus more on how to increase programmers’ productivity and, of course, how to keep it high.</p>
+<p>So, if you want to reduce takt time you will need to invest in a tech stack that favours fast build, fast deployment and that will motivate you and your colleague programmers to do the job faster, i.e., a tech stack fun to work with.</p>
+<p><!-- raw HTML omitted --></p>
+<h2 id="how-to-pick-the-right-stack">
+  How to pick the right stack
+  <a class="heading-link" href="#how-to-pick-the-right-stack">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In my opinion, the first thing that you should do to select the right stack is to keep your emotions aside. If you really want to choose the right stack to work with, i.e., the stack that will make your project more likely to succeed, you cannot get attached to your emotions or to what you have done before. If you want to pick the right stack, you need to know that there’s no silver bullet and that you won’t be able to do it right today just because you did it yesterday. So, forget about your past experiences and your emotional attachment to languages and frameworks.</p>
+<h3 id="1-benchmark-your-industry">
+  1) Benchmark your industry
+  <a class="heading-link" href="#1-benchmark-your-industry">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The first thing that you should do is benchmark your own industry. If you are working for an e-commerce business  you need to check and compare what other such companies are doing, investing and using. You can do this by reading papers, searching for common tech stacks and looking for opportunities to connect with programmers that work for those companies.
+One easy way to connect is going to tech events like TDC, QCon, Meetups and so on. There you can meet and share experiences. You have to always keep in mind that the whole tech industry is looking for solutions to reduce attrition and increase speed, so you can use that knowledge to advance with less effort. If you know that all fintechs are moving towards functional languages (Clojure, Scala, F#, Elixir or even Go) you would be better off betting on these techs instead of going with the old plain Java.
+Another good way to benchmark is through open source. Github has a lot of open repos that you can check to compare languages and frameworks.</p>
+<h3 id="2-plan-innovate-and-invest-more-than-you-think-you-should">
+  2) Plan, innovate and invest more than you think you should
+  <a class="heading-link" href="#2-plan-innovate-and-invest-more-than-you-think-you-should">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>You may think that if you pick a famous and common language like Java (with Spring) you won’t be wrong. Of course, it’s easier and safer to pick a famous language and/or framework because you will probably have more (and cheaper) professionals and more online available content. However, in the present times, if we want to reduce our takt time, we need to invest in our tech stack. And, please, don’t get me wrong, when I say invest, I’m not saying that your company needs to have an R&amp;D department or that you need to stop doing your current job or, even worse, that you need to create your own programming language. When I say invest, I mean more everything that will delay your instant result and create an asset that could improve and maintain your future productivity. Investing means the time you will spend thinking about your architecture before start programming. Yes. I’m talking about that time you know you should invest planning before doing.
+Investing in a tech stack means selecting the right tool for the job. It may sound a little cliché and obvious, but that’s not it. Investing means stepping out of our JVM’s comfort zone and trying a new approach using Python or Ruby or Go.
+I’ve seen a lot of teams avoiding new technologies, frameworks or process because they don’t want to learn something new or because they are too afraid to try it, or both. You need to reserve (invest) some time to make some Proof of Concept. And, after that, you need to try this new technology. Furthermore, you need to do this tech change knowing that you’ll be slower in the short term, but faster (with lower takt time) in the long term.</p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In the end, the conclusion is very simple and obvious. You need be aware of what tech stack your industry is using and be brave to try it. The most important thing to know is that you will need some courage to try this new feature and even more courage to say no to unrealistic deadlines. If you want to pick the right stack, you need to invest time in PoC, Innovations, new languages. However, always keep in mind the goal of it all, which is to reduce your takt time.</p>
+<p>And I almost forgot, If you are feeling braver now, how about trying a new language? <!-- raw HTML omitted -->How about Go? CLICK HERE<!-- raw HTML omitted --> to see how to start coding right now.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2026
+     Leonardo Zamariola 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MS8JW6F532"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MS8JW6F532');
+        }
+      </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

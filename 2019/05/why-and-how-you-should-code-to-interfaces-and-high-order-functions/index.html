@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Why and how you should code to interfaces - and high-order functions · Leonardo Zamariola
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Leonardo Zamariola">
+<meta name="description" content="One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Why and how you should code to interfaces - and high-order functions">
+  <meta name="twitter:description" content="One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.">
+
+<meta property="og:url" content="https://zamariola.com.br/2019/05/why-and-how-you-should-code-to-interfaces-and-high-order-functions/">
+  <meta property="og:site_name" content="Leonardo Zamariola">
+  <meta property="og:title" content="Why and how you should code to interfaces - and high-order functions">
+  <meta property="og:description" content="One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-05-16T18:16:13-03:00">
+    <meta property="article:modified_time" content="2019-05-16T18:16:13-03:00">
+    <meta property="article:tag" content="Interfaces">
+    <meta property="article:tag" content="Clean-Code">
+    <meta property="article:tag" content="Development">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Functions">
+
+
+
+
+<link rel="canonical" href="https://zamariola.com.br/2019/05/why-and-how-you-should-code-to-interfaces-and-high-order-functions/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://zamariola.com.br/">
+      Leonardo Zamariola
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zamariola.com.br/2019/05/why-and-how-you-should-code-to-interfaces-and-high-order-functions/">
+              Why and how you should code to interfaces - and high-order functions
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2019-05-16T18:16:13-03:00">
+                May 16, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              9-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/interfaces/">Interfaces</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/clean-code/">Clean-Code</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/development/">Development</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/go/">Go</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/functions/">Functions</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <p>One famous debate that emerges in every design discussion is about interfaces. As always, each programmer has a different conception about it and it’s something almost inevitable to spend hours arguing about. Even when the discussion isn’t about whether or not we should use it, it’s about how to use it. As a programmer, I have my own opinion as well. I expect to give you an overview about the importance of interfaces when you should or not use it, and what you can apply it to.</p>
+<p>I won’t define here what an interface is, because I believe that you can have way better definitions out there in the web. However, it’s important to know that we are going to talk about programming language interfaces and if you have no idea what it is, you should search for <!-- raw HTML omitted --> it first <!-- raw HTML omitted -->.</p>
+<h1 id="why-you-should-use-interfaces">
+  Why you should use interfaces
+  <a class="heading-link" href="#why-you-should-use-interfaces">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>If I was asked to summarize the importance of interfaces in one sentence, I would say that interfaces allow you to inject behavior in your methods and classes. Of course, there’s so much more to talk about and I’m planning to do it in the following sections, but that is the main reason that you should use interfaces while programming.</p>
+<p>Onto the reasons, then:</p>
+<h2 id="1-interfaces-allow-you-to-inject-behavior">
+  1) Interfaces allow you to inject behavior
+  <a class="heading-link" href="#1-interfaces-allow-you-to-inject-behavior">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>For me, the best example of behavior injection is the “Comparable” interfaces in Java and C# or the “sort.Interface” in Go. Sorting a collection is a well-known problem in computer science and we have a lot of different algorithms to do this. And all of those algorithms rely on the same basic function: how to compare different elements in the collection. When we create or code a sorting algorithm, we don&rsquo;t care how to compare different elements, we don&rsquo;t do this because we don&rsquo;t know which elements we are going to compare (their type) or how they can relate to each other. So, while coding those, we expect to receive a comparator injected in our method or our class and then just use this provided behavior.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#57606a">// Insertion sort</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">insertionSort</span><span style="color:#1f2328">(</span><span style="color:#1f2328">data</span><span style="color:#fff"> </span><span style="color:#1f2328">Interface</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">a</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">b</span><span style="color:#fff"> </span><span style="color:#cf222e">int</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">    	    </span><span style="color:#57606a">// Our original code</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">for</span><span style="color:#fff"> </span><span style="color:#1f2328">i</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#1f2328">a</span><span style="color:#fff"> </span><span style="color:#0550ae">+</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#1f2328">;</span><span style="color:#fff"> </span><span style="color:#1f2328">i</span><span style="color:#fff"> </span><span style="color:#1f2328">&lt;</span><span style="color:#fff"> </span><span style="color:#1f2328">b</span><span style="color:#1f2328">;</span><span style="color:#fff"> </span><span style="color:#1f2328">i</span><span style="color:#0550ae">++</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">			            </span><span style="color:#57606a">// Our original code</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">for</span><span style="color:#fff"> </span><span style="color:#1f2328">j</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#1f2328">i</span><span style="color:#1f2328">;</span><span style="color:#fff"> </span><span style="color:#1f2328">j</span><span style="color:#fff"> </span><span style="color:#1f2328">&gt;</span><span style="color:#fff"> </span><span style="color:#1f2328">a</span><span style="color:#fff"> </span><span style="color:#0550ae">&amp;&amp;</span><span style="color:#fff"> </span><span style="color:#1f2328">data</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Less</span><span style="color:#1f2328">(</span><span style="color:#1f2328">j</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">j</span><span style="color:#0550ae">-</span><span style="color:#0550ae">1</span><span style="color:#1f2328">);</span><span style="color:#fff"> </span><span style="color:#1f2328">j</span><span style="color:#0550ae">--</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">   </span><span style="color:#57606a">// Our code + provided behavior</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#1f2328">data</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Swap</span><span style="color:#1f2328">(</span><span style="color:#1f2328">j</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">j</span><span style="color:#0550ae">-</span><span style="color:#0550ae">1</span><span style="color:#1f2328">)</span><span style="color:#fff">		                    </span><span style="color:#57606a">// Our original code</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>Source: Go source code</p>
+<p>It’s impossible to make a code as simple as that without relying on injected behavior. And, considering that you are creating your source code before your API user, it&rsquo;s obvious that you can&rsquo;t have a regular class passed to your method, you need an interface (or an abstract class) so your user could implement it and inject that specific Less/Swap behavior.</p>
+<p>Another good example of injected behavior is strategy pattern. This design pattern  defines that  you can change the implementation (strategy) that will be executed at runtime based on program state (variables and etc). So, to create it you’ll need an interface (or an abstract class)  with two or more different implementations, inject then in your main class and then switch between them based on your state.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cf222e">type</span><span style="color:#fff"> </span><span style="color:#1f2328">Operator</span><span style="color:#fff"> </span><span style="color:#cf222e">interface</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#6639ba">Apply</span><span style="color:#1f2328">(</span><span style="color:#cf222e">int</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#cf222e">int</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">int</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">type</span><span style="color:#fff"> </span><span style="color:#1f2328">Operation</span><span style="color:#fff"> </span><span style="color:#cf222e">struct</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">Operator</span><span style="color:#fff"> </span><span style="color:#1f2328">Operator</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#1f2328">o</span><span style="color:#fff"> </span><span style="color:#0550ae">*</span><span style="color:#1f2328">Operation</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#6639ba">Operate</span><span style="color:#1f2328">(</span><span style="color:#1f2328">leftValue</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">rightValue</span><span style="color:#fff"> </span><span style="color:#cf222e">int</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">int</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">return</span><span style="color:#fff"> </span><span style="color:#1f2328">o</span><span style="color:#1f2328">.</span><span style="color:#1f2328">Operator</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Apply</span><span style="color:#1f2328">(</span><span style="color:#1f2328">leftValue</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">rightValue</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>Source: <a href="https://github.com/tmrts/go-patterns/blob/master/behavioral/strategy.md"  class="external-link" target="_blank" rel="noopener">https://github.com/tmrts/go-patterns/blob/master/behavioral/strategy.md</a></p>
+<h2 id="2-interfaces-force-you-to-rethink-about-your-codes-behavior">
+  2) Interfaces force you to [re]think about your code’s behavior
+  <a class="heading-link" href="#2-interfaces-force-you-to-rethink-about-your-codes-behavior">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>As I said, the main purpose of interfaces is to allow you to code based on behaviors. So, if you start using them you will be forced to rethink your code before writing it. This is really important because when you write your code based on behaviors you make it more declarative than imperative, so it&rsquo;s easier to read, maintain and improve.
+I&rsquo;m not saying that you need to start coding right away from interfaces. I think you can have interfaces that emerge from your code after a while. But, to do so it&rsquo;s important to reserve some time to reflect and rethink your code. It’s really important to stop for a while and make some improvements like behavioral extraction into interfaces. Your code should be the easiest to read as possible, so it needs to be neat and clean.</p>
+<h2 id="3-interfaces-make-you-code-with-a-more-reasonable-and-understandable-api">
+  3) Interfaces make you code with a more reasonable and understandable API
+  <a class="heading-link" href="#3-interfaces-make-you-code-with-a-more-reasonable-and-understandable-api">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>If we take a look at all open source libraries, we will see that they usually define their API using interfaces. Take the <!-- raw HTML omitted -->Apache Beam repository <!-- raw HTML omitted -->as an example. If we perform a simple search, we can see it has 849 interface keywords and 3,806 class keywords. It means that approximately 18% of the repo is composed of interfaces, it’s almost one interface for every 4 classes.
+Considering that coding to interfaces has been an industrial practice, new programmers that join a team expect to see them in the code base. So it’s a common task to start to read a code by its APIs, thus, by reading its interfaces.
+So, if you avoid using interfaces because you think you don’t need them or because you think it’s a waste of time, you are probably saving your own time in the short term, but making all other programmers’ life quite hard. Also, I really don’t believe that you’ll save time skipping interfaces when they are needed, because, as I said, they force you to think before action and they make your code more descriptive. However, if you still think it’s useless, at least think about the suffering that you may cause to your fellow coworker who will need to open the source file and read your entire class to understand how to use it correctly.</p>
+<h2 id="4-interfaces-make-your-code-more-testable">
+  4) Interfaces make your code more testable
+  <a class="heading-link" href="#4-interfaces-make-your-code-more-testable">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This topic is more a consequence of the three other topics. Of course, you can mock and test your code using only structs/classes, and don’t get me wrong here, I’m not saying that you should create interfaces just for the sake of testability. However,  abstractions will indeed make your code more testable.</p>
+<h1 id="how-to-code-to-interfaces">
+  How to code to interfaces
+  <a class="heading-link" href="#how-to-code-to-interfaces">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>There’s no golden rule here. Sometimes, it’s easier to start from an interface signature, but there are times that interfaces will emerge from an already existing code. The main point is: you don’t necessarily need to start from an interface every time you code, but if you don’t, you have to refactor your code as soon as possible to extract inner behavior and make the outer class with a single responsibility (as SOLID states).
+Personally, I like to stop and think before coding. When I know the entities and models that I’m working on, I tend to start with some interfaces to extract common or mutable behavior. However, we sometimes have no idea what to code, we don’t know our models and/or entities, so it’s easier to code with few interfaces and refactor later with more business knowledge.
+One last tip to code using interfaces is to receive an interface and return a concrete type. If you do so, you’ll make your code more general and easier to use, because your client won’t need to create adapters from their classes to yours. They will only need to implement an interface and it’s so much easier to do it than to create a whole new adapter class.
+The bottom line is: it doesn’t matter how you code, as long as you refactor it.</p>
+<h1 id="be-aware-of-high-order-functions">
+  Be aware of High-Order Functions
+  <a class="heading-link" href="#be-aware-of-high-order-functions">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>So far, I have been saying that you should use interfaces to inject behavior in your classes, however we can do this using high-order functions as well.
+Pure functional languages as Haskell and some more modern languages like Kotlin, Scala and Go have high order functions, i.e., functions that take one or more functions as parameters and/or return a function. Even languages without high-order functions can simulate it using lambdas with functional interfaces (interfaces with only one method).
+So, almost every time we have a functional interface, we can achieve the same behavioral-injection results using functions and closures.
+Take a look at the example below, it is very similar to the sorting example, but instead of receiving an interface as a parameter, the method is receiving a function “f”, so it can delegate some behavior to this function. The method doesn’t know (and care) how to select an element, it just iterates over them and delegates this behavior to the function. It’s easier to make a SOLID code using these features.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#6639ba">filter</span><span style="color:#1f2328">(</span><span style="color:#1f2328">s</span><span style="color:#fff"> </span><span style="color:#1f2328">[]</span><span style="color:#1f2328">student</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">f</span><span style="color:#fff"> </span><span style="color:#cf222e">func</span><span style="color:#1f2328">(</span><span style="color:#1f2328">student</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">bool</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">[]</span><span style="color:#1f2328">student</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">  
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">var</span><span style="color:#fff"> </span><span style="color:#1f2328">r</span><span style="color:#fff"> </span><span style="color:#1f2328">[]</span><span style="color:#1f2328">student</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">for</span><span style="color:#fff"> </span><span style="color:#1f2328">_</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">v</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#cf222e">range</span><span style="color:#fff"> </span><span style="color:#1f2328">s</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#6639ba">f</span><span style="color:#1f2328">(</span><span style="color:#1f2328">v</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#cf222e">true</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">				</span><span style="color:#57606a">// Delegating behavior to “f”</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">            </span><span style="color:#1f2328">r</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#6639ba">append</span><span style="color:#1f2328">(</span><span style="color:#1f2328">r</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">v</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">        </span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">return</span><span style="color:#fff"> </span><span style="color:#1f2328">r</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>Source: <a href="https://golangbot.com/first-class-functions/"  class="external-link" target="_blank" rel="noopener">https://golangbot.com/first-class-functions/</a></p>
+<p>Of course, we can change the “f” function to a “Predicate” interface with only one method, but this will probably result in more code. Also, in the end, you will be passing data with behavior instead of behavior alone.</p>
+<p>So, every time that you create a interface with just one method, double check whether you can change it to a function.</p>
+<p>If you want to learn more about it, <!-- raw HTML omitted -->check this post by Cheney<!-- raw HTML omitted -->.</p>
+<h1 id="avoid-interface-overuse-and-interface-pollution">
+  Avoid interface overuse and interface pollution
+  <a class="heading-link" href="#avoid-interface-overuse-and-interface-pollution">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>There are two common errors that you should avoid when coding an interface: overuse and pollution.</p>
+<h2 id="interface-overuse">
+  Interface overuse
+  <a class="heading-link" href="#interface-overuse">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>As its name suggests, interface overuse occurs when we create too many interfaces, for example, when we create a new interface for every new class, as we see a lot in Spring Services. We have to keep in mind that interfaces should be used to inject behavior and make our code clean and maintainable. If they are making it harder to read and/or harder to maintain, then we should rethink and refactor our code.</p>
+<h2 id="interface-pollution">
+  Interface pollution
+  <a class="heading-link" href="#interface-pollution">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<blockquote>
+<p>The bigger the interface, the weaker the abstraction.
+— Rob Pike, Go Proverbs</p>
+</blockquote>
+<p>Interface pollution is the case when you have huge interfaces. Like classes, interfaces should deal with only one responsibility, so they have to be small and self contained.
+Besides, as the SOLID principle states, “Clients should not be forced to depend upon interfaces that they do not use”, so, even though your concrete type can be large, your client API should be small and easy to understand.
+If you have an interface with more than three methods, you should check whether it will need a refactor into smaller pieces.</p>
+<p>If you want to learn more about pollution, <!-- raw HTML omitted -->check this link out.<!-- raw HTML omitted --></p>
+<h1 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>As almost everything in software engineering, interfaces are a complex and controversial topic. There’s no golden rule dictating when and how to use them; however, if you are not using them at all, you are probably doing it wrong. So, let’s stop coding now and start refactoring all those bloated codes that you complain about all the time. Let’s refactor them looking for behaviors to be externalized and new ways to make them more descriptive, clean and maintainable.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2026
+     Leonardo Zamariola 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MS8JW6F532"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MS8JW6F532');
+        }
+      </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

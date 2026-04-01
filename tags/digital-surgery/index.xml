@@ -10,10 +10,10 @@
     <atom:link href="https://zamariola.com.br/tags/digital-surgery/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TDC Innovation - Golang in Digital Surgery and Integration with Medical Devices</title>
-      <link>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</link>
+      <link>https://zamariola.com.br/2021/03/tdc-innovation-golang-in-digital-surgery-and-integration-with-medical-devices/</link>
       <pubDate>Thu, 25 Mar 2021 10:13:13 -0300</pubDate>
-      <guid>https://zamariola.com.br/post/tdc-digital-surgery-medical-devices/</guid>
-      <description>&lt;h1 id=&#34;what-its-about&#34;&gt;What it&amp;rsquo;s about&lt;/h1&gt;&#xA;&lt;p&gt;Slides from the TDC Innovation 2021 edition.&lt;/p&gt;&#xA;&lt;p&gt;On this talk I touched some topics related Digital Surgery and Medical Devices Integration. It explains how we created a FHIR, DICOM and HL7 ADT Integration using plain Go protocols and resources.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The source code &lt;a href=&#34;https://github.com/zamariola&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>https://zamariola.com.br/2021/03/tdc-innovation-golang-in-digital-surgery-and-integration-with-medical-devices/</guid>
+      <description>&lt;h1 id=&#34;what-its-about&#34;&gt;&#xA;  What it&amp;rsquo;s about&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#what-its-about&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Slides from the TDC Innovation 2021 edition.&lt;/p&gt;&#xA;&lt;p&gt;On this talk I touched some topics related Digital Surgery and Medical Devices Integration. It explains how we created a FHIR, DICOM and HL7 ADT Integration using plain Go protocols and resources.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The source code &lt;a href=&#34;https://github.com/zamariola&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;can be found here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Hybris Good Practices I · Leonardo Zamariola
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Leonardo Zamariola">
+<meta name="description" content="
+  1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix.
+  
+    
+    Link to heading
+  
+
+First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &ldquo;Coincidentally&rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hybris Good Practices I">
+  <meta name="twitter:description" content="1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. Link to heading First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. “Coincidentally”, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).">
+
+<meta property="og:url" content="https://zamariola.com.br/2018/06/hybris-good-practices-i/">
+  <meta property="og:site_name" content="Leonardo Zamariola">
+  <meta property="og:title" content="Hybris Good Practices I">
+  <meta property="og:description" content="1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix. Link to heading First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. “Coincidentally”, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-06-26T21:01:44-03:00">
+    <meta property="article:modified_time" content="2018-06-26T21:01:44-03:00">
+    <meta property="article:tag" content="Hybris">
+    <meta property="article:tag" content="Clean-Code">
+    <meta property="article:tag" content="Development">
+
+
+
+
+<link rel="canonical" href="https://zamariola.com.br/2018/06/hybris-good-practices-i/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://zamariola.com.br/">
+      Leonardo Zamariola
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zamariola.com.br/2018/06/hybris-good-practices-i/">
+              Hybris Good Practices I
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2018-06-26T21:01:44-03:00">
+                June 26, 2018
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/hybris/">Hybris</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/clean-code/">Clean-Code</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/development/">Development</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <h3 id="1-name-your-classesinterfaces-with-specific-names-instead-of-default-or-yourcustumer-prefix">
+  1) Name your classes/interfaces with specific names instead of “Default” or “YourCustumer” prefix.
+  <a class="heading-link" href="#1-name-your-classesinterfaces-with-specific-names-instead-of-default-or-yourcustumer-prefix">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>First of all, we have to keep this important thing in mind: we are coding general and abstract business and technical rules. &ldquo;Coincidentally&rdquo;, these rules are being used by our customer. (To make things clear, the customer here means the company that are paying you (or your employer) to customize the hybris).</p>
+<p>Suppose that you are defining a new way of adding a product to cart, that is, you will add the product (default behavior) and change all quantities to one (new behaviour). This new behavior is exclusive to your customer now, but it may not be in the future.</p>
+<p>So, don’t name your Class as “MyCustomerCartService” or “DefaultCartService” or, even worse, “DefaultCartServiceImpl”. Use the specific behavior name, for example, “SingleQuantityCartService”.</p>
+<h3 id="2-create-a-new-specific-interface-instead-of-extending-an-existing-one">
+  2) Create a new specific interface instead of extending an existing one
+  <a class="heading-link" href="#2-create-a-new-specific-interface-instead-of-extending-an-existing-one">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The most common “mistake” that I see is inserting new methods into an existing (OOTB) interface. You should avoid it at all costs because otherwise, you will end up with a giant and too generic contract. Remember that one of the SOLID principles is the “Interface Segregation Principle”. It states that a client should not depend on methods that they don’t use.</p>
+<p>Therefore, if you need to create a new way (method) of doing something, you shouldn’t extend the existing interface, but create a new one that represents this new method.</p>
+<p>For example, suppose that we have to create a new cart using the CartFactory, but instead of creating an empty cart we have to create it with default products that we will receive as parameter. In this scenario, we shouldn’t extend the CartFactory inserting all our methods there because we are creating a giant interface and obviously breaking the Interface Segregation Principle. In this case, the most convenient way of customizing it is creating a new interface (or a new implementation of the old interface) named something like “FilledCartFactory” and insert our methods there.</p>
+<h3 id="3-you-should-use-decorators-over-inheritance">
+  3) You should use decorators over inheritance
+  <a class="heading-link" href="#3-you-should-use-decorators-over-inheritance">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The concept of composition over inheritance is not new. <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Composition_over_inheritance</a></p>
+<p>Sometimes extending a bean may seem easier than recreating it, but we have to remember that all components (facade, service, strategy, dao) implement a contract (interface), so we should stick to this contract whenever it is possible.</p>
+<p>There are situations that we have to adjust the functional aspect of a class (service, strategy e etc) and it may sound tempting to extend the default class through inheritance and override the default behavior. It’s natural to think like this because it’s an easy way to do it (and it’s how the trails teach us). However, using the java standard extension with hybris OOTB classes tends to generate a big technical debt in the long term. The java traditional extension creates big classes and big interfaces. Soon or later, we will break encapsulation, Single responsibility and/or Interface segregation principles. So, the best way to do this is by using decorators (the decorator pattern).</p>
+<p>I’m not going to write how to create decorators, because we have a lot of good content about it: <a href="https://www.yegor256.com/2015/02/26/composable-decorators.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2015/02/26/composable-decorators.html</a></p>
+<p>Therefore, everytime that you think about creating a new interface, extending an existing interface or extending an existing class, check if there is a better way of doing this, probably you will come up with a more elegant solution using decorators.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2026
+     Leonardo Zamariola 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MS8JW6F532"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MS8JW6F532');
+        }
+      </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

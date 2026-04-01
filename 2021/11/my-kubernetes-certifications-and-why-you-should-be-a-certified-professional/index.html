@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  My Kubernetes Certifications and why you should be a certified professional · Leonardo Zamariola
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Leonardo Zamariola">
+<meta name="description" content="
+
+
+
+  The context
+  
+    
+    Link to heading
+  
+
+I’ve never been a huge fan of IT Certifications. I tend to believe that one’s ability to search for information associated with a good practical expertise is much more valuable than plain memorization. On the other hand, some certifications force us to go the extra mile and to study an unusual topic. That singularity captivates me.
+Following that path, these last months I focused on two different Kubernetes certifications: CKA  (Certified Kubernetes Administrator) and CKAD (Certified Kubernetes Application Developer). Even though I wouldn&rsquo;t call myself a DevOps/SR engineer, they seemed to be the natural path for an application developer working with containers and cloud computing. By the way, I strongly recommend taking these two, specially the CKAD because “Earners of this designation demonstrated the skills, knowledge and competencies to perform the responsibilities of a Kubernetes Application Developer. Earners are able to define application resources and use core primitives to build, monitor, and troubleshoot scalable applications and tools in Kubernetes”.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My Kubernetes Certifications and why you should be a certified professional">
+  <meta name="twitter:description" content="The context Link to heading I’ve never been a huge fan of IT Certifications. I tend to believe that one’s ability to search for information associated with a good practical expertise is much more valuable than plain memorization. On the other hand, some certifications force us to go the extra mile and to study an unusual topic. That singularity captivates me. Following that path, these last months I focused on two different Kubernetes certifications: CKA (Certified Kubernetes Administrator) and CKAD (Certified Kubernetes Application Developer). Even though I wouldn’t call myself a DevOps/SR engineer, they seemed to be the natural path for an application developer working with containers and cloud computing. By the way, I strongly recommend taking these two, specially the CKAD because “Earners of this designation demonstrated the skills, knowledge and competencies to perform the responsibilities of a Kubernetes Application Developer. Earners are able to define application resources and use core primitives to build, monitor, and troubleshoot scalable applications and tools in Kubernetes”.">
+
+<meta property="og:url" content="https://zamariola.com.br/2021/11/my-kubernetes-certifications-and-why-you-should-be-a-certified-professional/">
+  <meta property="og:site_name" content="Leonardo Zamariola">
+  <meta property="og:title" content="My Kubernetes Certifications and why you should be a certified professional">
+  <meta property="og:description" content="The context Link to heading I’ve never been a huge fan of IT Certifications. I tend to believe that one’s ability to search for information associated with a good practical expertise is much more valuable than plain memorization. On the other hand, some certifications force us to go the extra mile and to study an unusual topic. That singularity captivates me. Following that path, these last months I focused on two different Kubernetes certifications: CKA (Certified Kubernetes Administrator) and CKAD (Certified Kubernetes Application Developer). Even though I wouldn’t call myself a DevOps/SR engineer, they seemed to be the natural path for an application developer working with containers and cloud computing. By the way, I strongly recommend taking these two, specially the CKAD because “Earners of this designation demonstrated the skills, knowledge and competencies to perform the responsibilities of a Kubernetes Application Developer. Earners are able to define application resources and use core primitives to build, monitor, and troubleshoot scalable applications and tools in Kubernetes”.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-11-18T10:00:00-03:00">
+    <meta property="article:modified_time" content="2021-11-18T10:00:00-03:00">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="Certification">
+    <meta property="article:tag" content="Development">
+
+
+
+
+<link rel="canonical" href="https://zamariola.com.br/2021/11/my-kubernetes-certifications-and-why-you-should-be-a-certified-professional/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://zamariola.com.br/">
+      Leonardo Zamariola
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zamariola.com.br/2021/11/my-kubernetes-certifications-and-why-you-should-be-a-certified-professional/">
+              My Kubernetes Certifications and why you should be a certified professional
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-11-18T10:00:00-03:00">
+                November 18, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/kubernetes/">Kubernetes</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/certification/">Certification</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/development/">Development</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<h2 id="the-context">
+  The context
+  <a class="heading-link" href="#the-context">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I’ve never been a huge fan of IT Certifications. I tend to believe that one’s ability to search for information associated with a good practical expertise is much more valuable than plain memorization. On the other hand, some certifications force us to go the extra mile and to study an unusual topic. That singularity captivates me.
+Following that path, these last months I focused on two different Kubernetes certifications: <a href="https://www.credly.com/badges/bf887781-1211-47c3-b84d-f171a7e8970c"  class="external-link" target="_blank" rel="noopener">CKA</a>  (Certified Kubernetes Administrator) and <a href="https://www.credly.com/badges/c6ad6c2a-19dc-4656-a7d2-53788dd8d270"  class="external-link" target="_blank" rel="noopener">CKAD</a> (Certified Kubernetes Application Developer). Even though I wouldn&rsquo;t call myself a DevOps/SR engineer, they seemed to be the natural path for an application developer working with containers and cloud computing. By the way, I strongly recommend taking these two, specially the CKAD because “Earners of this designation demonstrated the skills, knowledge and competencies to perform the responsibilities of a Kubernetes Application Developer. Earners are able to define application resources and use core primitives to build, monitor, and troubleshoot scalable applications and tools in Kubernetes”.</p>
+<h2 id="challenges-of-kubernetes-certifications">
+  Challenges of Kubernetes Certifications
+  <a class="heading-link" href="#challenges-of-kubernetes-certifications">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>As I mentioned, I don’t think that memorization itself is a good proxy for one’s ability to deal and perform on a specific technology/tool and here is where the CKA(D) certifications shine. The test sponsored by The Linux Foundation consists of 20 real world practical challenges, i.e., It is requested to log in into a terminal and issue commands to solve problems, install applications, expose endpoints, and etc. In the end of the day, they test the ability to work with Kubernetes without having to ask boring memorization questions.
+The good thing about practical exams is that we can leverage our working experience and use our “googling” ability to solve the problems; however, we can’t guesstimate as we could do in a multiple choice exam. Therefore, it’s really important to be aware of the time remaining during the exam and, of course, be familiar with Linux and kubernetes. It isn’t an easy exam but it’s feasible to pass studying for one to two months.</p>
+<h2 id="study-guide-for-the-cka-and-ckad">
+  Study guide for the CKA and CKAD
+  <a class="heading-link" href="#study-guide-for-the-cka-and-ckad">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>There are plenty of study books and articles about these topics and they are all really useful; I’d like to focus more on the real world scenarios that you could face, though. If you can do all of them from scratch in a Linux environment, you would be halfway there:</p>
+<ul>
+<li>Install a Kubernetes cluster (1 master and 1+ worker node) from scratch using kubeadm</li>
+<li>Configure a new worker node on an existing cluster</li>
+<li>Configure security, networking and credentials on an existing cluster</li>
+<li>Install and configure a service mesh (Istio/Linkerd)</li>
+<li>Deploy an application (plain pod, replicaset and deployment)</li>
+<li>Deploy jobs (plain job and a cronjob)</li>
+<li>Expose applications (using services, ingress and service mesh)</li>
+<li>Creating, managing and using volumes, persistent volumes, persistentVolumeClaims and storageclasses.</li>
+<li>Configure networking permissions, redirects and firewalls using NetworkingPolicies</li>
+<li>Monitor, log and debug applications (view and extract logs, execute a command on a running container and etc)</li>
+</ul>
+<h2 id="why-i-think-its-important-to-be-a-certified-professional">
+  Why I think it’s important to be a certified professional
+  <a class="heading-link" href="#why-i-think-its-important-to-be-a-certified-professional">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Technology stacks have been changing really fast lately, so being a certified professional couldn’t help that much with a new job opportunity. To be honest, services and applications are being deployed using a combination of hundreds of different technologies, servers, OSs, frameworks, and etc, so, having a badge couldn’t help more than 10% during job hunting.
+The most important thing about being a certified professional consists of the studying process. The fact that we don’t know what is going to be “asked” during the exam forces us to study those specifics and singular topics, that tiny hidden feature that could save us a lot of time or increase the application performance when needed. One clear example for me is the Java “volatile” keyword. It’s not a common keyword (specially for a garbage collected language) but it has it’s usage and it could be really useful when writing and/or debugging multi-threading code. The fact that this volatile concept is extensively covered in the Java Certification Exam (JCP) forced me to practice it in a real world scenario. I could have been coding avoiding this keyword and I could have spent my entire career without knowing about it, but that would mean a lack of knowledge and one fewer tool in my toolbox. The Java OCP forced me to know, study, and practice it. And for me, this is the real value of my Java certification.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2026
+     Leonardo Zamariola 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MS8JW6F532"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MS8JW6F532');
+        }
+      </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
