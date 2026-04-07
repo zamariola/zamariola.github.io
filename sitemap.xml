@@ -2,10 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zamariola.com.br/tags/clean-code/</loc>
-    <lastmod>2025-08-23T18:09:27-03:00</lastmod>
+    <loc>https://zamariola.com.br/tags/cloudnative/</loc>
+    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
   </url><url>
     <loc>https://zamariola.com.br/tags/development/</loc>
+    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/kubecon/</loc>
+    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/2026/04/kubecon-and-cloudnativecon-europe-2026-biggest-hits/</loc>
+    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/kubernetes/</loc>
+    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/</loc>
+    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/posts/</loc>
+    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/</loc>
+    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/clean-code/</loc>
     <lastmod>2025-08-23T18:09:27-03:00</lastmod>
   </url><url>
     <loc>https://zamariola.com.br/tags/functions/</loc>
@@ -20,19 +41,10 @@
     <loc>https://zamariola.com.br/tags/java/</loc>
     <lastmod>2025-08-23T18:09:27-03:00</lastmod>
   </url><url>
-    <loc>https://zamariola.com.br/</loc>
-    <lastmod>2025-08-23T18:09:27-03:00</lastmod>
-  </url><url>
     <loc>https://zamariola.com.br/tags/locality-of-behavior/</loc>
     <lastmod>2025-08-23T18:09:27-03:00</lastmod>
   </url><url>
-    <loc>https://zamariola.com.br/posts/</loc>
-    <lastmod>2025-08-23T18:09:27-03:00</lastmod>
-  </url><url>
     <loc>https://zamariola.com.br/tags/solid/</loc>
-    <lastmod>2025-08-23T18:09:27-03:00</lastmod>
-  </url><url>
-    <loc>https://zamariola.com.br/tags/</loc>
     <lastmod>2025-08-23T18:09:27-03:00</lastmod>
   </url><url>
     <loc>https://zamariola.com.br/2025/08/what-is-the-solid-pattern-and-why-you-should-avoid-it/</loc>
@@ -78,9 +90,6 @@
     <lastmod>2021-12-20T22:53:00-03:00</lastmod>
   </url><url>
     <loc>https://zamariola.com.br/tags/certification/</loc>
-    <lastmod>2021-11-18T10:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://zamariola.com.br/tags/kubernetes/</loc>
     <lastmod>2021-11-18T10:00:00-03:00</lastmod>
   </url><url>
     <loc>https://zamariola.com.br/2021/11/my-kubernetes-certifications-and-why-you-should-be-a-certified-professional/</loc>

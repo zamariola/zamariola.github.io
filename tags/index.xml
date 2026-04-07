@@ -6,20 +6,41 @@
     <description>Recent content in Tags on Leonardo Zamariola</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Aug 2025 18:09:27 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 19:01:00 -0300</lastBuildDate>
     <atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Clean-Code</title>
-      <link>https://zamariola.com.br/tags/clean-code/</link>
-      <pubDate>Sat, 23 Aug 2025 18:09:27 -0300</pubDate>
-      <guid>https://zamariola.com.br/tags/clean-code/</guid>
+      <title>Cloudnative</title>
+      <link>https://zamariola.com.br/tags/cloudnative/</link>
+      <pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
+      <guid>https://zamariola.com.br/tags/cloudnative/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
       <link>https://zamariola.com.br/tags/development/</link>
-      <pubDate>Sat, 23 Aug 2025 18:09:27 -0300</pubDate>
+      <pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
       <guid>https://zamariola.com.br/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubecon</title>
+      <link>https://zamariola.com.br/tags/kubecon/</link>
+      <pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
+      <guid>https://zamariola.com.br/tags/kubecon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://zamariola.com.br/tags/kubernetes/</link>
+      <pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
+      <guid>https://zamariola.com.br/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Clean-Code</title>
+      <link>https://zamariola.com.br/tags/clean-code/</link>
+      <pubDate>Sat, 23 Aug 2025 18:09:27 -0300</pubDate>
+      <guid>https://zamariola.com.br/tags/clean-code/</guid>
       <description></description>
     </item>
     <item>
@@ -139,13 +160,6 @@
       <link>https://zamariola.com.br/tags/certification/</link>
       <pubDate>Thu, 18 Nov 2021 10:00:00 -0300</pubDate>
       <guid>https://zamariola.com.br/tags/certification/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kubernetes</title>
-      <link>https://zamariola.com.br/tags/kubernetes/</link>
-      <pubDate>Thu, 18 Nov 2021 10:00:00 -0300</pubDate>
-      <guid>https://zamariola.com.br/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>

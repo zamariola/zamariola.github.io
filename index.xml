@@ -6,8 +6,15 @@
     <description>Recent content on Leonardo Zamariola</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Aug 2025 18:09:27 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 19:01:00 -0300</lastBuildDate>
     <atom:link href="https://zamariola.com.br/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KubeCon and CloudNativeCon Europe 2026 biggest hits</title>
+      <link>https://zamariola.com.br/2026/04/kubecon-and-cloudnativecon-europe-2026-biggest-hits/</link>
+      <pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
+      <guid>https://zamariola.com.br/2026/04/kubecon-and-cloudnativecon-europe-2026-biggest-hits/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;https://zamariola.com.br/post/kubecon-cloudnativecon-europe-2026/kubecon-entrance.png&#34; width=&#34;500&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;The KubeCon and CloudNativeCon took place from March 23rd to 26th in Amsterdam (hosted in the RAI Amsterdam). The event was massive, with more than 13,000 attendees (a bump of more than 10% compared to last year&amp;rsquo;s edition).&lt;/p&gt;&#xA;&lt;p&gt;The first day (Monday) was dedicated to the co-located events and most of the knowledge paths were touching AI topics (I picked the Cloudnative AI + Kubeflow day, btw). The next three days were the main &amp;ldquo;official&amp;rdquo; keynotes and even though I tried my best to dodge the sketchy AI propaganda, most of the talks I attended mentioned a little bit of AI here and there.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>What is the SOLID pattern and why you should avoid it</title>
       <link>https://zamariola.com.br/2025/08/what-is-the-solid-pattern-and-why-you-should-avoid-it/</link>
