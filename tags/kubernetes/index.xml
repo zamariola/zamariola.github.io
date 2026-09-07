@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Kubernetes on Leonardo Zamariola</title>
-    <link>https://zamariola.com.br/tags/kubernetes/</link>
-    <description>Recent content in Kubernetes on Leonardo Zamariola</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 02 Apr 2026 19:01:00 -0300</lastBuildDate>
-    <atom:link href="https://zamariola.com.br/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>KubeCon and CloudNativeCon Europe 2026 biggest hits</title>
-      <link>https://zamariola.com.br/2026/04/kubecon-and-cloudnativecon-europe-2026-biggest-hits/</link>
-      <pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
-      <guid>https://zamariola.com.br/2026/04/kubecon-and-cloudnativecon-europe-2026-biggest-hits/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;https://zamariola.com.br/post/kubecon-cloudnativecon-europe-2026/kubecon-entrance.png&#34; width=&#34;500&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;The KubeCon and CloudNativeCon took place from March 23rd to 26th in Amsterdam (hosted in the RAI Amsterdam). The event was massive, with more than 13,000 attendees (a bump of more than 10% compared to last year&amp;rsquo;s edition).&lt;/p&gt;&#xA;&lt;p&gt;The first day (Monday) was dedicated to the co-located events and most of the knowledge paths were touching AI topics (I picked the Cloudnative AI + Kubeflow day, btw). The next three days were the main &amp;ldquo;official&amp;rdquo; keynotes and even though I tried my best to dodge the sketchy AI propaganda, most of the talks I attended mentioned a little bit of AI here and there.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>My Kubernetes Certifications and why you should be a certified professional</title>
-      <link>https://zamariola.com.br/2021/11/my-kubernetes-certifications-and-why-you-should-be-a-certified-professional/</link>
-      <pubDate>Thu, 18 Nov 2021 10:00:00 -0300</pubDate>
-      <guid>https://zamariola.com.br/2021/11/my-kubernetes-certifications-and-why-you-should-be-a-certified-professional/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;the-context&#34;&gt;&#xA;  The context&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#the-context&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;I’ve never been a huge fan of IT Certifications. I tend to believe that one’s ability to search for information associated with a good practical expertise is much more valuable than plain memorization. On the other hand, some certifications force us to go the extra mile and to study an unusual topic. That singularity captivates me.&#xA;Following that path, these last months I focused on two different Kubernetes certifications: &lt;a href=&#34;https://www.credly.com/badges/bf887781-1211-47c3-b84d-f171a7e8970c&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CKA&lt;/a&gt;  (Certified Kubernetes Administrator) and &lt;a href=&#34;https://www.credly.com/badges/c6ad6c2a-19dc-4656-a7d2-53788dd8d270&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CKAD&lt;/a&gt; (Certified Kubernetes Application Developer). Even though I wouldn&amp;rsquo;t call myself a DevOps/SR engineer, they seemed to be the natural path for an application developer working with containers and cloud computing. By the way, I strongly recommend taking these two, specially the CKAD because “Earners of this designation demonstrated the skills, knowledge and competencies to perform the responsibilities of a Kubernetes Application Developer. Earners are able to define application resources and use core primitives to build, monitor, and troubleshoot scalable applications and tools in Kubernetes”.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Kubernetes on Leonardo Zamariola</title>
+		<link>https://zamariola.com.br/tags/kubernetes/</link>
+		<description>Recent content in Kubernetes on Leonardo Zamariola</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 02 Apr 2026 19:01:00 -0300</lastBuildDate>
+		
+			<atom:link href="https://zamariola.com.br/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>KubeCon and CloudNativeCon Europe 2026 biggest hits</title>
+				<link>https://zamariola.com.br/2026/04/kubecon-and-cloudnativecon-europe-2026-biggest-hits/</link>
+				<pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/2026/04/kubecon-and-cloudnativecon-europe-2026-biggest-hits/</guid>
+				<description>&lt;figure&gt;&lt;img src=&#34;https://zamariola.com.br/post/kubecon-cloudnativecon-europe-2026/kubecon-entrance.png&#34; width=&#34;500&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;The KubeCon and CloudNativeCon took place from March 23rd to 26th in Amsterdam (hosted in the RAI Amsterdam). The event was massive, with more than 13,000 attendees (a bump of more than 10% compared to last year&amp;rsquo;s edition).&lt;/p&gt;&#xA;&lt;p&gt;The first day (Monday) was dedicated to the co-located events and most of the knowledge paths were touching AI topics (I picked the Cloudnative AI + Kubeflow day, btw). The next three days were the main &amp;ldquo;official&amp;rdquo; keynotes and even though I tried my best to dodge the sketchy AI propaganda, most of the talks I attended mentioned a little bit of AI here and there.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>My Kubernetes Certifications and why you should be a certified professional</title>
+				<link>https://zamariola.com.br/2021/11/my-kubernetes-certifications-and-why-you-should-be-a-certified-professional/</link>
+				<pubDate>Thu, 18 Nov 2021 10:00:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/2021/11/my-kubernetes-certifications-and-why-you-should-be-a-certified-professional/</guid>
+				<description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;the-context&#34;&gt;&#xA;  The context&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#the-context&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;I’ve never been a huge fan of IT Certifications. I tend to believe that one’s ability to search for information associated with a good practical expertise is much more valuable than plain memorization. On the other hand, some certifications force us to go the extra mile and to study an unusual topic. That singularity captivates me.&#xA;Following that path, these last months I focused on two different Kubernetes certifications: &lt;a href=&#34;https://www.credly.com/badges/bf887781-1211-47c3-b84d-f171a7e8970c&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CKA&lt;/a&gt;  (Certified Kubernetes Administrator) and &lt;a href=&#34;https://www.credly.com/badges/c6ad6c2a-19dc-4656-a7d2-53788dd8d270&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CKAD&lt;/a&gt; (Certified Kubernetes Application Developer). Even though I wouldn&amp;rsquo;t call myself a DevOps/SR engineer, they seemed to be the natural path for an application developer working with containers and cloud computing. By the way, I strongly recommend taking these two, specially the CKAD because “Earners of this designation demonstrated the skills, knowledge and competencies to perform the responsibilities of a Kubernetes Application Developer. Earners are able to define application resources and use core primitives to build, monitor, and troubleshoot scalable applications and tools in Kubernetes”.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
