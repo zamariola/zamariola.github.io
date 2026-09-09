@@ -1,12 +1,35 @@
-
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zamariola.com.br/tags/cloudnative/</loc>
-    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
+    <loc>https://zamariola.com.br/tags/database/</loc>
+    <lastmod>2026-09-07T15:38:00-03:00</lastmod>
   </url><url>
     <loc>https://zamariola.com.br/tags/development/</loc>
+    <lastmod>2026-09-07T15:38:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/go/</loc>
+    <lastmod>2026-09-07T15:38:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/java/</loc>
+    <lastmod>2026-09-07T15:38:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/</loc>
+    <lastmod>2026-09-07T15:38:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/pagination/</loc>
+    <lastmod>2026-09-07T15:38:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/posts/</loc>
+    <lastmod>2026-09-07T15:38:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/</loc>
+    <lastmod>2026-09-07T15:38:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/2026/09/token-pagination-not-everything-is-an-offset/</loc>
+    <lastmod>2026-09-07T15:38:00-03:00</lastmod>
+  </url><url>
+    <loc>https://zamariola.com.br/tags/cloudnative/</loc>
     <lastmod>2026-04-02T19:01:00-03:00</lastmod>
   </url><url>
     <loc>https://zamariola.com.br/tags/kubecon/</loc>
@@ -18,28 +41,13 @@
     <loc>https://zamariola.com.br/tags/kubernetes/</loc>
     <lastmod>2026-04-02T19:01:00-03:00</lastmod>
   </url><url>
-    <loc>https://zamariola.com.br/</loc>
-    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
-  </url><url>
-    <loc>https://zamariola.com.br/posts/</loc>
-    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
-  </url><url>
-    <loc>https://zamariola.com.br/tags/</loc>
-    <lastmod>2026-04-02T19:01:00-03:00</lastmod>
-  </url><url>
     <loc>https://zamariola.com.br/tags/clean-code/</loc>
     <lastmod>2025-08-23T18:09:27-03:00</lastmod>
   </url><url>
     <loc>https://zamariola.com.br/tags/functions/</loc>
     <lastmod>2025-08-23T18:09:27-03:00</lastmod>
   </url><url>
-    <loc>https://zamariola.com.br/tags/go/</loc>
-    <lastmod>2025-08-23T18:09:27-03:00</lastmod>
-  </url><url>
     <loc>https://zamariola.com.br/tags/interfaces/</loc>
-    <lastmod>2025-08-23T18:09:27-03:00</lastmod>
-  </url><url>
-    <loc>https://zamariola.com.br/tags/java/</loc>
     <lastmod>2025-08-23T18:09:27-03:00</lastmod>
   </url><url>
     <loc>https://zamariola.com.br/tags/locality-of-behavior/</loc>

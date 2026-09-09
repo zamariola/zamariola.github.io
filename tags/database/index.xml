@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Database on Leonardo Zamariola</title>
+		<link>https://zamariola.com.br/tags/database/</link>
+		<description>Recent content in Database on Leonardo Zamariola</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 07 Sep 2026 15:38:00 -0300</lastBuildDate>
+		
+			<atom:link href="https://zamariola.com.br/tags/database/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Token pagination - not everything is an offset</title>
+				<link>https://zamariola.com.br/2026/09/token-pagination-not-everything-is-an-offset/</link>
+				<pubDate>Mon, 07 Sep 2026 15:38:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/2026/09/token-pagination-not-everything-is-an-offset/</guid>
+				<description>&lt;h1 id=&#34;why-api-pagination-is-important&#34;&gt;&#xA;  Why API pagination is important&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#why-api-pagination-is-important&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.&lt;/p&gt;&#xA;&lt;p&gt;Most of the internet is CRUD-based, i.e. the majority of websites are just plain forms with a Create, Read, Update or Delete. Of course, there are more nuanced business rules here and there (and I don&amp;rsquo;t want to sound like a project manager trying to negotiate a deadline); however, if we take most of the edge cases and exception scenarios out, we end up with a CRUD flow. As a consequence, a great performance impact comes from how well the four operations are handled, especially the READ operation which could be a simple index hit or a full table scan.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

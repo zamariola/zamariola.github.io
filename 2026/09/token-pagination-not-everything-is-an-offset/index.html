@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Token pagination - not everything is an offset · Leonardo Zamariola
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Leonardo Zamariola">
+<meta name="description" content="
+  Why API pagination is important
+  
+    
+    Link to heading
+  
+
+API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.
+Most of the internet is CRUD-based, i.e. the majority of websites are just plain forms with a Create, Read, Update or Delete. Of course, there are more nuanced business rules here and there (and I don&rsquo;t want to sound like a project manager trying to negotiate a deadline); however, if we take most of the edge cases and exception scenarios out, we end up with a CRUD flow. As a consequence, a great performance impact comes from how well the four operations are handled, especially the READ operation which could be a simple index hit or a full table scan.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Token pagination - not everything is an offset">
+	<meta name="twitter:description" content="Why API pagination is important Link to heading API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.
+Most of the internet is CRUD-based, i.e. the majority of websites are just plain forms with a Create, Read, Update or Delete. Of course, there are more nuanced business rules here and there (and I don’t want to sound like a project manager trying to negotiate a deadline); however, if we take most of the edge cases and exception scenarios out, we end up with a CRUD flow. As a consequence, a great performance impact comes from how well the four operations are handled, especially the READ operation which could be a simple index hit or a full table scan.">
+
+<meta property="og:url" content="https://zamariola.com.br/2026/09/token-pagination-not-everything-is-an-offset/">
+	<meta property="og:site_name" content="Leonardo Zamariola">
+	<meta property="og:title" content="Token pagination - not everything is an offset">
+	<meta property="og:description" content="Why API pagination is important Link to heading API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.
+Most of the internet is CRUD-based, i.e. the majority of websites are just plain forms with a Create, Read, Update or Delete. Of course, there are more nuanced business rules here and there (and I don’t want to sound like a project manager trying to negotiate a deadline); however, if we take most of the edge cases and exception scenarios out, we end up with a CRUD flow. As a consequence, a great performance impact comes from how well the four operations are handled, especially the READ operation which could be a simple index hit or a full table scan.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-09-07T15:38:00-03:00">
+		<meta property="article:modified_time" content="2026-09-07T15:38:00-03:00">
+		<meta property="article:tag" content="Pagination">
+		<meta property="article:tag" content="Development">
+		<meta property="article:tag" content="Go">
+		<meta property="article:tag" content="Java">
+		<meta property="article:tag" content="Database">
+
+
+
+
+<link rel="canonical" href="https://zamariola.com.br/2026/09/token-pagination-not-everything-is-an-offset/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.698cbc55b687599da5e80b093c64cfc1e45303391bd98fabd54b6d6894538a9c.css" integrity="sha256-aYy8VbaHWZ2l6AsJPGTPweRTAzkb2Y&#43;r1UttaJRTipw=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.706eb4a63a058ee4ab16a417865a8b70c6a12f2a4d9359eaf3dec837466308ef.css" integrity="sha256-cG60pjoFjuSrFqQXhlqLcMahLypNk1nq897IN0ZjCO8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8099001272329611"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://zamariola.com.br/">
+      Leonardo Zamariola
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zamariola.com.br/2026/09/token-pagination-not-everything-is-an-offset/">
+              Token pagination - not everything is an offset
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-09-07T15:38:00-03:00">
+                September 7, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/pagination/">Pagination</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/development/">Development</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/go/">Go</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/java/">Java</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/database/">Database</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <h1 id="why-api-pagination-is-important">
+  Why API pagination is important
+  <a class="heading-link" href="#why-api-pagination-is-important">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.</p>
+<p>Most of the internet is CRUD-based, i.e. the majority of websites are just plain forms with a Create, Read, Update or Delete. Of course, there are more nuanced business rules here and there (and I don&rsquo;t want to sound like a project manager trying to negotiate a deadline); however, if we take most of the edge cases and exception scenarios out, we end up with a CRUD flow. As a consequence, a great performance impact comes from how well the four operations are handled, especially the READ operation which could be a simple index hit or a full table scan.</p>
+<p>A /ListAll operation on a massive table could generate a lot of database CPU work and even more network traffic in the database-to-server and in the server-to-client connections. The pagination comes to the rescue breaking the workload in predictable chunks (pages) so the user (or the application) can decide if he/she wants to pay the toll to get more data.</p>
+<h1 id="page-size-offset-limit-as-industry-standard">
+  Page-size (offset-limit) as industry standard
+  <a class="heading-link" href="#page-size-offset-limit-as-industry-standard">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>The current standard for pagination is strongly based on page and limit <code>https://my-endpoint/api/collections?page=3&amp;size=30</code> that defines the page size and the page number. Here are some other examples:</p>
+<p><strong>GitHub (REST API)</strong>: <code>GET https://api.github.com/user/repos?page=2&amp;per_page=30</code></p>
+<p><strong>Spotify API</strong>: <code>GET https://api.spotify.com/v1/artists/{id}/albums?offset=20&amp;limit=10</code></p>
+<p><strong>Unsplash API</strong>: <code>GET https://api.unsplash.com/photos?page=3&amp;per_page=10</code></p>
+<p>The pagination based on chunks of a query (page-size or offset-limit) are the easiest form of creating a pagination feature. It mimics the database query structure and are the default of most of the frameworks.</p>
+<h1 id="the-issues-with-the-page-size">
+  The issues with the page-size
+  <a class="heading-link" href="#the-issues-with-the-page-size">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Even though the page-size is a quick-win (and it should always be considered), it comes with a performance drawback when the resource table is massive. The default implementations of the page-size is converting the values to query params:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#fff">    </span><span style="color:#cf222e">SELECT</span><span style="color:#fff"> </span><span style="color:#0550ae">*</span><span style="color:#fff"> </span><span style="color:#cf222e">FROM</span><span style="color:#fff"> </span>products<span style="color:#fff"> </span><span style="color:#cf222e">ORDER</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span>id<span style="color:#fff"> </span><span style="color:#cf222e">LIMIT</span><span style="color:#fff"> </span><span style="color:#f6f8fa;background-color:#82071e">$</span><span style="color:#0550ae">1</span><span style="color:#fff"> </span><span style="color:#cf222e">OFFSET</span><span style="color:#fff"> </span><span style="color:#f6f8fa;background-color:#82071e">$</span><span style="color:#0550ae">2</span><span style="color:#fff">
+</span></span></span></code></pre></div><p><a href="https://github.com/zamariola/slides/tree/master/pagination"  class="external-link" target="_blank" rel="noopener">view the source</a></p>
+<p>the issue with this approach comes from the OFFSET keyword. Instead of using an index to jump directly to the required record (and navigating horizontally to the leaves), the database engine needs to go through all the previous records until it reaches the offset index and this can impact the lookup speed when requesting high page numbers.</p>
+<p>Another issue with page and offset comes from the deletion/insertion of records. Relying on offsets requested indivually for each page could cause some records to be missing. Let&rsquo;s say that we call for page 1 with size 10, we get the ids from 0 til 9. If we delete the record 7 and ask for page 2, the id number 10 that would be on page two is now on page one and does not come back in the requested page 2.</p>
+<h1 id="token-pagination-as-an-alternative">
+  Token pagination as an alternative
+  <a class="heading-link" href="#token-pagination-as-an-alternative">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>The alternative to the OFFSET is an Index. Search for an indexable/queryable column (or group of columsn) allows the database to leverage its engine and get the requested set of tuples directly instead of scanning the first records. In addition to that, having the id and the updated_at columns used as tokens we can avoid the missing records when adding or deleting records.</p>
+<p>Here it comes the concept of page_token. A page token is an encoded anchor that maps to the first record of an indexed queried filter. Instead of going throught a list skipping the viewed rows, the page_token contains an encoded &ldquo;where&rdquo; clauses that is going to leverage the database engine to get the next subset (page) of a list.</p>
+<p>If the http get does not contain the pagination_token, the service assumes that it is requesting the first page. If it does contain the page_token, then it uses it to get the next page encoded in the token.</p>
+<p>Some examples:</p>
+<p><strong>Twitter</strong>: <code>GET https://api.twitter.com/2/tweets/search/recent?query=tech&amp;pagination_token=8675309</code></p>
+<p><strong>Youtube</strong>: <code>GET https://www.googleapis.com/youtube/v3/search?part=snippet&amp;q=coding&amp;pageToken=CAUQAA</code></p>
+<p><strong>Zoom</strong>: <code>GET https://api.zoom.us/v2/users?page_size=30&amp;next_page_token=T4x9LzA2VkpSbmMxY1I2Sw==</code></p>
+<p>The page token is mostly used in infinite scroll pages on which getting to the page number hundred is more common.</p>
+<h1 id="how-the-token-works-behind-the-scenes">
+  How the token works behind the scenes
+  <a class="heading-link" href="#how-the-token-works-behind-the-scenes">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>It&rsquo;s commom to use the sequential Id with an updated_at column to compose the page token (id, updated_at).</p>
+<p>Here&rsquo;s an example of a pagination made with page token</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">type</span><span style="color:#fff"> </span><span style="color:#1f2328">pageToken</span><span style="color:#fff"> </span><span style="color:#cf222e">struct</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">ID</span><span style="color:#fff">        </span><span style="color:#cf222e">int64</span><span style="color:#fff">     </span><span style="color:#0a3069">`json:&#34;id&#34;`</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">UpdatedAt</span><span style="color:#fff"> </span><span style="color:#1f2328">time</span><span style="color:#1f2328">.</span><span style="color:#1f2328">Time</span><span style="color:#fff"> </span><span style="color:#0a3069">`json:&#34;updated_at&#34;`</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#1f2328">s</span><span style="color:#fff"> </span><span style="color:#0550ae">*</span><span style="color:#1f2328">server</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#6639ba">tokenPagination</span><span style="color:#1f2328">(</span><span style="color:#1f2328">w</span><span style="color:#fff"> </span><span style="color:#1f2328">http</span><span style="color:#1f2328">.</span><span style="color:#1f2328">ResponseWriter</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">r</span><span style="color:#fff"> </span><span style="color:#0550ae">*</span><span style="color:#1f2328">http</span><span style="color:#1f2328">.</span><span style="color:#1f2328">Request</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">limit</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">err</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#6639ba">parseLimit</span><span style="color:#1f2328">(</span><span style="color:#1f2328">r</span><span style="color:#1f2328">.</span><span style="color:#1f2328">URL</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Query</span><span style="color:#1f2328">().</span><span style="color:#6639ba">Get</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;limit&#34;</span><span style="color:#1f2328">))</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#1f2328">err</span><span style="color:#fff"> </span><span style="color:#0550ae">!=</span><span style="color:#fff"> </span><span style="color:#cf222e">nil</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">http</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Error</span><span style="color:#1f2328">(</span><span style="color:#1f2328">w</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">err</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Error</span><span style="color:#1f2328">(),</span><span style="color:#fff"> </span><span style="color:#1f2328">http</span><span style="color:#1f2328">.</span><span style="color:#1f2328">StatusBadRequest</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">return</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">query</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#0a3069">`SELECT id, external_id, name, description, price, create_at, updated_at FROM products`</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">args</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#1f2328">[]</span><span style="color:#cf222e">any</span><span style="color:#1f2328">{</span><span style="color:#1f2328">limit</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">encodedToken</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#1f2328">r</span><span style="color:#1f2328">.</span><span style="color:#1f2328">URL</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Query</span><span style="color:#1f2328">().</span><span style="color:#6639ba">Get</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;page_token&#34;</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#1f2328">encodedToken</span><span style="color:#fff"> </span><span style="color:#0550ae">!=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;&#34;</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">var</span><span style="color:#fff"> </span><span style="color:#1f2328">token</span><span style="color:#fff"> </span><span style="color:#1f2328">pageToken</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#1f2328">err</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#6639ba">decodeToken</span><span style="color:#1f2328">(</span><span style="color:#1f2328">encodedToken</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0550ae">&amp;</span><span style="color:#1f2328">token</span><span style="color:#1f2328">);</span><span style="color:#fff"> </span><span style="color:#1f2328">err</span><span style="color:#fff"> </span><span style="color:#0550ae">!=</span><span style="color:#fff"> </span><span style="color:#cf222e">nil</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#1f2328">http</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Error</span><span style="color:#1f2328">(</span><span style="color:#1f2328">w</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;invalid page_token&#34;</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">http</span><span style="color:#1f2328">.</span><span style="color:#1f2328">StatusBadRequest</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">			</span><span style="color:#cf222e">return</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">query</span><span style="color:#fff"> </span><span style="color:#0550ae">+=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34; WHERE (updated_at, id) &gt; ($2, $3)&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">args</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#6639ba">append</span><span style="color:#1f2328">(</span><span style="color:#1f2328">args</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">token</span><span style="color:#1f2328">.</span><span style="color:#1f2328">UpdatedAt</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">token</span><span style="color:#1f2328">.</span><span style="color:#1f2328">ID</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">query</span><span style="color:#fff"> </span><span style="color:#0550ae">+=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34; ORDER BY updated_at, id LIMIT $1&#34;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">items</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">err</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#6639ba">products</span><span style="color:#1f2328">(</span><span style="color:#1f2328">r</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Context</span><span style="color:#1f2328">(),</span><span style="color:#fff"> </span><span style="color:#1f2328">query</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">args</span><span style="color:#0550ae">...</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#1f2328">err</span><span style="color:#fff"> </span><span style="color:#0550ae">!=</span><span style="color:#fff"> </span><span style="color:#cf222e">nil</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">http</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Error</span><span style="color:#1f2328">(</span><span style="color:#1f2328">w</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#0a3069">&#34;could not list products&#34;</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">http</span><span style="color:#1f2328">.</span><span style="color:#1f2328">StatusInternalServerError</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#cf222e">return</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">response</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#1f2328">pageResponse</span><span style="color:#1f2328">{</span><span style="color:#1f2328">Items</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#1f2328">items</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">Limit</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#1f2328">limit</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#cf222e">if</span><span style="color:#fff"> </span><span style="color:#6639ba">len</span><span style="color:#1f2328">(</span><span style="color:#1f2328">items</span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#0550ae">==</span><span style="color:#fff"> </span><span style="color:#1f2328">limit</span><span style="color:#fff"> </span><span style="color:#1f2328">{</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">last</span><span style="color:#fff"> </span><span style="color:#0550ae">:=</span><span style="color:#fff"> </span><span style="color:#1f2328">items</span><span style="color:#1f2328">[</span><span style="color:#6639ba">len</span><span style="color:#1f2328">(</span><span style="color:#1f2328">items</span><span style="color:#1f2328">)</span><span style="color:#0550ae">-</span><span style="color:#0550ae">1</span><span style="color:#1f2328">]</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">		</span><span style="color:#1f2328">response</span><span style="color:#1f2328">.</span><span style="color:#1f2328">NextPageToken</span><span style="color:#fff"> </span><span style="color:#1f2328">=</span><span style="color:#fff"> </span><span style="color:#6639ba">encodeToken</span><span style="color:#1f2328">(</span><span style="color:#1f2328">pageToken</span><span style="color:#1f2328">{</span><span style="color:#1f2328">ID</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#1f2328">last</span><span style="color:#1f2328">.</span><span style="color:#1f2328">ID</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">UpdatedAt</span><span style="color:#1f2328">:</span><span style="color:#fff"> </span><span style="color:#1f2328">last</span><span style="color:#1f2328">.</span><span style="color:#1f2328">UpdatedAt</span><span style="color:#1f2328">})</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">	</span><span style="color:#6639ba">writeJSON</span><span style="color:#1f2328">(</span><span style="color:#1f2328">w</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">http</span><span style="color:#1f2328">.</span><span style="color:#1f2328">StatusOK</span><span style="color:#1f2328">,</span><span style="color:#fff"> </span><span style="color:#1f2328">response</span><span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span><span style="color:#fff">
+</span></span></span></code></pre></div><p><a href="https://github.com/zamariola/slides/tree/master/pagination"  class="external-link" target="_blank" rel="noopener">view the source</a></p>
+<p>The token is built using the composite index of (id,updated_at), and queried from it. The last record is them used to encode the next_token that is going to return in the response and the client should store it and use it to get the next page (if needed).</p>
+<p>In addition to the performance improvement, the <code>updated_at</code> helps with the consistency issue. A record that is deleted or added is not going to impact the pagination since it is ordering by index instead of skipping an offset.</p>
+<h1 id="pros-and-cons-of-token-pagination">
+  Pros and Cons of Token Pagination
+  <a class="heading-link" href="#pros-and-cons-of-token-pagination">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Token pagination solves a performance issue that is not common to the mundane websites. The performance impact of a page navigation via offset is going to happen when the dataset is unusually big. Therefore, it adds complexity and make the pagination one-way only (without the possibility to skip to an specific page) but helps with performance and consistency.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2026
+     Leonardo Zamariola 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MS8JW6F532"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MS8JW6F532');
+        }
+      </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

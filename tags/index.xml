@@ -10,21 +10,49 @@
 		
 		
 		
-			<lastBuildDate>Thu, 02 Apr 2026 19:01:00 -0300</lastBuildDate>
+			<lastBuildDate>Mon, 07 Sep 2026 15:38:00 -0300</lastBuildDate>
 		
 			<atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Cloudnative</title>
-				<link>https://zamariola.com.br/tags/cloudnative/</link>
-				<pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
-				<guid>https://zamariola.com.br/tags/cloudnative/</guid>
+				<title>Database</title>
+				<link>https://zamariola.com.br/tags/database/</link>
+				<pubDate>Mon, 07 Sep 2026 15:38:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/tags/database/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Development</title>
 				<link>https://zamariola.com.br/tags/development/</link>
-				<pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
+				<pubDate>Mon, 07 Sep 2026 15:38:00 -0300</pubDate>
 				<guid>https://zamariola.com.br/tags/development/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Go</title>
+				<link>https://zamariola.com.br/tags/go/</link>
+				<pubDate>Mon, 07 Sep 2026 15:38:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/tags/go/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Java</title>
+				<link>https://zamariola.com.br/tags/java/</link>
+				<pubDate>Mon, 07 Sep 2026 15:38:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/tags/java/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Pagination</title>
+				<link>https://zamariola.com.br/tags/pagination/</link>
+				<pubDate>Mon, 07 Sep 2026 15:38:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/tags/pagination/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cloudnative</title>
+				<link>https://zamariola.com.br/tags/cloudnative/</link>
+				<pubDate>Thu, 02 Apr 2026 19:01:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/tags/cloudnative/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -56,24 +84,10 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Go</title>
-				<link>https://zamariola.com.br/tags/go/</link>
-				<pubDate>Sat, 23 Aug 2025 18:09:27 -0300</pubDate>
-				<guid>https://zamariola.com.br/tags/go/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Interfaces</title>
 				<link>https://zamariola.com.br/tags/interfaces/</link>
 				<pubDate>Sat, 23 Aug 2025 18:09:27 -0300</pubDate>
 				<guid>https://zamariola.com.br/tags/interfaces/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Java</title>
-				<link>https://zamariola.com.br/tags/java/</link>
-				<pubDate>Sat, 23 Aug 2025 18:09:27 -0300</pubDate>
-				<guid>https://zamariola.com.br/tags/java/</guid>
 				<description></description>
 			</item>
 			<item>
