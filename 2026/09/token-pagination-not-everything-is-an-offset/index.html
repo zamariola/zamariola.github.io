@@ -20,22 +20,23 @@
     Link to heading
   
 
-API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.
-Most of the internet is CRUD-based, i.e. the majority of websites are just plain forms with a Create, Read, Update or Delete. Of course, there are more nuanced business rules here and there (and I don&rsquo;t want to sound like a project manager trying to negotiate a deadline); however, if we take most of the edge cases and exception scenarios out, we end up with a CRUD flow. As a consequence, a great performance impact comes from how well the four operations are handled, especially the READ operation which could be a simple index hit or a full table scan.">
+
+			
+		
+
+API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.">
 <meta name="keywords" content="blog,developer,personal">
 
 
 
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="Token pagination - not everything is an offset">
-	<meta name="twitter:description" content="Why API pagination is important Link to heading API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.
-Most of the internet is CRUD-based, i.e. the majority of websites are just plain forms with a Create, Read, Update or Delete. Of course, there are more nuanced business rules here and there (and I don’t want to sound like a project manager trying to negotiate a deadline); however, if we take most of the edge cases and exception scenarios out, we end up with a CRUD flow. As a consequence, a great performance impact comes from how well the four operations are handled, especially the READ operation which could be a simple index hit or a full table scan.">
+	<meta name="twitter:description" content="Why API pagination is important Link to heading API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.">
 
 <meta property="og:url" content="https://zamariola.com.br/2026/09/token-pagination-not-everything-is-an-offset/">
 	<meta property="og:site_name" content="Leonardo Zamariola">
 	<meta property="og:title" content="Token pagination - not everything is an offset">
-	<meta property="og:description" content="Why API pagination is important Link to heading API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.
-Most of the internet is CRUD-based, i.e. the majority of websites are just plain forms with a Create, Read, Update or Delete. Of course, there are more nuanced business rules here and there (and I don’t want to sound like a project manager trying to negotiate a deadline); however, if we take most of the edge cases and exception scenarios out, we end up with a CRUD flow. As a consequence, a great performance impact comes from how well the four operations are handled, especially the READ operation which could be a simple index hit or a full table scan.">
+	<meta property="og:description" content="Why API pagination is important Link to heading API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="posts">
@@ -60,7 +61,7 @@ Most of the internet is CRUD-based, i.e. the majority of websites are just plain
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.698cbc55b687599da5e80b093c64cfc1e45303391bd98fabd54b6d6894538a9c.css" integrity="sha256-aYy8VbaHWZ2l6AsJPGTPweRTAzkb2Y&#43;r1UttaJRTipw=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.min.460a64bb3d22b817ed65f9d395dbb8df405fb87ff290e88d9532ddcd068659ea.css" integrity="sha256-Rgpkuz0iuBftZfnTldu430BfuH/ykOiNlTLdzQaGWeo=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -220,6 +221,10 @@ Most of the internet is CRUD-based, i.e. the majority of websites are just plain
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/LwJqie7qcNM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+		</div>
+
 <p>API pagination is one of those tricky details that contributes a lot to the performance of a website. I use it frequently as an acurate indicator of an interview candidate. The ones who, when defining the API contract, mention API pagination tend to be the ones who perform better later on.</p>
 <p>Most of the internet is CRUD-based, i.e. the majority of websites are just plain forms with a Create, Read, Update or Delete. Of course, there are more nuanced business rules here and there (and I don&rsquo;t want to sound like a project manager trying to negotiate a deadline); however, if we take most of the edge cases and exception scenarios out, we end up with a CRUD flow. As a consequence, a great performance impact comes from how well the four operations are handled, especially the READ operation which could be a simple index hit or a full table scan.</p>
 <p>A /ListAll operation on a massive table could generate a lot of database CPU work and even more network traffic in the database-to-server and in the server-to-client connections. The pagination comes to the rescue breaking the workload in predictable chunks (pages) so the user (or the application) can decide if he/she wants to pay the toll to get more data.</p>
