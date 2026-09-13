@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Mon, 07 Sep 2026 15:38:00 -0300</lastBuildDate>
+			<lastBuildDate>Sat, 12 Sep 2026 14:07:00 -0300</lastBuildDate>
 		
 			<atom:link href="https://zamariola.com.br/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>PostgreSQL (and most of other databases) essentials for backend developers</title>
+				<link>https://zamariola.com.br/2026/09/postgresql-and-most-of-other-databases-essentials-for-backend-developers/</link>
+				<pubDate>Sat, 12 Sep 2026 14:07:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/2026/09/postgresql-and-most-of-other-databases-essentials-for-backend-developers/</guid>
+				<description>&lt;p&gt;This is not an extensive list. I reduced some details and specificities to the bare minimum that I think it&amp;rsquo;s&#xA;required for a backend developer to know when seriously using PostgreSQL.&lt;/p&gt;&#xA;&lt;p&gt;All the topics here are well documented in the &lt;a href=&#34;https://www.postgresql.org/docs/current/indexes-types.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;official PostgreSQL docs&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;index-types-when-and-why&#34;&gt;&#xA;  Index types, when and why&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#index-types-when-and-why&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m not getting into the detail of each index. What I believe that you should know is: 1) how this index is stored (how much space each one of them uses); 2) which datatypes they are supposed to perform better; 3) which operations they support&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Token pagination - not everything is an offset</title>
 				<link>https://zamariola.com.br/2026/09/token-pagination-not-everything-is-an-offset/</link>

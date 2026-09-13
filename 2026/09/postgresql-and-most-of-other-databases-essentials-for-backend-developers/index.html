@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  PostgreSQL (and most of other databases) essentials for backend developers · Leonardo Zamariola
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Leonardo Zamariola">
+<meta name="description" content="This is not an extensive list. I reduced some details and specificities to the bare minimum that I think it&rsquo;s
+required for a backend developer to know when seriously using PostgreSQL.
+All the topics here are well documented in the official PostgreSQL docs
+
+  Index types, when and why
+  
+    
+    Link to heading
+  
+
+I&rsquo;m not getting into the detail of each index. What I believe that you should know is: 1) how this index is stored (how much space each one of them uses); 2) which datatypes they are supposed to perform better; 3) which operations they support">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="PostgreSQL (and most of other databases) essentials for backend developers">
+	<meta name="twitter:description" content="This is not an extensive list. I reduced some details and specificities to the bare minimum that I think it’s required for a backend developer to know when seriously using PostgreSQL.
+All the topics here are well documented in the official PostgreSQL docs
+Index types, when and why Link to heading I’m not getting into the detail of each index. What I believe that you should know is: 1) how this index is stored (how much space each one of them uses); 2) which datatypes they are supposed to perform better; 3) which operations they support">
+
+<meta property="og:url" content="https://zamariola.com.br/2026/09/postgresql-and-most-of-other-databases-essentials-for-backend-developers/">
+	<meta property="og:site_name" content="Leonardo Zamariola">
+	<meta property="og:title" content="PostgreSQL (and most of other databases) essentials for backend developers">
+	<meta property="og:description" content="This is not an extensive list. I reduced some details and specificities to the bare minimum that I think it’s required for a backend developer to know when seriously using PostgreSQL.
+All the topics here are well documented in the official PostgreSQL docs
+Index types, when and why Link to heading I’m not getting into the detail of each index. What I believe that you should know is: 1) how this index is stored (how much space each one of them uses); 2) which datatypes they are supposed to perform better; 3) which operations they support">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-09-12T14:07:00-03:00">
+		<meta property="article:modified_time" content="2026-09-12T14:07:00-03:00">
+		<meta property="article:tag" content="Postgres">
+		<meta property="article:tag" content="Database">
+		<meta property="article:tag" content="Index">
+		<meta property="article:tag" content="Query">
+		<meta property="article:tag" content="Performance">
+
+
+
+
+<link rel="canonical" href="https://zamariola.com.br/2026/09/postgresql-and-most-of-other-databases-essentials-for-backend-developers/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.460a64bb3d22b817ed65f9d395dbb8df405fb87ff290e88d9532ddcd068659ea.css" integrity="sha256-Rgpkuz0iuBftZfnTldu430BfuH/ykOiNlTLdzQaGWeo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.706eb4a63a058ee4ab16a417865a8b70c6a12f2a4d9359eaf3dec837466308ef.css" integrity="sha256-cG60pjoFjuSrFqQXhlqLcMahLypNk1nq897IN0ZjCO8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/fav.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8099001272329611"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://zamariola.com.br/">
+      Leonardo Zamariola
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zamariola.com.br/2026/09/postgresql-and-most-of-other-databases-essentials-for-backend-developers/">
+              PostgreSQL (and most of other databases) essentials for backend developers
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-09-12T14:07:00-03:00">
+                September 12, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              9-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/postgres/">Postgres</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/database/">Database</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/index/">Index</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/query/">Query</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/performance/">Performance</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <p>This is not an extensive list. I reduced some details and specificities to the bare minimum that I think it&rsquo;s
+required for a backend developer to know when seriously using PostgreSQL.</p>
+<p>All the topics here are well documented in the <a href="https://www.postgresql.org/docs/current/indexes-types.html"  class="external-link" target="_blank" rel="noopener">official PostgreSQL docs</a></p>
+<h2 id="index-types-when-and-why">
+  Index types, when and why
+  <a class="heading-link" href="#index-types-when-and-why">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I&rsquo;m not getting into the detail of each index. What I believe that you should know is: 1) how this index is stored (how much space each one of them uses); 2) which datatypes they are supposed to perform better; 3) which operations they support</p>
+<ol>
+<li><strong>B-Tree</strong>: high storage;  scalar types; =, &lt;, &lt;=, &gt;, &gt;=, BETWEEN, IN, IS NULL, and ORDER BY</li>
+<li><strong>Hash</strong>: Moderate storage; scalar types (integers, text, UUIDs); =</li>
+<li><strong>GiST</strong>: Moderate-to-high storage; complex types (geometric, spatial, ranges, text search vectors); &amp;&amp;, @&gt;, &lt;@, ~=, &lt;-&gt;</li>
+<li><strong>SP-GiST</strong>: Low-to-moderate storage; non-balanced/partitioned types (IP addresses, URLs, text prefixes, 2D points); =, &lt;, &gt;, ~=, ^@</li>
+<li><strong>GIN</strong>: High storage; multi-value composite types (jsonb, arrays, tsvector); @&gt;, ?, ?|, @@, &amp;&amp;</li>
+<li><strong>BRIN</strong>: Extremely low storage (kilobytes); ordered sequential types (auto-incrementing IDs, timestamps); =, &lt;, &lt;=, &gt;, &gt;=, BETWEEN</li>
+</ol>
+<p>The most important difference, though, is the one between the <strong>B-Tree</strong> and <strong>Hash</strong></p>
+<h2 id="mvcc---multi-version-concurrency-control">
+  MVCC - Multi-Version Concurrency Control
+  <a class="heading-link" href="#mvcc---multi-version-concurrency-control">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The MVCC concept is not exclusive to PostgreSQL. It is the underlying mechanism of some other databases as well (CouchDB, Cloud Spanner and etc.)
+Even though there&rsquo;s nothing that you can actually do to use the MVCC, knowing how it works will you help understand two concepts that follow (Fill Factor and Auto Vacuum)</p>
+<p>It is a mechanism that allows the read and update with two different transactions to happen at the same time relying on the transaction id (xid) and the timestamp of the record (xmin, xmax)</p>
+<p>When a transaction updates a record, instead of physically updating the existing record, the PG Engine creates a new record and &ldquo;deprecates&rdquo; the old one.
+The same happens when a record is deleted. Instead of physically removing that row right away, the engine does kind of a soft deletion deprecating the version of that row.
+Therefore, when Postgres is performing under heavy write load, in addition to the pressure on the indexes, there&rsquo;s a pressure on the amount of &ldquo;garbage&rdquo; (deprecated) records in the phisical disk pages.</p>
+<p>The Postgres uses the Vacuum mechanism (the Auto Vaccum is one type of it) to deal with the clean up.</p>
+<h2 id="auto-vacuum">
+  Auto Vacuum
+  <a class="heading-link" href="#auto-vacuum">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Even though it is possible to manually start a vacuum process</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">VACUUM</span><span style="color:#1f2328">;</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>it is not usual to manually trigger them. The most recommended mechanism is relying on the <code>Auto Vacuum</code> to execute the space clean-up of dead tuples.</p>
+<p>When the vacuum runs it collects the space for dead tuples back to the database and there are five main configurations that can be tunned database-wise or per table that can help with the database performance and disk usage:</p>
+<ol>
+<li><code>autovacuum_vacuum_scale_factor</code> (default 0.2) =&gt; the % of dead tuples to the size of the table to trigger a vacuum</li>
+<li><code>autovacuum_vacuum_threshold</code> (default 50) =&gt; the minimum of dead rows (to avoid triggering too early in small tables)</li>
+<li><code>autovacuum_vacuum_insert_scale_factor</code> (default 0.2) =&gt; the % of inserts to the size of the table to trigger a vacuum</li>
+<li><code>autovacuum_analyze_scale_factor</code> (default 0.1) =&gt; the % of analyzes (insert, update, delete) to the size of the table to trigger a vacuum</li>
+<li><code>autovacuum_vacuum_cost_delay</code> (default 2ms) =&gt; the vacuum delay to wait after reaching the cost_limit. It&rsquo;s used to avoid too much CPU/MEM used to vacuum.</li>
+<li><code>autovacuum_vacuum_cost_limit</code> (default -1 ~ vacuum_cost_limit: 200) =&gt; the number of &lsquo;points&rsquo; threshold to trigger a delay.</li>
+</ol>
+<p>How to configure the scale factors for a specific table:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">ALTER</span><span style="color:#fff"> </span><span style="color:#cf222e">TABLE</span><span style="color:#fff"> </span>your_table_name<span style="color:#fff"> </span><span style="color:#cf222e">SET</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>autovacuum_vacuum_scale_factor<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">0</span><span style="color:#1f2328">.</span><span style="color:#0550ae">05</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>autovacuum_vacuum_threshold<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">1000</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>autovacuum_vacuum_insert_scale_factor<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">0</span><span style="color:#1f2328">.</span><span style="color:#0550ae">03</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>autovacuum_analyze_scale_factor<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">0</span><span style="color:#1f2328">.</span><span style="color:#0550ae">02</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>autovacuum_vacuum_cost_delay<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">2</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>autovacuum_vacuum_cost_limit<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">200</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">);</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>Based on that, when there&rsquo;s a huge table with a lot of inserts/update it&rsquo;s expected that it creates a lot of dead tuples that should be vacuum.
+To do so, it&rsquo;s recommended to update the <code>autovacuum_vacuum_scale_factor</code> to a low value so it won&rsquo;t accumulate too much garbage before triggering the vacuum.</p>
+<p>Another useful configuration for huge tables with high churn rate is increasing the <code>autovacuum_vacuum_cost_limit</code> so it will keep the vacuum pace close to the pace that the DB generates garbage.</p>
+<h2 id="fill-factor">
+  Fill Factor
+  <a class="heading-link" href="#fill-factor">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="heap">
+  Heap
+  <a class="heading-link" href="#heap">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>PostgreSQL reads and writes data to disk in fixed-size blocks called pages of size 8 KB (by default).
+The page is used to store the actual data (Heap) and the indexes.
+When the page is full the Database engine needs to create a new one and this can be a problem for the index update.</p>
+<p>To understand this we need to know how the indexes point to the page. The index does not point directly to phisical content of the row,
+instead it points to a Tuple Identifier (TID) that holds the page number and the tuple offset. Therefore, if an update happens and the new record
+(remember that the MVCC adds a new tuple and deprecates the old one) is added to the same page of the old value the index does not need to change. The page header (indicating the offset) is the only thing that needs to be updated. This is called Heap-Only update.
+However, if the update happens in a block that is full (it does not have enough capacity to hold the new tuple) then the new tuple is added to different page of the old record and the index have to be updated too.
+This index update usually impacts performance, so it&rsquo;s always desirable to have enough free space in the same page block for updates. That&rsquo;s the reason of the <code>fillfactor</code> config.</p>
+<p>The fillfactor defines how much free space the <code>INSERTS</code> should leave for the <code>UPDATES</code>. Instead of trying to use as much as possible of a page, the inserts are going to be spread into more new pages (since pure inserts do not benefit from HOT updates) doing so leaving more free room for existing row updates.</p>
+<p>There are two major trade-offs though, disk usage and locality. Creating more fragmented pages uses more disk and fragmented data does not benefit from sequential locality reading.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">CREATE</span><span style="color:#fff"> </span><span style="color:#cf222e">TABLE</span><span style="color:#fff"> </span>account_balances<span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>account_id<span style="color:#fff"> </span><span style="color:#6639ba">INT</span><span style="color:#fff"> </span><span style="color:#cf222e">PRIMARY</span><span style="color:#fff"> </span><span style="color:#cf222e">KEY</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>balance<span style="color:#fff"> </span><span style="color:#6639ba">NUMERIC</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>updated_at<span style="color:#fff"> </span>TIMESTAMPTZ<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">WITH</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span>fillfactor<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">80</span><span style="color:#1f2328">);</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>Existing tables:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a">-- Step 1: Update table parameters
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">ALTER</span><span style="color:#fff"> </span><span style="color:#cf222e">TABLE</span><span style="color:#fff"> </span>account_balances<span style="color:#fff"> </span><span style="color:#cf222e">SET</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span>fillfactor<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">80</span><span style="color:#1f2328">);</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a">-- Step 2: Rewrite the table so existing pages take the new fill factor
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">VACUUM</span><span style="color:#fff"> </span><span style="color:#cf222e">FULL</span><span style="color:#fff"> </span>account_balances<span style="color:#1f2328">;</span><span style="color:#fff">
+</span></span></span></code></pre></div><h3 id="index">
+  Index
+  <a class="heading-link" href="#index">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The same happens for the indexes. As I mentioned, the indexes are stored in blocks but the reason that they might benefit from fill factor is because a full page in an index causes a page split where half of the page is moved to another leaf. You can think of it like a simple hashmap in which the bucket is full and you need to create a new one and move half of the contents to the new bucket.
+If the indexes are being populated and modified by random non-sequential data, then it could benefit from some spare room to fill.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">CREATE</span><span style="color:#fff"> </span><span style="color:#cf222e">INDEX</span><span style="color:#fff"> </span>idx_orders_created_at<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">ON</span><span style="color:#fff"> </span>orders<span style="color:#fff"> </span><span style="color:#1f2328">(</span>created_at<span style="color:#1f2328">)</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WITH</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span>fillfactor<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">75</span><span style="color:#1f2328">);</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>Existing index:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a">-- Step 1: Update the index definition
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">ALTER</span><span style="color:#fff"> </span><span style="color:#cf222e">INDEX</span><span style="color:#fff"> </span>idx_orders_created_at<span style="color:#fff"> </span><span style="color:#cf222e">SET</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span>fillfactor<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">75</span><span style="color:#1f2328">);</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a">-- Step 2: Rebuild the index so pages are reorganized with the new fill factor
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">REINDEX</span><span style="color:#fff"> </span><span style="color:#cf222e">INDEX</span><span style="color:#fff"> </span>CONCURRENTLY<span style="color:#fff"> </span>idx_orders_created_at<span style="color:#1f2328">;</span><span style="color:#fff">
+</span></span></span></code></pre></div><h2 id="unlogged-tables">
+  Unlogged tables
+  <a class="heading-link" href="#unlogged-tables">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This is a technique to improve the writing throughput by the cost of reducing the reliability.</p>
+<p>The default PostgreSQL behavior for writing data is persisting synchronously to the WAL (Write Ahead Log) and propagating the shared buffers
+(holding the actual Page data) asynchronously to the disk. Any INSERT, UPDATE, DELETE marks the page as dirty in the RAM and during checkpoints
+the PG Engine flushes them to the disk. If the database crashes the dirty-not-flushed memory info gets lost. PG then reads the WAL during the restart to compare the disk state with the WAL and sync them avoiding losing data.
+However, this safeguard of writing to the WAL cost some time, CPU and MEM cycles during writing operations. If the client can either: 1) assume that database crashes are rare events and;2) accept some inconsistency (for non critical data), then it is possible to increase the writing throughput just disabling the Write Ahead Log for that table.</p>
+<p>Some benchmarks report that a Unlogged table can handle writing 2x to 5x faster (a 100% to 400% throughput increase) compared to standard logged tables.</p>
+<p>There&rsquo;s a caveat. The replication for read-replicas usually happens via WAL sync, so unlogged tables do not replicate to read replicas or standby servers. They will appear empty on any standby nodes.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">CREATE</span><span style="color:#fff"> </span>UNLOGGED<span style="color:#fff"> </span><span style="color:#cf222e">TABLE</span><span style="color:#fff"> </span>my_table<span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>id<span style="color:#fff"> </span><span style="color:#6639ba">SERIAL</span><span style="color:#fff"> </span><span style="color:#cf222e">PRIMARY</span><span style="color:#fff"> </span><span style="color:#cf222e">KEY</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>created_at<span style="color:#fff"> </span>TIMESTAMPTZ<span style="color:#fff"> </span><span style="color:#cf222e">DEFAULT</span><span style="color:#fff"> </span>clock_timestamp<span style="color:#1f2328">()</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">);</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>Existing table:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">ALTER</span><span style="color:#fff"> </span><span style="color:#cf222e">TABLE</span><span style="color:#fff"> </span>my_table<span style="color:#fff"> </span><span style="color:#cf222e">SET</span><span style="color:#fff"> </span>UNLOGGED<span style="color:#1f2328">;</span><span style="color:#fff">
+</span></span></span></code></pre></div><h2 id="job-queue-using-the-skip-locked">
+  Job Queue using the <em>Skip Locked</em>
+  <a class="heading-link" href="#job-queue-using-the-skip-locked">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>One final trick with Postgres is using it as a Job Queue. It&rsquo;s called worker pattern and it leverages the distributed locking mechanism of postgres to allow
+worker transactions to coordinate themselves.</p>
+<p>It&rsquo;s based on the structure:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">SELECT</span><span style="color:#fff"> </span><span style="color:#1f2328">...</span><span style="color:#fff"> </span><span style="color:#cf222e">FROM</span><span style="color:#fff"> </span>my_table<span style="color:#fff"> </span><span style="color:#1f2328">[</span><span style="color:#cf222e">FOR</span><span style="color:#fff"> </span><span style="color:#cf222e">UPDATE</span><span style="color:#fff"> </span><span style="color:#0550ae">|</span><span style="color:#fff"> </span><span style="color:#cf222e">FOR</span><span style="color:#fff"> </span><span style="color:#cf222e">SHARE</span><span style="color:#1f2328">]</span><span style="color:#fff"> </span>SKIP<span style="color:#fff"> </span>LOCKED<span style="color:#fff">
+</span></span></span></code></pre></div><p>Instead of waiting for locked rows to free up or failing with an error, SKIP LOCKED instructs the database to instantly skip any rows currently locked by another concurrent transaction and return only the available, unlocked rows.</p>
+<p>Therefore, you can make your worker pick the next available task to be execute by limiting to one <code>LIMIT 1</code> and skipping the locked (being executed by other workers/transactions) <code>SKIP LOCKED</code></p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">CREATE</span><span style="color:#fff"> </span><span style="color:#cf222e">TABLE</span><span style="color:#fff"> </span>task_queue<span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>id<span style="color:#fff"> </span><span style="color:#6639ba">SERIAL</span><span style="color:#fff"> </span><span style="color:#cf222e">PRIMARY</span><span style="color:#fff"> </span><span style="color:#cf222e">KEY</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>payload<span style="color:#fff"> </span><span style="color:#6639ba">TEXT</span><span style="color:#fff"> </span><span style="color:#cf222e">NOT</span><span style="color:#fff"> </span><span style="color:#cf222e">NULL</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>status<span style="color:#fff"> </span><span style="color:#6639ba">TEXT</span><span style="color:#fff"> </span><span style="color:#cf222e">NOT</span><span style="color:#fff"> </span><span style="color:#cf222e">NULL</span><span style="color:#fff"> </span><span style="color:#cf222e">DEFAULT</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;pending&#39;</span><span style="color:#1f2328">,</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">    </span>created_at<span style="color:#fff"> </span>TIMESTAMPTZ<span style="color:#fff"> </span><span style="color:#cf222e">DEFAULT</span><span style="color:#fff"> </span>clock_timestamp<span style="color:#1f2328">()</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#1f2328">);</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">INSERT</span><span style="color:#fff"> </span><span style="color:#cf222e">INTO</span><span style="color:#fff"> </span>task_queue<span style="color:#fff"> </span><span style="color:#1f2328">(</span>payload<span style="color:#1f2328">)</span><span style="color:#fff"> </span><span style="color:#cf222e">VALUES</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;Send Email 1&#39;</span><span style="color:#1f2328">),</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;Send Email 2&#39;</span><span style="color:#1f2328">),</span><span style="color:#fff"> </span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;Send Email 3&#39;</span><span style="color:#1f2328">);</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>The worker picks one (<code>SELECT FOR UPDATE</code> locking it and protecting from other workers) but at the same time skips the one that are already being executed <code>SKIP LOCKED</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#cf222e">BEGIN</span><span style="color:#1f2328">;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a">-- Step 1: Select and lock the next available pending job, skipping any locked by other workers
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">SELECT</span><span style="color:#fff"> </span>id<span style="color:#1f2328">,</span><span style="color:#fff"> </span>payload<span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">FROM</span><span style="color:#fff"> </span>task_queue<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff"> </span>status<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;pending&#39;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">ORDER</span><span style="color:#fff"> </span><span style="color:#cf222e">BY</span><span style="color:#fff"> </span>id<span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">LIMIT</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">FOR</span><span style="color:#fff"> </span><span style="color:#cf222e">UPDATE</span><span style="color:#fff"> </span>SKIP<span style="color:#fff"> </span>LOCKED<span style="color:#1f2328">;</span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a">-- Step 2: EXECUTE THE TASK
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#57606a">-- Step 3: Update status and commit
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">UPDATE</span><span style="color:#fff"> </span>task_queue<span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">SET</span><span style="color:#fff"> </span>status<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0a3069">&#39;completed&#39;</span><span style="color:#fff"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">WHERE</span><span style="color:#fff"> </span>id<span style="color:#fff"> </span><span style="color:#0550ae">=</span><span style="color:#fff"> </span><span style="color:#0550ae">1</span><span style="color:#1f2328">;</span><span style="color:#fff"> </span><span style="color:#57606a">-- Replace with retrieved ID
+</span></span></span><span style="display:flex;"><span><span style="color:#fff">
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">COMMIT</span><span style="color:#1f2328">;</span><span style="color:#fff">
+</span></span></span></code></pre></div><p>It&rsquo;s an easy and cheap way of avoiding adding a new queue (sns/sqs/rabbitmq/etc)</p>
+<h3 id="suggested-content">
+  Suggested content:
+  <a class="heading-link" href="#suggested-content">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><a href="https://dev.to/polliog/i-replaced-redis-with-postgresql-and-its-faster-4942"  class="external-link" target="_blank" rel="noopener">https://dev.to/polliog/i-replaced-redis-with-postgresql-and-its-faster-4942</a></li>
+<li><a href="https://leapcell.medium.com/understanding-the-9-types-of-indexes-in-postgresql-6508f3b9fb71"  class="external-link" target="_blank" rel="noopener">https://leapcell.medium.com/understanding-the-9-types-of-indexes-in-postgresql-6508f3b9fb71</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Multiversion_concurrency_control"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Multiversion_concurrency_control</a></li>
+<li><a href="https://dev.to/headf1rst/postgresql-mvcc-internals-from-xminxmax-to-isolation-levels-2g6h"  class="external-link" target="_blank" rel="noopener">https://dev.to/headf1rst/postgresql-mvcc-internals-from-xminxmax-to-isolation-levels-2g6h</a></li>
+<li><a href="https://medium.com/@jramcloud1/mastering-autovacuum-and-vacuum-in-postgresql-the-complete-guide-for-dbas-fba18c2b2477"  class="external-link" target="_blank" rel="noopener">https://medium.com/@jramcloud1/mastering-autovacuum-and-vacuum-in-postgresql-the-complete-guide-for-dbas-fba18c2b2477</a></li>
+<li><a href="https://www.postgresql.org/docs/18/runtime-config-autovacuum.html"  class="external-link" target="_blank" rel="noopener">https://www.postgresql.org/docs/18/runtime-config-autovacuum.html</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zamariola" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2026
+     Leonardo Zamariola 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MS8JW6F532"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MS8JW6F532');
+        }
+      </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

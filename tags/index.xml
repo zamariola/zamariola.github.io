@@ -10,14 +10,42 @@
 		
 		
 		
-			<lastBuildDate>Mon, 07 Sep 2026 15:38:00 -0300</lastBuildDate>
+			<lastBuildDate>Sat, 12 Sep 2026 14:07:00 -0300</lastBuildDate>
 		
 			<atom:link href="https://zamariola.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Database</title>
 				<link>https://zamariola.com.br/tags/database/</link>
-				<pubDate>Mon, 07 Sep 2026 15:38:00 -0300</pubDate>
+				<pubDate>Sat, 12 Sep 2026 14:07:00 -0300</pubDate>
 				<guid>https://zamariola.com.br/tags/database/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Index</title>
+				<link>https://zamariola.com.br/tags/index/</link>
+				<pubDate>Sat, 12 Sep 2026 14:07:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/tags/index/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Performance</title>
+				<link>https://zamariola.com.br/tags/performance/</link>
+				<pubDate>Sat, 12 Sep 2026 14:07:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/tags/performance/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Postgres</title>
+				<link>https://zamariola.com.br/tags/postgres/</link>
+				<pubDate>Sat, 12 Sep 2026 14:07:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/tags/postgres/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Query</title>
+				<link>https://zamariola.com.br/tags/query/</link>
+				<pubDate>Sat, 12 Sep 2026 14:07:00 -0300</pubDate>
+				<guid>https://zamariola.com.br/tags/query/</guid>
 				<description></description>
 			</item>
 			<item>
