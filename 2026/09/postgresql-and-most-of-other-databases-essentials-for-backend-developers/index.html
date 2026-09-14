@@ -236,6 +236,7 @@ required for a backend developer to know when seriously using PostgreSQL.</p>
 <li><strong>GIN</strong>: High storage; multi-value composite types (jsonb, arrays, tsvector); @&gt;, ?, ?|, @@, &amp;&amp;</li>
 <li><strong>BRIN</strong>: Extremely low storage (kilobytes); ordered sequential types (auto-incrementing IDs, timestamps); =, &lt;, &lt;=, &gt;, &gt;=, BETWEEN</li>
 </ol>
+<p>This <a href="https://www.gufoe.it/en/blog/postgresql-18-single-char-status-codes-benchmark"  class="external-link" target="_blank" rel="noopener">post</a> shows clear impact of randomness vs index size. With a lot of random values the b-tree cannot deduplicate and them it grows in size compared with the Hash.</p>
 <p>The most important difference, though, is the one between the <strong>B-Tree</strong> and <strong>Hash</strong></p>
 <h2 id="mvcc---multi-version-concurrency-control">
   MVCC - Multi-Version Concurrency Control
@@ -407,6 +408,7 @@ worker transactions to coordinate themselves.</p>
   </a>
 </h3>
 <ul>
+<li><a href="https://www.gufoe.it/en/blog/postgresql-18-single-char-status-codes-benchmark"  class="external-link" target="_blank" rel="noopener">https://www.gufoe.it/en/blog/postgresql-18-single-char-status-codes-benchmark</a></li>
 <li><a href="https://dev.to/polliog/i-replaced-redis-with-postgresql-and-its-faster-4942"  class="external-link" target="_blank" rel="noopener">https://dev.to/polliog/i-replaced-redis-with-postgresql-and-its-faster-4942</a></li>
 <li><a href="https://leapcell.medium.com/understanding-the-9-types-of-indexes-in-postgresql-6508f3b9fb71"  class="external-link" target="_blank" rel="noopener">https://leapcell.medium.com/understanding-the-9-types-of-indexes-in-postgresql-6508f3b9fb71</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Multiversion_concurrency_control"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Multiversion_concurrency_control</a></li>
